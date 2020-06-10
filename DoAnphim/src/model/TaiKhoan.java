@@ -10,14 +10,14 @@ package model;
  * @author Phon
  */
 public class TaiKhoan {
-    private String MatK, MaNguoiDung, TenTK, Password, LoaiTK;
+    private String MaTK, MaNguoiDung, TenTK, Password, LoaiTK;
 
     public String getMatK() {
-        return MatK;
+        return MaTK;
     }
 
     public void setMatK(String MatK) {
-        this.MatK = MatK;
+        this.MaTK = MatK;
     }
 
     public String getMaNguoiDung() {

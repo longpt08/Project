@@ -6,6 +6,7 @@
 package UI;
 
 import Controller.Oracle;
+import Controller.TaiKhoan_ctrl;
 import java.awt.Color;
 import java.sql.*;
 import java.util.logging.Level;
@@ -155,34 +156,24 @@ public class DangNhap extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_loginActionPerformed
-        //get username and password
+
         String username = txt_username.getText();
         String password = String.valueOf(txt_pass.getPassword());
-        
-        //Tạo trường hợp nếu username hoặc password không tìm thấy trong database
-        String query = "SELECT * FROM TAIKHOAN WHERE TENTK = ? AND PASSWORD = ?";
-        
-        PreparedStatement st;
-        ResultSet rs;
+        TaiKhoan_ctrl tkc = new TaiKhoan_ctrl();
         try {
-            st = Oracle.getConnection().prepareStatement(query);
-            st.setString(1,username);
-            st.setString(2, password);
-            rs= st.executeQuery();
-             //Tạo trường hợp nếu username hoặc password hợp lệ hoặc không tìm thấy trong database
-            if(rs.next())
+            if(tkc.Login(username, password))
             {
              //hiển thị frame trang chủ
                 Home trangchu = new Home();
                 //Đóng đăng nhập
                 this.dispose();
-                Oracle.getConnection().close();
+                Oracle.con.close();
             }
             else
             {
              // hiển thị lỗi
                 JOptionPane.showMessageDialog(null,"Invalid Username/ Password","Login error",2);
-                Oracle.getConnection().close();
+                Oracle.con.close();
             }
             
             

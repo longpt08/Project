@@ -3,11 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Administrator/Documents/GitHub/Project/DoAnphim/src/UI/ThemTV.java</file>
             <file>file:/C:/Users/Administrator/Documents/GitHub/Project/DoAnphim/src/UI/TraCuuTV.java</file>
             <file>file:/C:/Users/Administrator/Documents/GitHub/Project/DoAnphim/src/model/TaiKhoan.java</file>
             <file>file:/C:/Users/Administrator/Documents/GitHub/Project/DoAnphim/src/UI/Home.java</file>
             <file>file:/C:/Users/Administrator/Documents/GitHub/Project/DoAnphim/src/UI/DangNhap.java</file>
+=======
+            <file>file:/E:/HK4/Project/DoAnphim/src/UI/DangNhap.java</file>
+            <file>file:/E:/HK4/Project/DoAnphim/src/UI/ThemTV.java</file>
+            <file>file:/E:/HK4/Project/DoAnphim/src/Controller/ThanhVien_ctrl.java</file>
+            <file>file:/E:/HK4/Project/DoAnphim/src/Controller/Oracle.java</file>
+            <file>file:/E:/HK4/Project/DoAnphim/src/UI/TraCuuTV.java</file>
+            <file>file:/E:/HK4/Project/DoAnphim/src/Controller/TaiKhoan_ctrl.java</file>
+>>>>>>> a9647dff611bbae41e78590a4d7a5f1e203c5981
         </group>
     </open-files>
 </project-private>
