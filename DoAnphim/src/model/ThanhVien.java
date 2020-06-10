@@ -15,101 +15,88 @@ import java.util.Date;
  * @author Phon
  */
 public class ThanhVien implements Serializable{
-    private String matv,tentv,gioitinh,diachi,sdt,cmnd;
-    private String ngaysinh, ngaydk;
-    private int diemtichluy;
+    private String MaTV, MaNV, TenTV, GioiTinh, NgaySinh, DiaChi,
+            SDT, CMND, NgayDangKy;
+    private int DiemTichLuy;
 
-    public ThanhVien(String matv, String tentv, String gioitinh, String diachi, String sdt, String cmnd, String ngaysinh, String ngaydk, int diemtichluy) {
-        this.matv = matv;
-        this.tentv = tentv;
-        
-        this.gioitinh = gioitinh;
-        this.diachi = diachi;
-        this.sdt = sdt;
-        this.cmnd = cmnd;
-        this.ngaysinh = ngaysinh;
-        this.ngaydk = ngaydk;
-        this.diemtichluy = diemtichluy;
+    public String getMaTV() {
+        return MaTV;
     }
 
-    public ThanhVien() {
+    public void setMaTV(String MaTV) {
+        this.MaTV = MaTV;
     }
 
-    public String getMatv() {
-        return matv;
+    public String getMaNV() {
+        return MaNV;
     }
 
-    public void setMatv(String matv) {
-        this.matv = matv;
+    public void setMaNV(String MaNV) {
+        this.MaNV = MaNV;
     }
 
-    public String getTentv() {
-        return tentv;
+    public String getTenTV() {
+        return TenTV;
     }
 
-    public void setTentv(String tentv) {
-        this.tentv = tentv;
+    public void setTenTV(String TenTV) {
+        this.TenTV = TenTV;
     }
 
-   
-    
-
-    public String getGioitinh() {
-        return gioitinh;
+    public String getGioiTinh() {
+        return GioiTinh;
     }
 
-    public void setGioitinh(String gioitinh) {
-        this.gioitinh = gioitinh;
+    public void setGioiTinh(String GioiTinh) {
+        this.GioiTinh = GioiTinh;
     }
 
-    public String getDiachi() {
-        return diachi;
+    public String getNgaySinh() {
+        return NgaySinh;
     }
 
-    public void setDiachi(String diachi) {
-        this.diachi = diachi;
+    public void setNgaySinh(String NgaySinh) {
+        this.NgaySinh = NgaySinh;
     }
 
-    public String getSdt() {
-        return sdt;
+    public String getDiaChi() {
+        return DiaChi;
     }
 
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
+    public void setDiaChi(String DiaChi) {
+        this.DiaChi = DiaChi;
     }
 
-    public String getCmnd() {
-        return cmnd;
+    public String getSDT() {
+        return SDT;
     }
 
-    public void setCmnd(String cmnd) {
-        this.cmnd = cmnd;
+    public void setSDT(String SDT) {
+        this.SDT = SDT;
     }
 
-    public String getNgaysinh() {
-        return ngaysinh;
+    public String getCMND() {
+        return CMND;
     }
 
-    public void setNgaysinh(String ngaysinh) {
-        this.ngaysinh = ngaysinh;
+    public void setCMND(String CMND) {
+        this.CMND = CMND;
     }
 
-    public String getNgaydk() {
-        return ngaydk;
+    public String getNgayDangKy() {
+        return NgayDangKy;
     }
 
-    public void setNgaydk(String ngaydk) {
-        this.ngaydk = ngaydk;
+    public void setNgayDangKy(String NgayDangKy) {
+        this.NgayDangKy = NgayDangKy;
     }
 
-    public int getDiemtichluy() {
-        return diemtichluy;
+    public int getDiemTichLuy() {
+        return DiemTichLuy;
     }
 
-    public void setDiemtichluy(int diemtichluy) {
-        this.diemtichluy = diemtichluy;
+    public void setDiemTichLuy(int DiemTichLuy) {
+        this.DiemTichLuy = DiemTichLuy;
     }
-    
-    
-    
+
 }

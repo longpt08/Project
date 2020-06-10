@@ -211,9 +211,6 @@
         <Component class="javax.swing.JTextField" name="txt_diem">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
-            <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="doubleBuffered" type="boolean" value="true"/>
             <Property name="dragEnabled" type="boolean" value="true"/>
             <Property name="enabled" type="boolean" value="false"/>

@@ -5,7 +5,8 @@
  */
 package UI;
 
-import static Controller.Oracle.getConnection;
+import Controller.Oracle;
+import Controller.ThanhVien_ctrl;
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -25,14 +26,14 @@ import model.ThanhVien;
  */
 public class ThemTV extends javax.swing.JFrame {
 
-    private String gioiTinh;
+    static String gioiTinh;
 
-    public String getGioiTinh() {
+    public static String getGioiTinh() {
         return gioiTinh;
     }
 
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
+    public static void setGioiTinh(String gt) {
+        gioiTinh=gt;
     }
 
     public ThemTV() {
@@ -340,13 +341,13 @@ public class ThemTV extends javax.swing.JFrame {
             ThanhVien tv = new ThanhVien();
            
            
-            tv.setMatv(txt_matv.getText());
-            tv.setTentv(txt_tentv.getText());
-            tv.setGioitinh(gioiTinh);
-            tv.setDiachi(text_diachi.getText());
-            tv.setCmnd(txt_cmnd.getText());
-            tv.setSdt(txt_sdt.getText());
-            tv.setDiemtichluy(0);
+            tv.setMaTV(txt_matv.getText());
+            tv.setTenTV(txt_tentv.getText());
+            tv.setGioiTinh(gioiTinh);
+            tv.setDiaChi(text_diachi.getText());
+            tv.setCMND(txt_cmnd.getText());
+            tv.setSDT(txt_sdt.getText());
+            tv.setDiemTichLuy(0);
             SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
             try {
 //                Calendar c = jDate_ngaysinh.getCalendar();
@@ -357,15 +358,16 @@ public class ThemTV extends javax.swing.JFrame {
                 //ngsinh co dang(dd-mm-yyyy)
                 //insert: to_date(ngsinh,'dd-mm-yyyy')
                 String ngsinh = sdf.format(jDate_ngaysinh.getDate());
-                tv.setNgaysinh(ngsinh);
-                String ngdk = sdf.format(jDate_ngaysinh.getDate());
-                tv.setNgaydk(ngdk);
+                tv.setNgaySinh(ngsinh);
+                String ngdk = sdf.format(jDate_ngaydangky.getDate());
+                tv.setNgayDangKy(ngdk);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Lỗi ngày tháng năm");
                 e.printStackTrace();
             }
-
-            if (new ThemTV().addThanhVien(tv)) {
+            
+            ThanhVien_ctrl tvc = new ThanhVien_ctrl();
+            if (tvc.ThemThanhVien(tv)) {
                 JOptionPane.showMessageDialog(null, "Thêm Thành viên thành công");
             } else {
                 JOptionPane.showMessageDialog(null, "Thêm không thành công");
@@ -417,34 +419,6 @@ public class ThemTV extends javax.swing.JFrame {
     public static void main(String args[]) {
 
         ThemTV themTV = new ThemTV();
-    }
-    public boolean addThanhVien(ThanhVien t){
-//        String  ngay = ""
-        String query = "INSERT INTO THANHVIEN VALUES(?,?,?,to_date(?,'dd-mm-yyyy'),?,?,?,to_date(?,'dd-mm-yyyy'),?)";
-        //String q = "insert into thanhvien(hoten,masv,ngsinh) values(?,?,to_date(....))
-        try {
-            PreparedStatement pt = getConnection().prepareStatement(query);
-            pt.setString(1,t.getMatv());
-            
-            pt.setString(2,t.getTentv());
-            pt.setString(3,t.getGioitinh());
-            pt.setString(4,  t.getNgaysinh());
-            pt.setString(5,t.getDiachi());
-            pt.setString(6,t.getSdt());
-            pt.setString(7,t.getCmnd());
-            pt.setString(8,  t.getNgaydk());
-            pt.setInt(9, t.getDiemtichluy());
-            
-            return pt.executeUpdate() >0;
-           
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally{try {
-                getConnection().close();
-            } catch (Exception e) {
-            }}
-        return false;
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
