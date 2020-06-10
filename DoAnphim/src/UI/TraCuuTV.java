@@ -5,8 +5,8 @@
  */
 package UI;
 
-import DAO.DAO;
-import static DAO.DAO.getConnection;
+import Controller.Oracle;
+import static Controller.Oracle.getConnection;
 import java.awt.Color;
 import java.sql.Statement;
 import java.sql.Date;

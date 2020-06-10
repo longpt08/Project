@@ -5,7 +5,7 @@
  */
 package UI;
 
-import static DAO.DAO.getConnection;
+import static Controller.Oracle.getConnection;
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
