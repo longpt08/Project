@@ -10,5 +10,46 @@ package model;
  * @author Phon
  */
 public class TaiKhoan {
+    private String MatK, MaNguoiDung, TenTK, Password, LoaiTK;
+
+    public String getMatK() {
+        return MatK;
+    }
+
+    public void setMatK(String MatK) {
+        this.MatK = MatK;
+    }
+
+    public String getMaNguoiDung() {
+        return MaNguoiDung;
+    }
+
+    public void setMaNguoiDung(String MaNguoiDung) {
+        this.MaNguoiDung = MaNguoiDung;
+    }
+
+    public String getTenTK() {
+        return TenTK;
+    }
+
+    public void setTenTK(String TenTK) {
+        this.TenTK = TenTK;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+
+    public String getLoaiTK() {
+        return LoaiTK;
+    }
+
+    public void setLoaiTK(String LoaiTK) {
+        this.LoaiTK = LoaiTK;
+    }
     
 }
