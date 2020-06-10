@@ -41,7 +41,6 @@ public class Home extends javax.swing.JFrame {
         jPanel19 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         but_phongchieu = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         but_baocao = new javax.swing.JPanel();
@@ -52,6 +51,7 @@ public class Home extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         but_taikhoan = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         panel_center = new javax.swing.JPanel();
         panel_trangchu = new javax.swing.JPanel();
@@ -146,14 +146,6 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\film (3).png")); // NOI18N
-        jLabel2.setText("jLabel2");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
         but_phongchieu.setBackground(new java.awt.Color(0, 153, 153));
         but_phongchieu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -169,7 +161,7 @@ public class Home extends javax.swing.JFrame {
         but_phongchieu.setLayout(null);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\room.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\room.png")); // NOI18N
         jLabel6.setText("Phòng Chiếu");
         but_phongchieu.add(jLabel6);
         jLabel6.setBounds(30, 10, 130, 40);
@@ -189,7 +181,7 @@ public class Home extends javax.swing.JFrame {
         but_baocao.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\report.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\report.png")); // NOI18N
         jLabel5.setText(" Báo Cáo");
         but_baocao.add(jLabel5);
         jLabel5.setBounds(30, 10, 120, 32);
@@ -209,7 +201,7 @@ public class Home extends javax.swing.JFrame {
         but_hoadon.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\bill.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\bill.jpg")); // NOI18N
         jLabel4.setText(" Hoá Đơn");
         but_hoadon.add(jLabel4);
         jLabel4.setBounds(30, 20, 130, 30);
@@ -229,12 +221,12 @@ public class Home extends javax.swing.JFrame {
         but_nhanvien.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\people.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\people.png")); // NOI18N
         jLabel3.setText(" Nhân Viên");
         but_nhanvien.add(jLabel3);
         jLabel3.setBounds(30, 20, 120, 30);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\logout.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\logout.png")); // NOI18N
         jLabel8.setText("jLabel8");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -256,25 +248,19 @@ public class Home extends javax.swing.JFrame {
         });
         but_taikhoan.setLayout(null);
 
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\profile.png")); // NOI18N
+        jLabel9.setText(" Tài Khoản");
+        but_taikhoan.add(jLabel9);
+        jLabel9.setBounds(30, 10, 120, 40);
+
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\profile.png")); // NOI18N
-        jLabel7.setText(" Tài Khoản");
-        but_taikhoan.add(jLabel7);
-        jLabel7.setBounds(30, 10, 120, 40);
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\film (3).jpg")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,13 +269,22 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(but_hoadon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(but_nhanvien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(but_taikhoan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel2)
-                .addGap(34, 34, 34)
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(38, 38, 38)
                 .addComponent(but_taikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(but_nhanvien, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -301,7 +296,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(but_baocao, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2);
@@ -348,7 +343,7 @@ public class Home extends javax.swing.JFrame {
         butt_thanhvien.setLayout(null);
 
         label_thanhvien.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        label_thanhvien.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\member.png")); // NOI18N
+        label_thanhvien.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\member.png")); // NOI18N
         label_thanhvien.setText(" Thành Viên");
         butt_thanhvien.add(label_thanhvien);
         label_thanhvien.setBounds(20, 10, 243, 104);
@@ -369,7 +364,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\popcorn.png")); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\popcorn.png")); // NOI18N
         jLabel13.setText(" Sản Phẩm");
         butt_sanpham.add(jLabel13);
         jLabel13.setBounds(0, 0, 320, 110);
@@ -390,7 +385,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\ticket.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\ticket.png")); // NOI18N
         jLabel11.setText(" Đặt Vé");
         butt_datve.add(jLabel11);
         jLabel11.setBounds(23, 4, 280, 110);
@@ -410,7 +405,7 @@ public class Home extends javax.swing.JFrame {
         butt_phim.setLayout(null);
 
         jLabel14.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\phim.png")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\phim.png")); // NOI18N
         jLabel14.setText("  Phim");
         butt_phim.add(jLabel14);
         jLabel14.setBounds(30, 10, 243, 104);
@@ -430,10 +425,10 @@ public class Home extends javax.swing.JFrame {
         butt_loaiphim.setLayout(null);
 
         jLabel12.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\cinema.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\cinema.png")); // NOI18N
         jLabel12.setText("  Loại Phim");
         butt_loaiphim.add(jLabel12);
-        jLabel12.setBounds(30, 10, 280, 104);
+        jLabel12.setBounds(40, 10, 280, 104);
 
         butt_lichchieu.setBackground(new java.awt.Color(255, 255, 255));
         butt_lichchieu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -450,7 +445,7 @@ public class Home extends javax.swing.JFrame {
         butt_lichchieu.setLayout(null);
 
         jLabel32.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        jLabel32.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\phim.png")); // NOI18N
+        jLabel32.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Documents\\GitHub\\Project\\icons\\calendar.png")); // NOI18N
         jLabel32.setText("  Lịch chiếu");
         butt_lichchieu.add(jLabel32);
         jLabel32.setBounds(30, 10, 243, 104);
@@ -1363,26 +1358,6 @@ public class Home extends javax.swing.JFrame {
         but_baocao.setBackground(new Color(0, 153, 153));
     }//GEN-LAST:event_but_baocaoMouseExited
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        panel_trangchu.setVisible(true);
-        panel_taikhoan.setVisible(false);
-        panel_nhanvien.setVisible(false);
-        panel_hoadon.setVisible(false);
-        panel_phongchieu.setVisible(false);
-        panel_baocao.setVisible(false);
-        panel_thanhvien.setVisible(false);
-        panel_DatVe.setVisible(false);
-        panel_sanpham.setVisible(false);
-        panel_phim.setVisible(false);
-        panel_lichchieu.setVisible(false);
-        panel_loaiphim.setVisible(false);
-//        panel_datve1.setVisible(false);
-//        panel_datve2.setVisible(false);
-//        panel_datve3.setVisible(false);
-//        panel_datve4.setVisible(false);
-//        panel_datve5.setVisible(false);
-    }//GEN-LAST:event_jLabel2MouseClicked
-
     private void but_taikhoanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_but_taikhoanMouseClicked
         panel_trangchu.setVisible(false);
         panel_taikhoan.setVisible(true);
@@ -1590,7 +1565,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_but_datve_qlbvMouseClicked
 
     private void butt_lichchieuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_lichchieuMouseClicked
-       panel_thanhvien.setVisible(false);
+         panel_thanhvien.setVisible(false);
         panel_trangchu.setVisible(false);
         panel_taikhoan.setVisible(false);
         panel_nhanvien.setVisible(false);
@@ -1648,7 +1623,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1668,6 +1642,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel12;
