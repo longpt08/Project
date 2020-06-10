@@ -58,8 +58,6 @@ public class Home extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        butt_l?chchieu = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         butt_thanhvien = new javax.swing.JPanel();
         label_thanhvien = new javax.swing.JLabel();
         butt_sanpham = new javax.swing.JPanel();
@@ -70,6 +68,8 @@ public class Home extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         butt_loaiphim = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        butt_lichchieu = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
         panel_DatVe = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
@@ -170,7 +170,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\room.png")); // NOI18N
-        jLabel6.setText("Ph�ng Chi?u");
+        jLabel6.setText("Phòng Chiếu");
         but_phongchieu.add(jLabel6);
         jLabel6.setBounds(30, 10, 130, 40);
 
@@ -190,7 +190,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\report.png")); // NOI18N
-        jLabel5.setText(" B�o C�o");
+        jLabel5.setText(" Báo Cáo");
         but_baocao.add(jLabel5);
         jLabel5.setBounds(30, 10, 120, 32);
 
@@ -210,7 +210,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\bill.png")); // NOI18N
-        jLabel4.setText(" Ho� ??n");
+        jLabel4.setText(" Hoá Đơn");
         but_hoadon.add(jLabel4);
         jLabel4.setBounds(30, 20, 130, 30);
 
@@ -230,7 +230,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\people.png")); // NOI18N
-        jLabel3.setText(" Nh�n Vi�n");
+        jLabel3.setText(" Nhân Viên");
         but_nhanvien.add(jLabel3);
         jLabel3.setBounds(30, 20, 120, 30);
 
@@ -258,7 +258,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\profile.png")); // NOI18N
-        jLabel7.setText(" T�i Kho?n");
+        jLabel7.setText(" Tài Khoản");
         but_taikhoan.add(jLabel7);
         jLabel7.setBounds(30, 10, 120, 40);
 
@@ -333,26 +333,6 @@ public class Home extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        butt_l?chchieu.setBackground(new java.awt.Color(255, 255, 255));
-        butt_l?chchieu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                butt_l?chchieuMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                butt_l?chchieuMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                butt_l?chchieuMouseExited(evt);
-            }
-        });
-        butt_l?chchieu.setLayout(null);
-
-        jLabel9.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\calendar.png")); // NOI18N
-        jLabel9.setText(" L?ch Chi?u");
-        butt_l?chchieu.add(jLabel9);
-        jLabel9.setBounds(20, 10, 243, 104);
-
         butt_thanhvien.setBackground(new java.awt.Color(255, 255, 255));
         butt_thanhvien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -369,7 +349,7 @@ public class Home extends javax.swing.JFrame {
 
         label_thanhvien.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         label_thanhvien.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\member.png")); // NOI18N
-        label_thanhvien.setText(" Th�nh Vi�n");
+        label_thanhvien.setText(" Thành Viên");
         butt_thanhvien.add(label_thanhvien);
         label_thanhvien.setBounds(20, 10, 243, 104);
 
@@ -390,7 +370,7 @@ public class Home extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\popcorn.png")); // NOI18N
-        jLabel13.setText(" S?n Ph?m");
+        jLabel13.setText(" Sản Phẩm");
         butt_sanpham.add(jLabel13);
         jLabel13.setBounds(0, 0, 320, 110);
 
@@ -411,7 +391,7 @@ public class Home extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\ticket.png")); // NOI18N
-        jLabel11.setText(" ??t V�");
+        jLabel11.setText(" Đặt Vé");
         butt_datve.add(jLabel11);
         jLabel11.setBounds(23, 4, 280, 110);
 
@@ -451,9 +431,29 @@ public class Home extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\cinema.png")); // NOI18N
-        jLabel12.setText("  Lo?i Phim");
+        jLabel12.setText("  Loại Phim");
         butt_loaiphim.add(jLabel12);
         jLabel12.setBounds(30, 10, 280, 104);
+
+        butt_lichchieu.setBackground(new java.awt.Color(255, 255, 255));
+        butt_lichchieu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butt_lichchieuMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                butt_lichchieuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                butt_lichchieuMouseExited(evt);
+            }
+        });
+        butt_lichchieu.setLayout(null);
+
+        jLabel32.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
+        jLabel32.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\phim.png")); // NOI18N
+        jLabel32.setText("  Lịch chiếu");
+        butt_lichchieu.add(jLabel32);
+        jLabel32.setBounds(30, 10, 243, 104);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -461,11 +461,10 @@ public class Home extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(butt_thanhvien, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-                        .addComponent(butt_l?chchieu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(butt_phim, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(butt_thanhvien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(butt_phim, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(butt_lichchieu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(butt_loaiphim, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
@@ -485,9 +484,9 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(butt_sanpham, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(butt_phim, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(butt_l?chchieu, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(butt_loaiphim, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(butt_loaiphim, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butt_lichchieu, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -516,7 +515,7 @@ public class Home extends javax.swing.JFrame {
         jPanel18.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel29.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel29.setText("Qu?n L� B�n V�");
+        jLabel29.setText("Quản Lý Bán Vé");
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -546,7 +545,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         jLabel22.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
-        jLabel22.setText("??t V�");
+        jLabel22.setText("Đặt Vé");
 
         javax.swing.GroupLayout but_datve_qlbvLayout = new javax.swing.GroupLayout(but_datve_qlbv);
         but_datve_qlbv.setLayout(but_datve_qlbvLayout);
@@ -571,7 +570,7 @@ public class Home extends javax.swing.JFrame {
         but_tracuuve_qlbv.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel30.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
-        jLabel30.setText("Tra C?u V�");
+        jLabel30.setText("Tra Cứu Vé");
 
         javax.swing.GroupLayout but_tracuuve_qlbvLayout = new javax.swing.GroupLayout(but_tracuuve_qlbv);
         but_tracuuve_qlbv.setLayout(but_tracuuve_qlbvLayout);
@@ -598,7 +597,7 @@ public class Home extends javax.swing.JFrame {
         jPanel14.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel25.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel25.setText("Qu?n L� L?ch chi?u");
+        jLabel25.setText("Quản Lý Lịch chiếu");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -623,7 +622,7 @@ public class Home extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel15.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel15.setText("Qu?n L� T�i Kho?n");
+        jLabel15.setText("Quản Lý Tài Khoản");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -646,7 +645,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel27.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         jLabel27.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\profile.png")); // NOI18N
-        jLabel27.setText(" T?o t�i kho?n");
+        jLabel27.setText(" Tạo tài khoản");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -670,7 +669,7 @@ public class Home extends javax.swing.JFrame {
         jLabel28.setBackground(new java.awt.Color(0, 204, 204));
         jLabel28.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         jLabel28.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Downloads\\search.png")); // NOI18N
-        jLabel28.setText("Tra c?u t�i kho?n");
+        jLabel28.setText("Tra cứu tài khoản");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -717,7 +716,7 @@ public class Home extends javax.swing.JFrame {
         jPanel15.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel26.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel26.setText("Qu?n L� Lo?i Phim");
+        jLabel26.setText("Quản Lý Loại Phim");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -744,7 +743,7 @@ public class Home extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel24.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel24.setText("Qu?n L� Phim");
+        jLabel24.setText("Quản Lý Phim");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -873,7 +872,7 @@ public class Home extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel16.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel16.setText("Qu?n L� Nh�n Vi�n");
+        jLabel16.setText("Quản Lý Nhân Viên");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -909,7 +908,7 @@ public class Home extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel17.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel17.setText("Qu?n L� Ho� ??n");
+        jLabel17.setText("Quản Lý Hoá Đơn");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -947,7 +946,7 @@ public class Home extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel23.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel23.setText("Qu?n L� S?n Ph?m");
+        jLabel23.setText("Quản Lý Sản Phẩm");
         jLabel23.setToolTipText("");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -973,7 +972,7 @@ public class Home extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel18.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel18.setText("Qu?n l� Ph�ng Chi?u");
+        jLabel18.setText("Quản lý Phòng Chiếu");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1008,7 +1007,7 @@ public class Home extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel19.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel19.setText("B�o c�o, Th?ng k�");
+        jLabel19.setText("Báo cáo, Thống kê");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1046,7 +1045,7 @@ public class Home extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel20.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
-        jLabel20.setText("Qu?n L� Th�nh Vi�n");
+        jLabel20.setText("Quản Lý Thành Viên");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1080,7 +1079,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Desktop\\icons\\add-nhanvien.png")); // NOI18N
-        jLabel10.setText(" Th�m th�nh vi�n");
+        jLabel10.setText(" Thêm thành viên");
 
         javax.swing.GroupLayout butt_themthanhvienLayout = new javax.swing.GroupLayout(butt_themthanhvien);
         butt_themthanhvien.setLayout(butt_themthanhvienLayout);
@@ -1114,7 +1113,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrator\\Downloads\\smile.png")); // NOI18N
-        jLabel21.setText(" Tra c?u th�nh vi�n");
+        jLabel21.setText(" Tra cứu thành viên");
 
         javax.swing.GroupLayout butt_tracuuthanhvienLayout = new javax.swing.GroupLayout(butt_tracuuthanhvien);
         butt_tracuuthanhvien.setLayout(butt_tracuuthanhvienLayout);
@@ -1451,15 +1450,15 @@ public class Home extends javax.swing.JFrame {
     private void butt_thanhvienMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_thanhvienMouseExited
         butt_thanhvien.setBackground(Color.white);
     }//GEN-LAST:event_butt_thanhvienMouseExited
-
+/*
     private void butt_l?chchieuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_l?chchieuMouseEntered
-        butt_l?chchieu.setBackground(new Color(238, 238, 238));
+      
     }//GEN-LAST:event_butt_l?chchieuMouseEntered
 
     private void butt_l?chchieuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_l?chchieuMouseExited
-        butt_l?chchieu.setBackground(Color.white);
+       
     }//GEN-LAST:event_butt_l?chchieuMouseExited
-
+*/
     private void butt_thanhvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_thanhvienMouseClicked
         panel_thanhvien.setVisible(true);
         panel_trangchu.setVisible(false);
@@ -1565,27 +1564,11 @@ public class Home extends javax.swing.JFrame {
 //        panel_datve4.setVisible(false);
 //        panel_datve5.setVisible(false);
     }//GEN-LAST:event_butt_phimMouseClicked
-
+/*
     private void butt_l?chchieuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_l?chchieuMouseClicked
-        panel_thanhvien.setVisible(false);
-        panel_trangchu.setVisible(false);
-        panel_taikhoan.setVisible(false);
-        panel_nhanvien.setVisible(false);
-        panel_hoadon.setVisible(false);
-        panel_phongchieu.setVisible(false);
-        panel_baocao.setVisible(false);
-        panel_DatVe.setVisible(false);
-        panel_sanpham.setVisible(false);
-        panel_phim.setVisible(false);
-        panel_lichchieu.setVisible(true);
-        panel_loaiphim.setVisible(false);
-//        panel_datve1.setVisible(false);
-//        panel_datve2.setVisible(false);
-//        panel_datve3.setVisible(false);
-//        panel_datve4.setVisible(false);
-//        panel_datve5.setVisible(false);
+       
     }//GEN-LAST:event_butt_l?chchieuMouseClicked
-
+*/
     private void butt_loaiphimMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_loaiphimMouseClicked
         panel_thanhvien.setVisible(false);
         panel_trangchu.setVisible(false);
@@ -1599,16 +1582,35 @@ public class Home extends javax.swing.JFrame {
         panel_phim.setVisible(false);
         panel_lichchieu.setVisible(false);
         panel_loaiphim.setVisible(true);
-//        panel_datve1.setVisible(false);
-//        panel_datve2.setVisible(false);
-//        panel_datve3.setVisible(false);
-//        panel_datve4.setVisible(false);
-//        panel_datve5.setVisible(false);
+//       
     }//GEN-LAST:event_butt_loaiphimMouseClicked
 
     private void but_datve_qlbvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_but_datve_qlbvMouseClicked
         DatVe datve = new DatVe();
     }//GEN-LAST:event_but_datve_qlbvMouseClicked
+
+    private void butt_lichchieuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_lichchieuMouseClicked
+       panel_thanhvien.setVisible(false);
+        panel_trangchu.setVisible(false);
+        panel_taikhoan.setVisible(false);
+        panel_nhanvien.setVisible(false);
+        panel_hoadon.setVisible(false);
+        panel_phongchieu.setVisible(false);
+        panel_baocao.setVisible(false);
+        panel_DatVe.setVisible(false);
+        panel_sanpham.setVisible(false);
+        panel_phim.setVisible(false);
+        panel_lichchieu.setVisible(true);
+        panel_loaiphim.setVisible(false);
+    }//GEN-LAST:event_butt_lichchieuMouseClicked
+
+    private void butt_lichchieuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_lichchieuMouseEntered
+       butt_lichchieu.setBackground(new Color(238, 238, 238));
+    }//GEN-LAST:event_butt_lichchieuMouseEntered
+
+    private void butt_lichchieuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butt_lichchieuMouseExited
+       butt_lichchieu.setBackground(Color.WHITE);
+    }//GEN-LAST:event_butt_lichchieuMouseExited
 
     /**
      * @param args the command line arguments
@@ -1628,8 +1630,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel but_taikhoan;
     private javax.swing.JPanel but_tracuuve_qlbv;
     private javax.swing.JPanel butt_datve;
+    private javax.swing.JPanel butt_lichchieu;
     private javax.swing.JPanel butt_loaiphim;
-    private javax.swing.JPanel butt_l?chchieu;
     private javax.swing.JPanel butt_phim;
     private javax.swing.JPanel butt_sanpham;
     private javax.swing.JPanel butt_thanhvien;
@@ -1660,12 +1662,12 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel12;

@@ -300,16 +300,8 @@ public class ThemTV extends javax.swing.JFrame {
 
         jPanel1.add(panel_dong);
         panel_dong.setBounds(460, 0, 30, 30);
-
-        jDate_ngaysinh.setBackground(new java.awt.Color(0, 153, 153));
-        jDate_ngaysinh.setDateFormatString("dd-MM-yyyy");
-        jDate_ngaysinh.setMaxSelectableDate(new java.util.Date(253370743279000L));
-        jDate_ngaysinh.setMinSelectableDate(new java.util.Date(-62135791121000L));
         jPanel1.add(jDate_ngaysinh);
         jDate_ngaysinh.setBounds(140, 240, 290, 30);
-
-        jDate_ngaydangky.setBackground(new java.awt.Color(0, 153, 153));
-        jDate_ngaydangky.setDateFormatString("dd-MM-yyyy");
         jPanel1.add(jDate_ngaydangky);
         jDate_ngaydangky.setBounds(140, 469, 290, 30);
 
@@ -332,7 +324,7 @@ public class ThemTV extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         txt_matv.setText("");
-        jDate_ngaydangky.setDate(null);
+        jDate_ngaysinh.setDate(null);
         jDate_ngaysinh.setDate(null);
         txt_sdt.setText("");
         txt_tentv.setText("");
@@ -366,7 +358,7 @@ public class ThemTV extends javax.swing.JFrame {
                 //insert: to_date(ngsinh,'dd-mm-yyyy')
                 String ngsinh = sdf.format(jDate_ngaysinh.getDate());
                 tv.setNgaysinh(ngsinh);
-                String ngdk = sdf.format(jDate_ngaydangky.getDate());
+                String ngdk = sdf.format(jDate_ngaysinh.getDate());
                 tv.setNgaydk(ngdk);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Lỗi ngày tháng năm");
