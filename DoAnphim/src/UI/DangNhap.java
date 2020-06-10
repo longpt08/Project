@@ -5,7 +5,7 @@
  */
 package UI;
 
-import DAO.DAO;
+import Controller.Oracle;
 import java.awt.Color;
 import java.sql.*;
 import java.util.logging.Level;
@@ -165,7 +165,7 @@ public class DangNhap extends javax.swing.JFrame {
         PreparedStatement st;
         ResultSet rs;
         try {
-            st = DAO.getConnection().prepareStatement(query);
+            st = Oracle.getConnection().prepareStatement(query);
             st.setString(1,username);
             st.setString(2, password);
             rs= st.executeQuery();
@@ -176,13 +176,13 @@ public class DangNhap extends javax.swing.JFrame {
                 Home trangchu = new Home();
                 //Đóng đăng nhập
                 this.dispose();
-                DAO.getConnection().close();
+                Oracle.getConnection().close();
             }
             else
             {
              // hiển thị lỗi
                 JOptionPane.showMessageDialog(null,"Invalid Username/ Password","Login error",2);
-                DAO.getConnection().close();
+                Oracle.getConnection().close();
             }
             
             
