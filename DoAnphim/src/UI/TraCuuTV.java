@@ -6,7 +6,7 @@
 package UI;
 
 import Controller.Oracle;
-import static Controller.Oracle.getConnection;
+
 import java.awt.Color;
 import java.sql.Statement;
 import java.sql.Date;
@@ -59,7 +59,7 @@ public class TraCuuTV extends javax.swing.JFrame {
         ArrayList<ThanhVien> memberList = new ArrayList<>();
         String sql = "SELECT * FROM THANHVIEN";
         try {
-            PreparedStatement pt = getConnection().prepareStatement(sql);
+            PreparedStatement pt = Oracle.getConnection().prepareStatement(sql);
             ResultSet rss = pt.executeQuery();
             
             while(rss.next()){
@@ -87,7 +87,7 @@ public class TraCuuTV extends javax.swing.JFrame {
         } catch (SQLException e) {
             e.printStackTrace();
         }finally{try {
-                getConnection().close();
+                Controller.Oracle.getConnection().close();
             } catch (Exception e) {
             }}
         return memberList;
@@ -100,16 +100,16 @@ public class TraCuuTV extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) table_thanhvien.getModel();
         Object[] row = new Object[9];
         for(int i=0;i< list.size();i++){
-            row[0]=list.get(i).getMatv();
+            row[0]=list.get(i).getMaTV();
             
-            row[1]=list.get(i).getTentv();
-            row[2]=list.get(i).getGioitinh();
-            row[3]=list.get(i).getNgaysinh();
-            row[4]=list.get(i).getDiachi();
-            row[5]=list.get(i).getSdt();
-            row[6]=list.get(i).getCmnd();
-            row[7]=list.get(i).getNgaydk();
-            row[8]=list.get(i).getDiemtichluy();
+            row[1]=list.get(i).getTenTV();
+            row[2]=list.get(i).getGioiTinh();
+            row[3]=list.get(i).getNgaySinh();
+            row[4]=list.get(i).getDiaChi();
+            row[5]=list.get(i).getSDT();
+            row[6]=list.get(i).getCMND();
+            row[7]=list.get(i).getNgayDangKy();
+            row[8]=list.get(i).getDiemTichLuy();
             model.addRow(row);
             
             
@@ -548,7 +548,7 @@ public class TraCuuTV extends javax.swing.JFrame {
         try {
         String sql = "DELETE FROM THANHVIEN WHERE MATV =?";
           try {
-            PreparedStatement pre = getConnection().prepareStatement(sql);
+            PreparedStatement pre = Oracle.getConnection().prepareStatement(sql);
             pre.setString(1, txt_matv1.getText());
             pre.executeUpdate();
             JOptionPane.showMessageDialog(null, "Xoá Thành công !");
@@ -570,20 +570,20 @@ public class TraCuuTV extends javax.swing.JFrame {
             ThanhVien tv = new ThanhVien();
            
            
-            tv.setMatv(txt_matv1.getText());
-            tv.setTentv(txt_tentv2.getText());
-            tv.setGioitinh(txt_gioitinh1.getText());
-            tv.setDiachi(txt_diachi1.getText());
-            tv.setCmnd(txt_cmnd1.getText());
-            tv.setSdt(txt_sdt1.getText());
-            tv.setDiemtichluy(Integer.parseInt(txt_diem1.getText()));
+            tv.setMaTV(txt_matv1.getText());
+            tv.setTenTV(txt_tentv2.getText());
+            tv.setGioiTinh(txt_gioitinh1.getText());
+            tv.setDiaChi(txt_diachi1.getText());
+            tv.setCMND(txt_cmnd1.getText());
+            tv.setSDT(txt_sdt1.getText());
+            tv.setDiemTichLuy(Integer.parseInt(txt_diem1.getText()));
          
             try {
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
                 String ngsinh = sdf.format(txt_ngaysinh1.getDate());
-                tv.setNgaysinh(ngsinh);
+                tv.setNgaySinh(ngsinh);
                 String ngdk = sdf.format(txt_ngaydangky1.getDate());
-                tv.setNgaydk(ngdk);
+                tv.setNgayDangKy(ngdk);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Lỗi ngày tháng năm");
                 e.printStackTrace();
@@ -636,17 +636,17 @@ public class TraCuuTV extends javax.swing.JFrame {
                  +     ",SDT= ? ,CMND= ? ,NGAYDANGKY= to_date(?,'dd-mm-yyyy'), DIEMTICHLUY= ? WHERE MATV = ?";
         //String q = "insert into thanhvien(hoten,masv,ngsinh) values(?,?,to_date(....))
         try {
-            PreparedStatement pt = getConnection().prepareStatement(query);
-            pt.setString(1,t.getTentv());
+            PreparedStatement pt = Oracle.getConnection().prepareStatement(query);
+            pt.setString(1,t.getTenTV());
             
-            pt.setString(2,t.getGioitinh());
-            pt.setString(3,t.getNgaysinh());
-            pt.setString(4,  t.getDiachi());
-            pt.setString(5,t.getSdt());
-            pt.setString(6,t.getCmnd());
-            pt.setString(7,t.getNgaydk());
-            pt.setInt(8,  t.getDiemtichluy());
-            pt.setString(9, t.getMatv());
+            pt.setString(2,t.getGioiTinh());
+            pt.setString(3,t.getNgaySinh());
+            pt.setString(4,  t.getDiaChi());
+            pt.setString(5,t.getSDT());
+            pt.setString(6,t.getCMND());
+            pt.setString(7,t.getNgayDangKy());
+            pt.setInt(8,  t.getDiemTichLuy());
+            pt.setString(9, t.getMaTV());
             
             return pt.executeUpdate() >0;
            

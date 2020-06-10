@@ -28,17 +28,23 @@ public class Oracle {
  
     public static Connection con;
     public Oracle() {
+          
+            }
+    
+     public static Connection getConnection() {
+         try {
             //Thiết lập kết nối đến cơ sở dữ liệu
-            String url = "jdbc:oracle:thin:@localhost:1521:OrclLong";
-            String username = "Universe";
-            String password = "universe";
-            try{
-                con = DriverManager.getConnection(url, username, password);
-            }
-            catch (SQLException e){
-                e.printStackTrace();
-            }
-    }
+            String url = "jdbc:oracle:thin:@localhost:1521:orcl3";
+            String username = "phon";
+            String password = "phon";
+            return DriverManager.getConnection(url,username,password);
+            
+         }
+      catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+     }
 }
    
 

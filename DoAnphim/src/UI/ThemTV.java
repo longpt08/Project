@@ -173,7 +173,6 @@ public class ThemTV extends javax.swing.JFrame {
         txt_matv.setBounds(140, 90, 290, 30);
 
         txt_diem.setText("0");
-        txt_diem.setCaretColor(new java.awt.Color(0, 0, 0));
         txt_diem.setDoubleBuffered(true);
         txt_diem.setDragEnabled(true);
         txt_diem.setEnabled(false);
@@ -302,9 +301,9 @@ public class ThemTV extends javax.swing.JFrame {
         jPanel1.add(panel_dong);
         panel_dong.setBounds(460, 0, 30, 30);
         jPanel1.add(jDate_ngaysinh);
-        jDate_ngaysinh.setBounds(140, 240, 290, 30);
+        jDate_ngaysinh.setBounds(140, 240, 300, 30);
         jPanel1.add(jDate_ngaydangky);
-        jDate_ngaydangky.setBounds(140, 469, 290, 30);
+        jDate_ngaydangky.setBounds(140, 470, 290, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
