@@ -15,9 +15,22 @@ import java.util.Date;
  * @author Phon
  */
 public class ThanhVien implements Serializable{
-    private String MaTV, MaNV, TenTV, GioiTinh, NgaySinh, DiaChi,
+    private String MaTV, TenTV, GioiTinh, NgaySinh, DiaChi,
             SDT, CMND, NgayDangKy;
     private int DiemTichLuy;
+
+   public ThanhVien(String MaTV, String TenTV, String GioiTinh, String NgaySinh, String DiaChi, String SDT, String CMND, String NgayDangKy, int DiemTichLuy) {
+        this.MaTV = MaTV;
+        
+        this.TenTV = TenTV;
+        this.GioiTinh = GioiTinh;
+        this.NgaySinh = NgaySinh;
+        this.DiaChi = DiaChi;
+        this.SDT = SDT;
+        this.CMND = CMND;
+        this.NgayDangKy = NgayDangKy;
+        this.DiemTichLuy = DiemTichLuy;
+    }
 
     public String getMaTV() {
         return MaTV;
@@ -27,13 +40,11 @@ public class ThanhVien implements Serializable{
         this.MaTV = MaTV;
     }
 
-    public String getMaNV() {
-        return MaNV;
+    public ThanhVien() {
     }
 
-    public void setMaNV(String MaNV) {
-        this.MaNV = MaNV;
-    }
+    
+    
 
     public String getTenTV() {
         return TenTV;
@@ -98,5 +109,8 @@ public class ThanhVien implements Serializable{
     public void setDiemTichLuy(int DiemTichLuy) {
         this.DiemTichLuy = DiemTichLuy;
     }
+
+    
+    
 
 }
