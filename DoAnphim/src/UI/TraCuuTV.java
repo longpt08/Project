@@ -6,7 +6,7 @@
 package UI;
 
 import Controller.Oracle;
-import static Controller.Oracle.getConnection;
+import Controller.ThanhVien_ctrl;
 import java.awt.Color;
 import java.sql.Statement;
 import java.sql.Date;
@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -45,79 +46,33 @@ public class TraCuuTV extends javax.swing.JFrame {
     public TraCuuTV() {
         initComponents();
         this.setLocationRelativeTo(null);//hiển thị giữa màn hình
- 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//thoát chương trình khi bấm exit
         this.setVisible(true);//chạy chương trình
        //set màu cho table
         JTableHeader table = table_thanhvien.getTableHeader();
         table.setBackground(new Color(0,153,153));
         table.setForeground(Color.black);
-        showThanhVien();
-       
-    }
-    public ArrayList<ThanhVien> getAllMember(){
-        ArrayList<ThanhVien> memberList = new ArrayList<>();
-        String sql = "SELECT * FROM THANHVIEN";
-        try {
-            PreparedStatement pt = getConnection().prepareStatement(sql);
-            ResultSet rss = pt.executeQuery();
-            
-            while(rss.next()){
-               
-                String mtv = rss.getString(1);
-                
-                String tentv = rss.getString(2);
-                String gt = rss.getString(3);
-                String ngsinh = rss.getString(4);
-                String dchi = rss.getString(5);
-                String dth = rss.getString(6);
-                String cm = rss.getString(7);
-                String ngdk = rss.getString(8);
-                int dtl = rss.getInt(9);
-              
-               
-               
-              
-               
-                
-                
-                memberList.add(new ThanhVien(mtv, tentv, gt, dchi, dth, cm, ngsinh, ngdk, dtl));
-               
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally{try {
-                getConnection().close();
-            } catch (Exception e) {
-            }}
-        return memberList;
-        
-        
+        showThanhVien();     
     }
     public void showThanhVien(){
-        
-        ArrayList<ThanhVien> list = getAllMember();
+        ThanhVien_ctrl tvc = new ThanhVien_ctrl();
+        ArrayList<ThanhVien> list = tvc.getAllMember();
         DefaultTableModel model = (DefaultTableModel) table_thanhvien.getModel();
-        Object[] row = new Object[9];
-        for(int i=0;i< list.size();i++){
-            row[0]=list.get(i).getMatv();
-            
-            row[1]=list.get(i).getTentv();
-            row[2]=list.get(i).getGioitinh();
-            row[3]=list.get(i).getNgaysinh();
-            row[4]=list.get(i).getDiachi();
-            row[5]=list.get(i).getSdt();
-            row[6]=list.get(i).getCmnd();
-            row[7]=list.get(i).getNgaydk();
-            row[8]=list.get(i).getDiemtichluy();
-            model.addRow(row);
-            
-            
-        }
-        
+        model.setRowCount(0);
+        for(int i=0;i< list.size();i++){         
+            Vector<Object> row = new Vector<Object>();
+            row.add(list.get(i).getMaTV());
+            row.add(list.get(i).getTenTV());
+            row.add(list.get(i).getGioiTinh());
+            row.add(list.get(i).getNgaySinh());
+            row.add(list.get(i).getDiaChi());
+            row.add(list.get(i).getSDT());
+            row.add(list.get(i).getCMND());
+            row.add(list.get(i).getNgayDangKy());
+            row.add(list.get(i).getDiemTichLuy());
+            model.addRow(row);          
+        }   
     }
-    
- 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -541,69 +496,38 @@ public class TraCuuTV extends javax.swing.JFrame {
     }//GEN-LAST:event_button_tracuu1ActionPerformed
 
     private void button_tracuu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_tracuu2ActionPerformed
-         int xacnhanxoa = JOptionPane.showConfirmDialog(this, "Bạn có muốn xoá thành viên này không?", "Xác nhận cậpt nhật",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+        int xacnhanxoa = JOptionPane.showConfirmDialog(this, "Bạn có muốn xoá thành viên này không?", "Xác nhận cậpt nhật",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
         if(xacnhanxoa == JOptionPane.YES_OPTION)
-        {
-           
-        try {
-        String sql = "DELETE FROM THANHVIEN WHERE MATV =?";
-          try {
-            PreparedStatement pre = getConnection().prepareStatement(sql);
-            pre.setString(1, txt_matv1.getText());
-            pre.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Xoá Thành công !");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Xoá không thành công !");
+        {     
+            ThanhVien tv = new ThanhVien();
+            tv.setMaTV(txt_matv1.getText());
+            ThanhVien_ctrl tvc = new ThanhVien_ctrl();
+            tvc.XoaTV(tv);
         }
-        }catch(Exception e){
-            e.printStackTrace();
-        }}
     }//GEN-LAST:event_button_tracuu2ActionPerformed
 
     private void butt_capnhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_capnhatActionPerformed
         
         int xacnhan = JOptionPane.showConfirmDialog(this, "Bạn có muốn cập nhật thành viên này không?", "Xác nhận cậpt nhật",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
-        if(xacnhan == JOptionPane.YES_OPTION)
-        {
-           
-        try {
-            ThanhVien tv = new ThanhVien();
-           
-           
-            tv.setMatv(txt_matv1.getText());
-            tv.setTentv(txt_tentv2.getText());
-            tv.setGioitinh(txt_gioitinh1.getText());
-            tv.setDiachi(txt_diachi1.getText());
-            tv.setCmnd(txt_cmnd1.getText());
-            tv.setSdt(txt_sdt1.getText());
-            tv.setDiemtichluy(Integer.parseInt(txt_diem1.getText()));
-         
+        if(xacnhan == JOptionPane.YES_OPTION){
             try {
-                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-                String ngsinh = sdf.format(txt_ngaysinh1.getDate());
-                tv.setNgaysinh(ngsinh);
-                String ngdk = sdf.format(txt_ngaydangky1.getDate());
-                tv.setNgaydk(ngdk);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Lỗi ngày tháng năm");
+                ThanhVien tv = new ThanhVien();
+                tv.setMaTV(txt_matv1.getText());
+                tv.setTenTV(txt_tentv2.getText());
+                tv.setGioiTinh(txt_gioitinh1.getText());
+                tv.setDiaChi(txt_diachi1.getText());
+                tv.setCMND(txt_cmnd1.getText());
+                tv.setSDT(txt_sdt1.getText());
+                tv.setDiemTichLuy(Integer.parseInt(txt_diem1.getText()));
+                tv.setNgayDangKy(txt_ngaydangky1.getDate().toString());
+                tv.setNgaySinh(txt_ngaysinh1.getDate().toString());
+                ThanhVien_ctrl tvc = new ThanhVien_ctrl();
+                tvc.CapNhatTV(tv);
+            }
+            catch (Exception e){
                 e.printStackTrace();
-            }
-
-            if (new TraCuuTV().UpdateTV(tv)) {
-                JOptionPane.showMessageDialog(null, "Cập nhật Thành viên thành công");
-            } else {
-                JOptionPane.showMessageDialog(null, "Cập nhật không thành công");
-            }
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-
-        }
-           
-        }
-        
-     
-         
+            } 
+        }    
     }//GEN-LAST:event_butt_capnhatActionPerformed
 
     private void button_tracuu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_tracuu1MouseClicked
@@ -630,32 +554,6 @@ public class TraCuuTV extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-   public boolean UpdateTV(ThanhVien t){
-
-        String query = "UPDATE THANHVIEN SET TENTV =?,GIOITINH = ?, NGAYSINH= to_date(?,'dd-mm-yyyy'),DIACHI= ? "
-                 +     ",SDT= ? ,CMND= ? ,NGAYDANGKY= to_date(?,'dd-mm-yyyy'), DIEMTICHLUY= ? WHERE MATV = ?";
-        //String q = "insert into thanhvien(hoten,masv,ngsinh) values(?,?,to_date(....))
-        try {
-            PreparedStatement pt = getConnection().prepareStatement(query);
-            pt.setString(1,t.getTentv());
-            
-            pt.setString(2,t.getGioitinh());
-            pt.setString(3,t.getNgaysinh());
-            pt.setString(4,  t.getDiachi());
-            pt.setString(5,t.getSdt());
-            pt.setString(6,t.getCmnd());
-            pt.setString(7,t.getNgaydk());
-            pt.setInt(8,  t.getDiemtichluy());
-            pt.setString(9, t.getMatv());
-            
-            return pt.executeUpdate() >0;
-           
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-
-    } 
     public static void main(String args[]) {
        
         TraCuuTV traCuuTV = new TraCuuTV();

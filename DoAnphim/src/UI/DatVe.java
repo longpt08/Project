@@ -5,7 +5,11 @@
  */
 package UI;
 
+import Controller.SuatChieu_ctrl;
 import java.awt.Color;
+import java.util.Vector;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -23,6 +27,7 @@ public class DatVe extends javax.swing.JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//thoát chương trình khi bấm exit
         this.setVisible(true);//chạy chương trình
         panel_datve2.setVisible(true);
+        HienThiNgayChieu();
     }
 
     /**
@@ -649,4 +654,11 @@ public class DatVe extends javax.swing.JFrame {
     private javax.swing.JPanel panel_dong;
     private javax.swing.JPanel panel_exit;
     // End of variables declaration//GEN-END:variables
+
+    private void HienThiNgayChieu() {
+        SuatChieu_ctrl scc = new SuatChieu_ctrl();
+        Vector<String> ListNgayChieu = new Vector<String>();
+        ListNgayChieu = scc.ListNgayChieu();
+        CBB_NgayChieu.setModel(new DefaultComboBoxModel<String>(ListNgayChieu.toArray(new String[ListNgayChieu.size()])));
+    }
 }

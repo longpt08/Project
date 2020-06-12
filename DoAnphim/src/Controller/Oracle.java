@@ -29,7 +29,7 @@ public class Oracle {
     public static Connection con;
     public Oracle() {
             //Thiết lập kết nối đến cơ sở dữ liệu
-            String url = "jdbc:oracle:thin:@localhost:1521:OrclLong";
+            String url = "jdbc:oracle:thin:@localhost:1521:orclLong";
             String username = "Universe";
             String password = "universe";
             try{
