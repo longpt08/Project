@@ -100,7 +100,7 @@ public class DatVe extends javax.swing.JFrame {
         jLabel57 = new javax.swing.JLabel();
         jButton198 = new javax.swing.JButton();
         jLabel58 = new javax.swing.JLabel();
-        jComboBox20 = new javax.swing.JComboBox<>();
+        CBB_LoaiPhim = new javax.swing.JComboBox<>();
         Btn_XacNhan = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -190,7 +190,25 @@ public class DatVe extends javax.swing.JFrame {
 
         CBB_NgayChieu.setBackground(new java.awt.Color(0, 153, 153));
         CBB_NgayChieu.setForeground(new java.awt.Color(255, 255, 255));
-        CBB_NgayChieu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "trang2" }));
+        CBB_NgayChieu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ngày chiếu" }));
+        CBB_NgayChieu.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CBB_NgayChieuItemStateChanged(evt);
+            }
+        });
+        CBB_NgayChieu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CBB_NgayChieuMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CBB_NgayChieuMouseEntered(evt);
+            }
+        });
+        CBB_NgayChieu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBB_NgayChieuActionPerformed(evt);
+            }
+        });
         panel_datve2.add(CBB_NgayChieu);
         CBB_NgayChieu.setBounds(90, 40, 330, 22);
 
@@ -201,7 +219,7 @@ public class DatVe extends javax.swing.JFrame {
 
         jComboBox18.setBackground(new java.awt.Color(0, 153, 153));
         jComboBox18.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phim" }));
         panel_datve2.add(jComboBox18);
         jComboBox18.setBounds(90, 140, 330, 22);
 
@@ -212,7 +230,7 @@ public class DatVe extends javax.swing.JFrame {
 
         jComboBox19.setBackground(new java.awt.Color(0, 153, 153));
         jComboBox19.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox19.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox19.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suất chiếu" }));
         panel_datve2.add(jComboBox19);
         jComboBox19.setBounds(90, 190, 330, 22);
 
@@ -479,16 +497,16 @@ public class DatVe extends javax.swing.JFrame {
         panel_datve2.add(jLabel58);
         jLabel58.setBounds(20, 90, 70, 16);
 
-        jComboBox20.setBackground(new java.awt.Color(0, 153, 153));
-        jComboBox20.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "trang2" }));
-        jComboBox20.addActionListener(new java.awt.event.ActionListener() {
+        CBB_LoaiPhim.setBackground(new java.awt.Color(0, 153, 153));
+        CBB_LoaiPhim.setForeground(new java.awt.Color(255, 255, 255));
+        CBB_LoaiPhim.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Loại Phim" }));
+        CBB_LoaiPhim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox20ActionPerformed(evt);
+                CBB_LoaiPhimActionPerformed(evt);
             }
         });
-        panel_datve2.add(jComboBox20);
-        jComboBox20.setBounds(90, 90, 330, 22);
+        panel_datve2.add(CBB_LoaiPhim);
+        CBB_LoaiPhim.setBounds(90, 90, 330, 22);
 
         Btn_XacNhan.setLabel("Xác Nhận");
         Btn_XacNhan.addActionListener(new java.awt.event.ActionListener() {
@@ -572,13 +590,30 @@ public class DatVe extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton198ActionPerformed
 
-    private void jComboBox20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox20ActionPerformed
+    private void CBB_LoaiPhimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_LoaiPhimActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox20ActionPerformed
+    }//GEN-LAST:event_CBB_LoaiPhimActionPerformed
 
     private void Btn_XacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_XacNhanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_XacNhanActionPerformed
+
+    private void CBB_NgayChieuItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CBB_NgayChieuItemStateChanged
+
+    
+    }//GEN-LAST:event_CBB_NgayChieuItemStateChanged
+
+    private void CBB_NgayChieuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CBB_NgayChieuMouseClicked
+
+    }//GEN-LAST:event_CBB_NgayChieuMouseClicked
+
+    private void CBB_NgayChieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_NgayChieuActionPerformed
+        HienThiLoaiPhim();
+    }//GEN-LAST:event_CBB_NgayChieuActionPerformed
+
+    private void CBB_NgayChieuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CBB_NgayChieuMouseEntered
+
+    }//GEN-LAST:event_CBB_NgayChieuMouseEntered
 
     /**
      * @param args the command line arguments
@@ -591,6 +626,7 @@ public class DatVe extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button Btn_XacNhan;
+    private javax.swing.JComboBox<String> CBB_LoaiPhim;
     private javax.swing.JComboBox<String> CBB_NgayChieu;
     private javax.swing.JLabel Lbl_NgayChieu;
     private javax.swing.JButton jButton166;
@@ -628,7 +664,6 @@ public class DatVe extends javax.swing.JFrame {
     private javax.swing.JButton jButton198;
     private javax.swing.JComboBox<String> jComboBox18;
     private javax.swing.JComboBox<String> jComboBox19;
-    private javax.swing.JComboBox<String> jComboBox20;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel51;
@@ -660,5 +695,12 @@ public class DatVe extends javax.swing.JFrame {
         Vector<String> ListNgayChieu = new Vector<String>();
         ListNgayChieu = scc.ListNgayChieu();
         CBB_NgayChieu.setModel(new DefaultComboBoxModel<String>(ListNgayChieu.toArray(new String[ListNgayChieu.size()])));
+    }
+    private void HienThiLoaiPhim(){
+        String NgayChieu = CBB_NgayChieu.getSelectedItem().toString();
+        SuatChieu_ctrl scc = new SuatChieu_ctrl();
+        Vector<String> ListLoaiPhim = new Vector<String>();
+        ListLoaiPhim= scc.ListLoaiPhim(NgayChieu);
+        CBB_LoaiPhim.setModel(new DefaultComboBoxModel<String>(ListLoaiPhim.toArray(new String[ListLoaiPhim.size()])));
     }
 }
