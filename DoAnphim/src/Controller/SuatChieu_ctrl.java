@@ -68,4 +68,22 @@ public class SuatChieu_ctrl extends Oracle {
         }
         return ListPhim;
     }
+        public Vector<String> ListThoiGianChieu(String NgayChieu, String LoaiPhim, String TenPhim){
+        Vector<String> ListThoiGianChieu = new Vector<String>();
+        String query = "select  thoigianchieu "
+                       +"from    ((select malp from loaiphim where tenlp ='"+LoaiPhim+"') lp inner join "
+                               +"(select maphim, malp from phim where tenphim ='"+TenPhim+"') p on lp.malp = p.malp) inner join "
+                               +"(select maphim,thoigianchieu from suatchieu where ngaychieu = TO_DATE('"+NgayChieu+"', 'DD-MM-YYYY','NLS_DATE_LANGUAGE = American')) sc on sc.maphim = p.maphim "
+                               +"group by ThoiGianChieu";
+        try {
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery(query);
+            while (rs.next()){
+                ListThoiGianChieu.add(rs.getString(1));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ListThoiGianChieu;
+    }
 }
