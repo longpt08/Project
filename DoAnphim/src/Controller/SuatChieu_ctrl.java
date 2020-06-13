@@ -50,7 +50,7 @@ public class SuatChieu_ctrl extends Oracle {
         }
         return ListLoaiPhim;
     }
-        public Vector<String> ListPhim(String NgayChieu, String LoaiPhim){
+    public Vector<String> ListPhim(String NgayChieu, String LoaiPhim){
         Vector<String> ListPhim = new Vector<String>();
         String query = "select  tenphim "
                        +"from    ((select malp from loaiphim where tenlp ='"+LoaiPhim+"') lp inner join "
@@ -68,7 +68,7 @@ public class SuatChieu_ctrl extends Oracle {
         }
         return ListPhim;
     }
-        public Vector<String> ListThoiGianChieu(String NgayChieu, String LoaiPhim, String TenPhim){
+    public Vector<String> ListThoiGianChieu(String NgayChieu, String LoaiPhim, String TenPhim){
         Vector<String> ListThoiGianChieu = new Vector<String>();
         String query = "select  thoigianchieu "
                        +"from    ((select malp from loaiphim where tenlp ='"+LoaiPhim+"') lp inner join "
@@ -85,5 +85,20 @@ public class SuatChieu_ctrl extends Oracle {
             e.printStackTrace();
         }
         return ListThoiGianChieu;
+    }
+    public String SuatChieuDaChon(String NgayChieu, String LoaiPhim, String TenPhim, String ThoiGianChieu){
+            String MaSuatChieu = "";
+            String query = "select  masc "
+                          +"from    suatchieu "
+                          +"where   thoigianchieu ='"+ThoiGianChieu+"' and ngaychieu =TO_DATE('"+NgayChieu+"', 'DD-MM-YYYY','NLS_DATE_LANGUAGE = American')";
+            try {
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery(query);
+                if (rs.next())
+                    MaSuatChieu=rs.getString(1);
+            } catch (Exception e) {
+            e.printStackTrace();
+            }
+            return MaSuatChieu;
     }
 }
