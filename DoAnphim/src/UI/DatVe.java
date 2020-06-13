@@ -55,6 +55,13 @@ public class DatVe extends javax.swing.JFrame {
         CBB_SuatChieu = new javax.swing.JComboBox<>();
         jPanel49 = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
+        Lbl_TenPhim_Ve = new javax.swing.JLabel();
+        Lbl_NgayChieu_Ve = new javax.swing.JLabel();
+        Lbl_Gia_Ve = new javax.swing.JLabel();
+        Lbl_GioChieu_Ve = new javax.swing.JLabel();
+        Lbl_Rap_Ve = new javax.swing.JLabel();
+        Lbl_Ghe_Ve = new javax.swing.JLabel();
+        Lbl_Gia1_Ve1 = new javax.swing.JLabel();
         jPanel50 = new javax.swing.JPanel();
         jPanel51 = new javax.swing.JPanel();
         jPanel52 = new javax.swing.JPanel();
@@ -66,8 +73,6 @@ public class DatVe extends javax.swing.JFrame {
         E4 = new javax.swing.JButton();
         E5 = new javax.swing.JButton();
         E1 = new javax.swing.JButton();
-        A1 = new javax.swing.JButton();
-        A2 = new javax.swing.JButton();
         A3 = new javax.swing.JButton();
         A4 = new javax.swing.JButton();
         A5 = new javax.swing.JButton();
@@ -103,6 +108,8 @@ public class DatVe extends javax.swing.JFrame {
         jLabel58 = new javax.swing.JLabel();
         CBB_LoaiPhim = new javax.swing.JComboBox<>();
         Btn_XacNhan = new java.awt.Button();
+        A2 = new javax.swing.JToggleButton();
+        A1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -237,13 +244,43 @@ public class DatVe extends javax.swing.JFrame {
         panel_datve2.add(CBB_SuatChieu);
         CBB_SuatChieu.setBounds(90, 190, 330, 22);
 
-        jPanel49.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel49.setBackground(new java.awt.Color(255, 255, 255));
         jPanel49.setLayout(null);
 
-        jLabel52.setFont(new java.awt.Font("Goudy Stout", 1, 18)); // NOI18N
-        jLabel52.setText("Universo Cinemas");
+        jLabel52.setFont(new java.awt.Font("Arial", 1, 35)); // NOI18N
+        jLabel52.setText("Universal Cinemas");
+        jLabel52.setToolTipText("");
         jPanel49.add(jLabel52);
-        jLabel52.setBounds(30, 10, 340, 40);
+        jLabel52.setBounds(50, 10, 340, 40);
+
+        Lbl_TenPhim_Ve.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        Lbl_TenPhim_Ve.setText("Tên phim");
+        jPanel49.add(Lbl_TenPhim_Ve);
+        Lbl_TenPhim_Ve.setBounds(20, 140, 380, 40);
+
+        Lbl_NgayChieu_Ve.setText("Ngày chiếu");
+        jPanel49.add(Lbl_NgayChieu_Ve);
+        Lbl_NgayChieu_Ve.setBounds(20, 66, 180, 20);
+
+        Lbl_Gia_Ve.setText("0");
+        jPanel49.add(Lbl_Gia_Ve);
+        Lbl_Gia_Ve.setBounds(60, 260, 110, 20);
+
+        Lbl_GioChieu_Ve.setText("Giờ chiếu");
+        jPanel49.add(Lbl_GioChieu_Ve);
+        Lbl_GioChieu_Ve.setBounds(20, 100, 180, 20);
+
+        Lbl_Rap_Ve.setText("Rạp: ");
+        jPanel49.add(Lbl_Rap_Ve);
+        Lbl_Rap_Ve.setBounds(20, 210, 70, 20);
+
+        Lbl_Ghe_Ve.setText("Ghế: ");
+        jPanel49.add(Lbl_Ghe_Ve);
+        Lbl_Ghe_Ve.setBounds(110, 210, 70, 20);
+
+        Lbl_Gia1_Ve1.setText("Giá:");
+        jPanel49.add(Lbl_Gia1_Ve1);
+        Lbl_Gia1_Ve1.setBounds(20, 260, 30, 20);
 
         panel_datve2.add(jPanel49);
         jPanel49.setBounds(10, 260, 410, 340);
@@ -305,21 +342,6 @@ public class DatVe extends javax.swing.JFrame {
         E1.setText("E1");
         panel_datve2.add(E1);
         E1.setBounds(490, 420, 70, 50);
-
-        A1.setBackground(new java.awt.Color(0, 153, 153));
-        A1.setText("A1");
-        A1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                A1ActionPerformed(evt);
-            }
-        });
-        panel_datve2.add(A1);
-        A1.setBounds(490, 140, 70, 50);
-
-        A2.setBackground(new java.awt.Color(0, 153, 153));
-        A2.setText("A2");
-        panel_datve2.add(A2);
-        A2.setBounds(570, 140, 70, 50);
 
         A3.setBackground(new java.awt.Color(0, 153, 153));
         A3.setText("A3");
@@ -459,7 +481,7 @@ public class DatVe extends javax.swing.JFrame {
         panel_datve2.add(jLabel54);
         jLabel54.setBounds(470, 500, 100, 30);
 
-        jPanel54.setBackground(new java.awt.Color(51, 102, 0));
+        jPanel54.setBackground(new java.awt.Color(184, 207, 229));
         jPanel54.setLayout(null);
         panel_datve2.add(jPanel54);
         jPanel54.setBounds(830, 510, 20, 20);
@@ -525,6 +547,26 @@ public class DatVe extends javax.swing.JFrame {
         panel_datve2.add(Btn_XacNhan);
         Btn_XacNhan.setBounds(280, 230, 140, 24);
 
+        A2.setBackground(new Color(0,153,153));
+        A2.setText("A2");
+        A2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A2ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(A2);
+        A2.setBounds(570, 140, 70, 50);
+
+        A1.setBackground(new Color(0,153,153));
+        A1.setText("A1");
+        A1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A1ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(A1);
+        A1.setBounds(490, 140, 70, 50);
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -586,10 +628,6 @@ public class DatVe extends javax.swing.JFrame {
         panel_exit.setBackground(new Color(0,153,153));
     }//GEN-LAST:event_panel_exitMouseExited
 
-    private void A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_A1ActionPerformed
-
     private void Btn_DatVeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_DatVeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_DatVeActionPerformed
@@ -603,36 +641,36 @@ public class DatVe extends javax.swing.JFrame {
     }//GEN-LAST:event_CBB_LoaiPhimActionPerformed
 
     private void Btn_XacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_XacNhanActionPerformed
-        DoiMauGheDaDat(A1);
         DoiMauGheDaDat(A2);
-        DoiMauGheDaDat(A3);
-        DoiMauGheDaDat(A4);
-        DoiMauGheDaDat(A5);
-        DoiMauGheDaDat(A6);
-        DoiMauGheDaDat(B1);
-        DoiMauGheDaDat(B2);
-        DoiMauGheDaDat(B3);
-        DoiMauGheDaDat(B4);
-        DoiMauGheDaDat(B5);
-        DoiMauGheDaDat(B6);
-        DoiMauGheDaDat(C1);
-        DoiMauGheDaDat(C2);
-        DoiMauGheDaDat(C3);
-        DoiMauGheDaDat(C4);
-        DoiMauGheDaDat(C5);
-        DoiMauGheDaDat(C6);
-        DoiMauGheDaDat(D1);
-        DoiMauGheDaDat(D2);
-        DoiMauGheDaDat(D3);
-        DoiMauGheDaDat(D4);
-        DoiMauGheDaDat(D5);
-        DoiMauGheDaDat(D6);
-        DoiMauGheDaDat(E1);
-        DoiMauGheDaDat(E2);
-        DoiMauGheDaDat(E3);
-        DoiMauGheDaDat(E4);
-        DoiMauGheDaDat(E5);
-        DoiMauGheDaDat(E6); 
+        DoiMauGheDaDat(A2);
+//        DoiMauGheDaDat(A3);
+//        DoiMauGheDaDat(A4);
+//        DoiMauGheDaDat(A5);
+//        DoiMauGheDaDat(A6);
+//        DoiMauGheDaDat(B1);
+//        DoiMauGheDaDat(B2);
+//        DoiMauGheDaDat(B3);
+//        DoiMauGheDaDat(B4);
+//        DoiMauGheDaDat(B5);
+//        DoiMauGheDaDat(B6);
+//        DoiMauGheDaDat(C1);
+//        DoiMauGheDaDat(C2);
+//        DoiMauGheDaDat(C3);
+//        DoiMauGheDaDat(C4);
+//        DoiMauGheDaDat(C5);
+//        DoiMauGheDaDat(C6);
+//        DoiMauGheDaDat(D1);
+//        DoiMauGheDaDat(D2);
+//        DoiMauGheDaDat(D3);
+//        DoiMauGheDaDat(D4);
+//        DoiMauGheDaDat(D5);
+//        DoiMauGheDaDat(D6);
+//        DoiMauGheDaDat(E1);
+//        DoiMauGheDaDat(E2);
+//        DoiMauGheDaDat(E3);
+//        DoiMauGheDaDat(E4);
+//        DoiMauGheDaDat(E5);
+//        DoiMauGheDaDat(E6); 
     }//GEN-LAST:event_Btn_XacNhanActionPerformed
 
     private void none(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_none
@@ -641,19 +679,34 @@ public class DatVe extends javax.swing.JFrame {
 
     private void CBB_NgayChieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_NgayChieuActionPerformed
         HienThiLoaiPhim();
+        Lbl_NgayChieu_Ve.setText(CBB_NgayChieu.getSelectedItem().toString());
     }//GEN-LAST:event_CBB_NgayChieuActionPerformed
 
     private void CBB_PhimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_PhimActionPerformed
         HienThoiGianChieu();
+        Lbl_TenPhim_Ve.setText(CBB_Phim.getSelectedItem().toString());
     }//GEN-LAST:event_CBB_PhimActionPerformed
 
     private void CBB_SuatChieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_SuatChieuActionPerformed
- 
+        Lbl_GioChieu_Ve.setText(CBB_SuatChieu.getSelectedItem().toString());
+        SuatChieu_ctrl scc = new SuatChieu_ctrl();
+        String ThoiGianChieu = CBB_SuatChieu.getSelectedItem().toString();
+        String NgayChieu = CBB_NgayChieu.getSelectedItem().toString();
+        String Rap = scc.RapDaChon(NgayChieu, ThoiGianChieu);
+        Lbl_Rap_Ve.setText(Rap);
     }//GEN-LAST:event_CBB_SuatChieuActionPerformed
 
     private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_D1ActionPerformed
+
+    private void A2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A2ActionPerformed
+        ChonGhe(A2);
+    }//GEN-LAST:event_A2ActionPerformed
+
+    private void A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A1ActionPerformed
+        ChonGhe(A1);
+    }//GEN-LAST:event_A1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -665,8 +718,8 @@ public class DatVe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton A1;
-    private javax.swing.JButton A2;
+    private javax.swing.JToggleButton A1;
+    private javax.swing.JToggleButton A2;
     private javax.swing.JButton A3;
     private javax.swing.JButton A4;
     private javax.swing.JButton A5;
@@ -703,7 +756,14 @@ public class DatVe extends javax.swing.JFrame {
     private javax.swing.JButton E4;
     private javax.swing.JButton E5;
     private javax.swing.JButton E6;
+    private javax.swing.JLabel Lbl_Ghe_Ve;
+    private javax.swing.JLabel Lbl_Gia1_Ve1;
+    private javax.swing.JLabel Lbl_Gia_Ve;
+    private javax.swing.JLabel Lbl_GioChieu_Ve;
     private javax.swing.JLabel Lbl_NgayChieu;
+    private javax.swing.JLabel Lbl_NgayChieu_Ve;
+    private javax.swing.JLabel Lbl_Rap_Ve;
+    private javax.swing.JLabel Lbl_TenPhim_Ve;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel51;
@@ -760,7 +820,7 @@ public class DatVe extends javax.swing.JFrame {
         ListThoiGianChieu= scc.ListThoiGianChieu(NgayChieu,LoaiPhim,TenPhim);
         CBB_SuatChieu.setModel(new DefaultComboBoxModel<String>(ListThoiGianChieu.toArray(new String[ListThoiGianChieu.size()])));
     }
-    private void DoiMauGheDaDat(javax.swing.JButton a){
+    private void DoiMauGheDaDat(javax.swing.JToggleButton a){
         String ViTri = a.getText();
         String NgayChieu = CBB_NgayChieu.getSelectedItem().toString();
         String LoaiPhim = CBB_LoaiPhim.getSelectedItem().toString();
@@ -768,10 +828,25 @@ public class DatVe extends javax.swing.JFrame {
         String ThoiGianChieu = CBB_SuatChieu.getSelectedItem().toString();
         DatVe_ctrl dvc = new DatVe_ctrl();
         SuatChieu_ctrl scc = new SuatChieu_ctrl();
-        String MaSuatChieu = scc.SuatChieuDaChon(NgayChieu, LoaiPhim, TenPhim, ThoiGianChieu);
+        String MaSuatChieu = scc.SuatChieuDaChon(NgayChieu,ThoiGianChieu);
         boolean tmp = dvc.GheDaDat(ViTri, MaSuatChieu);
         if (tmp) {
             a.setBackground(new Color(255,51,51));
+        }
+    }
+    private void ChonGhe(javax.swing.JToggleButton a){
+        if (a.isSelected()) {
+            a.setForeground(new Color(51,102,0));
+            String tmp = Lbl_Ghe_Ve.getText()+ a.getText()+" ";
+            Lbl_Ghe_Ve.setText(tmp);
+            long gia = Long.parseLong(Lbl_Gia_Ve.getText())+40000;
+            Lbl_Gia_Ve.setText(""+gia);
+        }
+        else{
+            String tmp = Lbl_Ghe_Ve.getText().replace(a.getText()+" ","");
+            Lbl_Ghe_Ve.setText(tmp);
+            long gia = Long.parseLong(Lbl_Gia_Ve.getText())-40000;
+            Lbl_Gia_Ve.setText(""+gia);
         }
     }
 }

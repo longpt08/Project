@@ -86,9 +86,24 @@ public class SuatChieu_ctrl extends Oracle {
         }
         return ListThoiGianChieu;
     }
-    public String SuatChieuDaChon(String NgayChieu, String LoaiPhim, String TenPhim, String ThoiGianChieu){
+    public String SuatChieuDaChon(String NgayChieu, String ThoiGianChieu){
             String MaSuatChieu = "";
             String query = "select  masc "
+                          +"from    suatchieu sc join phim p on sc.maphim = p.maphim "
+                          +"where   thoigianchieu ='"+ThoiGianChieu+"' and ngaychieu =TO_DATE('"+NgayChieu+"', 'DD-MM-YYYY','NLS_DATE_LANGUAGE = American')";
+            try {
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery(query);
+                if (rs.next())
+                    MaSuatChieu=rs.getString(1);
+            } catch (Exception e) {
+            e.printStackTrace();
+            }
+            return MaSuatChieu;
+    }
+    public String RapDaChon(String NgayChieu, String ThoiGianChieu){
+            String MaSuatChieu = "";
+            String query = "select  marap "
                           +"from    suatchieu "
                           +"where   thoigianchieu ='"+ThoiGianChieu+"' and ngaychieu =TO_DATE('"+NgayChieu+"', 'DD-MM-YYYY','NLS_DATE_LANGUAGE = American')";
             try {
