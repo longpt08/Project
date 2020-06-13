@@ -66,34 +66,6 @@ public class DatVe extends javax.swing.JFrame {
         jPanel51 = new javax.swing.JPanel();
         jPanel52 = new javax.swing.JPanel();
         jLabel53 = new javax.swing.JLabel();
-        E6 = new javax.swing.JButton();
-        C6 = new javax.swing.JButton();
-        E2 = new javax.swing.JButton();
-        E3 = new javax.swing.JButton();
-        E4 = new javax.swing.JButton();
-        E5 = new javax.swing.JButton();
-        E1 = new javax.swing.JButton();
-        A3 = new javax.swing.JButton();
-        A4 = new javax.swing.JButton();
-        A5 = new javax.swing.JButton();
-        A6 = new javax.swing.JButton();
-        B6 = new javax.swing.JButton();
-        B5 = new javax.swing.JButton();
-        B4 = new javax.swing.JButton();
-        B3 = new javax.swing.JButton();
-        B2 = new javax.swing.JButton();
-        B1 = new javax.swing.JButton();
-        D6 = new javax.swing.JButton();
-        C2 = new javax.swing.JButton();
-        C3 = new javax.swing.JButton();
-        C4 = new javax.swing.JButton();
-        C5 = new javax.swing.JButton();
-        C1 = new javax.swing.JButton();
-        D1 = new javax.swing.JButton();
-        D2 = new javax.swing.JButton();
-        D3 = new javax.swing.JButton();
-        D4 = new javax.swing.JButton();
-        D5 = new javax.swing.JButton();
         Btn_Huy = new javax.swing.JButton();
         Btn_DatVe = new javax.swing.JButton();
         jPanel53 = new javax.swing.JPanel();
@@ -109,7 +81,35 @@ public class DatVe extends javax.swing.JFrame {
         CBB_LoaiPhim = new javax.swing.JComboBox<>();
         Btn_XacNhan = new java.awt.Button();
         A2 = new javax.swing.JToggleButton();
+        E4 = new javax.swing.JToggleButton();
         A1 = new javax.swing.JToggleButton();
+        A3 = new javax.swing.JToggleButton();
+        B1 = new javax.swing.JToggleButton();
+        B2 = new javax.swing.JToggleButton();
+        B3 = new javax.swing.JToggleButton();
+        C3 = new javax.swing.JToggleButton();
+        C2 = new javax.swing.JToggleButton();
+        C1 = new javax.swing.JToggleButton();
+        D1 = new javax.swing.JToggleButton();
+        D2 = new javax.swing.JToggleButton();
+        D3 = new javax.swing.JToggleButton();
+        E3 = new javax.swing.JToggleButton();
+        E2 = new javax.swing.JToggleButton();
+        E1 = new javax.swing.JToggleButton();
+        A4 = new javax.swing.JToggleButton();
+        A5 = new javax.swing.JToggleButton();
+        A6 = new javax.swing.JToggleButton();
+        B4 = new javax.swing.JToggleButton();
+        B5 = new javax.swing.JToggleButton();
+        B6 = new javax.swing.JToggleButton();
+        C6 = new javax.swing.JToggleButton();
+        C5 = new javax.swing.JToggleButton();
+        C4 = new javax.swing.JToggleButton();
+        D4 = new javax.swing.JToggleButton();
+        D5 = new javax.swing.JToggleButton();
+        D6 = new javax.swing.JToggleButton();
+        E6 = new javax.swing.JToggleButton();
+        E5 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -308,151 +308,6 @@ public class DatVe extends javax.swing.JFrame {
         panel_datve2.add(jPanel52);
         jPanel52.setBounds(490, 40, 570, 50);
 
-        E6.setBackground(new java.awt.Color(0, 153, 153));
-        E6.setText("E6");
-        panel_datve2.add(E6);
-        E6.setBounds(990, 420, 70, 50);
-
-        C6.setBackground(new java.awt.Color(0, 153, 153));
-        C6.setText("C6");
-        panel_datve2.add(C6);
-        C6.setBounds(990, 280, 70, 50);
-
-        E2.setBackground(new java.awt.Color(0, 153, 153));
-        E2.setText("E2");
-        panel_datve2.add(E2);
-        E2.setBounds(570, 420, 70, 50);
-
-        E3.setBackground(new java.awt.Color(0, 153, 153));
-        E3.setText("E3");
-        panel_datve2.add(E3);
-        E3.setBounds(650, 420, 70, 50);
-
-        E4.setBackground(new java.awt.Color(0, 153, 153));
-        E4.setText("E4");
-        panel_datve2.add(E4);
-        E4.setBounds(830, 420, 70, 50);
-
-        E5.setBackground(new java.awt.Color(0, 153, 153));
-        E5.setText("E5");
-        panel_datve2.add(E5);
-        E5.setBounds(910, 420, 70, 50);
-
-        E1.setBackground(new java.awt.Color(0, 153, 153));
-        E1.setText("E1");
-        panel_datve2.add(E1);
-        E1.setBounds(490, 420, 70, 50);
-
-        A3.setBackground(new java.awt.Color(0, 153, 153));
-        A3.setText("A3");
-        panel_datve2.add(A3);
-        A3.setBounds(650, 140, 70, 50);
-
-        A4.setBackground(new java.awt.Color(0, 153, 153));
-        A4.setText("A4");
-        panel_datve2.add(A4);
-        A4.setBounds(830, 140, 70, 50);
-
-        A5.setBackground(new java.awt.Color(0, 153, 153));
-        A5.setText("A5");
-        panel_datve2.add(A5);
-        A5.setBounds(910, 140, 70, 50);
-
-        A6.setBackground(new java.awt.Color(0, 153, 153));
-        A6.setText("A6");
-        panel_datve2.add(A6);
-        A6.setBounds(990, 140, 70, 50);
-
-        B6.setBackground(new java.awt.Color(0, 153, 153));
-        B6.setText("B6");
-        panel_datve2.add(B6);
-        B6.setBounds(990, 210, 70, 50);
-
-        B5.setBackground(new java.awt.Color(0, 153, 153));
-        B5.setText("B5");
-        panel_datve2.add(B5);
-        B5.setBounds(910, 210, 70, 50);
-
-        B4.setBackground(new java.awt.Color(0, 153, 153));
-        B4.setText("B4");
-        panel_datve2.add(B4);
-        B4.setBounds(830, 210, 70, 50);
-
-        B3.setBackground(new java.awt.Color(0, 153, 153));
-        B3.setText("B3");
-        panel_datve2.add(B3);
-        B3.setBounds(650, 210, 70, 50);
-
-        B2.setBackground(new java.awt.Color(0, 153, 153));
-        B2.setText("B2");
-        panel_datve2.add(B2);
-        B2.setBounds(570, 210, 70, 50);
-
-        B1.setBackground(new java.awt.Color(0, 153, 153));
-        B1.setText("B1");
-        panel_datve2.add(B1);
-        B1.setBounds(490, 210, 70, 50);
-
-        D6.setBackground(new java.awt.Color(0, 153, 153));
-        D6.setText("D6");
-        panel_datve2.add(D6);
-        D6.setBounds(990, 350, 70, 50);
-
-        C2.setBackground(new java.awt.Color(0, 153, 153));
-        C2.setText("C2");
-        panel_datve2.add(C2);
-        C2.setBounds(570, 280, 70, 50);
-
-        C3.setBackground(new java.awt.Color(0, 153, 153));
-        C3.setText("C3");
-        panel_datve2.add(C3);
-        C3.setBounds(650, 280, 70, 50);
-
-        C4.setBackground(new java.awt.Color(0, 153, 153));
-        C4.setText("C4");
-        panel_datve2.add(C4);
-        C4.setBounds(830, 280, 70, 50);
-
-        C5.setBackground(new java.awt.Color(0, 153, 153));
-        C5.setText("C5");
-        panel_datve2.add(C5);
-        C5.setBounds(910, 280, 70, 50);
-
-        C1.setBackground(new java.awt.Color(0, 153, 153));
-        C1.setText("C1");
-        panel_datve2.add(C1);
-        C1.setBounds(490, 280, 70, 50);
-
-        D1.setBackground(new java.awt.Color(0, 153, 153));
-        D1.setText("D1");
-        D1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                D1ActionPerformed(evt);
-            }
-        });
-        panel_datve2.add(D1);
-        D1.setBounds(490, 350, 70, 50);
-
-        D2.setBackground(new java.awt.Color(0, 153, 153));
-        D2.setText("D2");
-        panel_datve2.add(D2);
-        D2.setBounds(570, 350, 70, 50);
-
-        D3.setBackground(new java.awt.Color(0, 153, 153));
-        D3.setText("D3");
-        panel_datve2.add(D3);
-        D3.setBounds(650, 350, 70, 50);
-
-        D4.setBackground(new java.awt.Color(0, 153, 153));
-        D4.setText("D4");
-        panel_datve2.add(D4);
-        D4.setBounds(830, 350, 70, 50);
-
-        D5.setBackground(new java.awt.Color(0, 153, 153));
-        D5.setText("D5");
-        panel_datve2.add(D5);
-        D5.setBounds(910, 350, 70, 50);
-
         Btn_Huy.setBackground(new java.awt.Color(102, 102, 0));
         Btn_Huy.setForeground(new java.awt.Color(255, 255, 255));
         Btn_Huy.setText("Huỷ");
@@ -557,6 +412,16 @@ public class DatVe extends javax.swing.JFrame {
         panel_datve2.add(A2);
         A2.setBounds(570, 140, 70, 50);
 
+        E4.setBackground(new Color(0,153,153));
+        E4.setText("E4");
+        E4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                E4ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(E4);
+        E4.setBounds(830, 420, 70, 50);
+
         A1.setBackground(new Color(0,153,153));
         A1.setText("A1");
         A1.addActionListener(new java.awt.event.ActionListener() {
@@ -566,6 +431,276 @@ public class DatVe extends javax.swing.JFrame {
         });
         panel_datve2.add(A1);
         A1.setBounds(490, 140, 70, 50);
+
+        A3.setBackground(new Color(0,153,153));
+        A3.setText("A3");
+        A3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A3ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(A3);
+        A3.setBounds(650, 140, 70, 50);
+
+        B1.setBackground(new Color(0,153,153));
+        B1.setText("B1");
+        B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B1ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(B1);
+        B1.setBounds(490, 210, 70, 50);
+
+        B2.setBackground(new Color(0,153,153));
+        B2.setText("B2");
+        B2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B2ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(B2);
+        B2.setBounds(570, 210, 70, 50);
+
+        B3.setBackground(new Color(0,153,153));
+        B3.setText("B3");
+        B3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B3ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(B3);
+        B3.setBounds(650, 210, 70, 50);
+
+        C3.setBackground(new Color(0,153,153));
+        C3.setText("C3");
+        C3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                C3ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(C3);
+        C3.setBounds(650, 280, 70, 50);
+
+        C2.setBackground(new Color(0,153,153));
+        C2.setText("C2");
+        C2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                C2ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(C2);
+        C2.setBounds(570, 280, 70, 50);
+
+        C1.setBackground(new Color(0,153,153));
+        C1.setText("C1");
+        C1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                C1ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(C1);
+        C1.setBounds(490, 280, 70, 50);
+
+        D1.setBackground(new Color(0,153,153));
+        D1.setText("D1");
+        D1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D1ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(D1);
+        D1.setBounds(490, 350, 70, 50);
+
+        D2.setBackground(new Color(0,153,153));
+        D2.setText("D2");
+        D2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D2ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(D2);
+        D2.setBounds(570, 350, 70, 50);
+
+        D3.setBackground(new Color(0,153,153));
+        D3.setText("D3");
+        D3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D3ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(D3);
+        D3.setBounds(650, 350, 70, 50);
+
+        E3.setBackground(new Color(0,153,153));
+        E3.setText("E3");
+        E3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                E3ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(E3);
+        E3.setBounds(650, 420, 70, 50);
+
+        E2.setBackground(new Color(0,153,153));
+        E2.setText("E2");
+        E2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                E2ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(E2);
+        E2.setBounds(570, 420, 70, 50);
+
+        E1.setBackground(new Color(0,153,153));
+        E1.setText("E1");
+        E1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                E1ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(E1);
+        E1.setBounds(490, 420, 70, 50);
+
+        A4.setBackground(new Color(0,153,153));
+        A4.setText("A4");
+        A4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A4ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(A4);
+        A4.setBounds(830, 140, 70, 50);
+
+        A5.setBackground(new Color(0,153,153));
+        A5.setText("A5");
+        A5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A5ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(A5);
+        A5.setBounds(910, 140, 70, 50);
+
+        A6.setBackground(new Color(0,153,153));
+        A6.setText("A6");
+        A6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A6ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(A6);
+        A6.setBounds(990, 140, 70, 50);
+
+        B4.setBackground(new Color(0,153,153));
+        B4.setText("B4");
+        B4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B4ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(B4);
+        B4.setBounds(830, 210, 70, 50);
+
+        B5.setBackground(new Color(0,153,153));
+        B5.setText("B5");
+        B5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B5ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(B5);
+        B5.setBounds(910, 210, 70, 50);
+
+        B6.setBackground(new Color(0,153,153));
+        B6.setText("B6");
+        B6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B6ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(B6);
+        B6.setBounds(990, 210, 70, 50);
+
+        C6.setBackground(new Color(0,153,153));
+        C6.setText("C6");
+        C6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                C6ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(C6);
+        C6.setBounds(990, 280, 70, 50);
+
+        C5.setBackground(new Color(0,153,153));
+        C5.setText("C5");
+        C5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                C5ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(C5);
+        C5.setBounds(910, 280, 70, 50);
+
+        C4.setBackground(new Color(0,153,153));
+        C4.setText("C4");
+        C4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                C4ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(C4);
+        C4.setBounds(830, 280, 70, 50);
+
+        D4.setBackground(new Color(0,153,153));
+        D4.setText("D4");
+        D4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D4ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(D4);
+        D4.setBounds(830, 350, 70, 50);
+
+        D5.setBackground(new Color(0,153,153));
+        D5.setText("D5");
+        D5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D5ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(D5);
+        D5.setBounds(910, 350, 70, 50);
+
+        D6.setBackground(new Color(0,153,153));
+        D6.setText("D6");
+        D6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D6ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(D6);
+        D6.setBounds(990, 350, 70, 50);
+
+        E6.setBackground(new Color(0,153,153));
+        E6.setText("E6");
+        E6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                E6ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(E6);
+        E6.setBounds(990, 420, 70, 50);
+
+        E5.setBackground(new Color(0,153,153));
+        E5.setText("E5");
+        E5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                E5ActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(E5);
+        E5.setBounds(910, 420, 70, 50);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -641,36 +776,36 @@ public class DatVe extends javax.swing.JFrame {
     }//GEN-LAST:event_CBB_LoaiPhimActionPerformed
 
     private void Btn_XacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_XacNhanActionPerformed
+        DoiMauGheDaDat(A1);
         DoiMauGheDaDat(A2);
-        DoiMauGheDaDat(A2);
-//        DoiMauGheDaDat(A3);
-//        DoiMauGheDaDat(A4);
-//        DoiMauGheDaDat(A5);
-//        DoiMauGheDaDat(A6);
-//        DoiMauGheDaDat(B1);
-//        DoiMauGheDaDat(B2);
-//        DoiMauGheDaDat(B3);
-//        DoiMauGheDaDat(B4);
-//        DoiMauGheDaDat(B5);
-//        DoiMauGheDaDat(B6);
-//        DoiMauGheDaDat(C1);
-//        DoiMauGheDaDat(C2);
-//        DoiMauGheDaDat(C3);
-//        DoiMauGheDaDat(C4);
-//        DoiMauGheDaDat(C5);
-//        DoiMauGheDaDat(C6);
-//        DoiMauGheDaDat(D1);
-//        DoiMauGheDaDat(D2);
-//        DoiMauGheDaDat(D3);
-//        DoiMauGheDaDat(D4);
-//        DoiMauGheDaDat(D5);
-//        DoiMauGheDaDat(D6);
-//        DoiMauGheDaDat(E1);
-//        DoiMauGheDaDat(E2);
-//        DoiMauGheDaDat(E3);
-//        DoiMauGheDaDat(E4);
-//        DoiMauGheDaDat(E5);
-//        DoiMauGheDaDat(E6); 
+        DoiMauGheDaDat(A3);
+        DoiMauGheDaDat(A4);
+        DoiMauGheDaDat(A5);
+        DoiMauGheDaDat(A6);
+        DoiMauGheDaDat(B1);
+        DoiMauGheDaDat(B2);
+        DoiMauGheDaDat(B3);
+        DoiMauGheDaDat(B4);
+        DoiMauGheDaDat(B5);
+        DoiMauGheDaDat(B6);
+        DoiMauGheDaDat(C1);
+        DoiMauGheDaDat(C1);
+        DoiMauGheDaDat(C2);
+        DoiMauGheDaDat(C4);
+        DoiMauGheDaDat(C5);
+        DoiMauGheDaDat(C6);
+        DoiMauGheDaDat(D1);
+        DoiMauGheDaDat(D2);
+        DoiMauGheDaDat(D3);
+        DoiMauGheDaDat(D4);
+        DoiMauGheDaDat(D5);
+        DoiMauGheDaDat(D6);
+        DoiMauGheDaDat(E1);
+        DoiMauGheDaDat(E2);
+        DoiMauGheDaDat(E3);
+        DoiMauGheDaDat(E4);
+        DoiMauGheDaDat(E5);
+        DoiMauGheDaDat(E6); 
     }//GEN-LAST:event_Btn_XacNhanActionPerformed
 
     private void none(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_none
@@ -696,10 +831,6 @@ public class DatVe extends javax.swing.JFrame {
         Lbl_Rap_Ve.setText(Rap);
     }//GEN-LAST:event_CBB_SuatChieuActionPerformed
 
-    private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_D1ActionPerformed
-
     private void A2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A2ActionPerformed
         ChonGhe(A2);
     }//GEN-LAST:event_A2ActionPerformed
@@ -707,6 +838,118 @@ public class DatVe extends javax.swing.JFrame {
     private void A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A1ActionPerformed
         ChonGhe(A1);
     }//GEN-LAST:event_A1ActionPerformed
+
+    private void A3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A3ActionPerformed
+        ChonGhe(A3);
+    }//GEN-LAST:event_A3ActionPerformed
+
+    private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
+        ChonGhe(B1);
+    }//GEN-LAST:event_B1ActionPerformed
+
+    private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
+        ChonGhe(B2);
+    }//GEN-LAST:event_B2ActionPerformed
+
+    private void B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B3ActionPerformed
+        ChonGhe(B3);
+    }//GEN-LAST:event_B3ActionPerformed
+
+    private void C3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C3ActionPerformed
+        ChonGhe(C3);
+    }//GEN-LAST:event_C3ActionPerformed
+
+    private void C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C2ActionPerformed
+        ChonGhe(C2);
+    }//GEN-LAST:event_C2ActionPerformed
+
+    private void C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C1ActionPerformed
+        ChonGhe(C1);
+    }//GEN-LAST:event_C1ActionPerformed
+
+    private void E4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E4ActionPerformed
+        ChonGhe(E4);
+    }//GEN-LAST:event_E4ActionPerformed
+
+    private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
+        ChonGhe(D1);
+    }//GEN-LAST:event_D1ActionPerformed
+
+    private void D2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D2ActionPerformed
+        ChonGhe(D2);
+    }//GEN-LAST:event_D2ActionPerformed
+
+    private void D3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D3ActionPerformed
+        ChonGhe(D3);
+    }//GEN-LAST:event_D3ActionPerformed
+
+    private void E3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E3ActionPerformed
+        ChonGhe(E3);
+    }//GEN-LAST:event_E3ActionPerformed
+
+    private void E2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E2ActionPerformed
+        ChonGhe(E2);
+    }//GEN-LAST:event_E2ActionPerformed
+
+    private void E1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E1ActionPerformed
+        ChonGhe(E1);
+    }//GEN-LAST:event_E1ActionPerformed
+
+    private void A4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A4ActionPerformed
+        ChonGhe(A4);
+    }//GEN-LAST:event_A4ActionPerformed
+
+    private void A5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A5ActionPerformed
+        ChonGhe(A5);
+    }//GEN-LAST:event_A5ActionPerformed
+
+    private void A6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A6ActionPerformed
+        ChonGhe(A6);
+    }//GEN-LAST:event_A6ActionPerformed
+
+    private void B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B4ActionPerformed
+        ChonGhe(B4);
+    }//GEN-LAST:event_B4ActionPerformed
+
+    private void B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B5ActionPerformed
+        ChonGhe(B5);
+    }//GEN-LAST:event_B5ActionPerformed
+
+    private void B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B6ActionPerformed
+        ChonGhe(B6);
+    }//GEN-LAST:event_B6ActionPerformed
+
+    private void C6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C6ActionPerformed
+        ChonGhe(C6);
+    }//GEN-LAST:event_C6ActionPerformed
+
+    private void C5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C5ActionPerformed
+        ChonGhe(C5);
+    }//GEN-LAST:event_C5ActionPerformed
+
+    private void C4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C4ActionPerformed
+        ChonGhe(C4);
+    }//GEN-LAST:event_C4ActionPerformed
+
+    private void D4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D4ActionPerformed
+        ChonGhe(D4);
+    }//GEN-LAST:event_D4ActionPerformed
+
+    private void D5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D5ActionPerformed
+        ChonGhe(D5);
+    }//GEN-LAST:event_D5ActionPerformed
+
+    private void D6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D6ActionPerformed
+        ChonGhe(D6);
+    }//GEN-LAST:event_D6ActionPerformed
+
+    private void E6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E6ActionPerformed
+        ChonGhe(E6);
+    }//GEN-LAST:event_E6ActionPerformed
+
+    private void E5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E5ActionPerformed
+        ChonGhe(E5);
+    }//GEN-LAST:event_E5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -720,42 +963,42 @@ public class DatVe extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton A1;
     private javax.swing.JToggleButton A2;
-    private javax.swing.JButton A3;
-    private javax.swing.JButton A4;
-    private javax.swing.JButton A5;
-    private javax.swing.JButton A6;
-    private javax.swing.JButton B1;
-    private javax.swing.JButton B2;
-    private javax.swing.JButton B3;
-    private javax.swing.JButton B4;
-    private javax.swing.JButton B5;
-    private javax.swing.JButton B6;
+    private javax.swing.JToggleButton A3;
+    private javax.swing.JToggleButton A4;
+    private javax.swing.JToggleButton A5;
+    private javax.swing.JToggleButton A6;
+    private javax.swing.JToggleButton B1;
+    private javax.swing.JToggleButton B2;
+    private javax.swing.JToggleButton B3;
+    private javax.swing.JToggleButton B4;
+    private javax.swing.JToggleButton B5;
+    private javax.swing.JToggleButton B6;
     private javax.swing.JButton Btn_DatVe;
     private javax.swing.JButton Btn_Huy;
     private javax.swing.JButton Btn_ThanhToan;
     private java.awt.Button Btn_XacNhan;
-    private javax.swing.JButton C1;
-    private javax.swing.JButton C2;
-    private javax.swing.JButton C3;
-    private javax.swing.JButton C4;
-    private javax.swing.JButton C5;
-    private javax.swing.JButton C6;
+    private javax.swing.JToggleButton C1;
+    private javax.swing.JToggleButton C2;
+    private javax.swing.JToggleButton C3;
+    private javax.swing.JToggleButton C4;
+    private javax.swing.JToggleButton C5;
+    private javax.swing.JToggleButton C6;
     private javax.swing.JComboBox<String> CBB_LoaiPhim;
     private javax.swing.JComboBox<String> CBB_NgayChieu;
     private javax.swing.JComboBox<String> CBB_Phim;
     private javax.swing.JComboBox<String> CBB_SuatChieu;
-    private javax.swing.JButton D1;
-    private javax.swing.JButton D2;
-    private javax.swing.JButton D3;
-    private javax.swing.JButton D4;
-    private javax.swing.JButton D5;
-    private javax.swing.JButton D6;
-    private javax.swing.JButton E1;
-    private javax.swing.JButton E2;
-    private javax.swing.JButton E3;
-    private javax.swing.JButton E4;
-    private javax.swing.JButton E5;
-    private javax.swing.JButton E6;
+    private javax.swing.JToggleButton D1;
+    private javax.swing.JToggleButton D2;
+    private javax.swing.JToggleButton D3;
+    private javax.swing.JToggleButton D4;
+    private javax.swing.JToggleButton D5;
+    private javax.swing.JToggleButton D6;
+    private javax.swing.JToggleButton E1;
+    private javax.swing.JToggleButton E2;
+    private javax.swing.JToggleButton E3;
+    private javax.swing.JToggleButton E4;
+    private javax.swing.JToggleButton E5;
+    private javax.swing.JToggleButton E6;
     private javax.swing.JLabel Lbl_Ghe_Ve;
     private javax.swing.JLabel Lbl_Gia1_Ve1;
     private javax.swing.JLabel Lbl_Gia_Ve;
@@ -836,7 +1079,6 @@ public class DatVe extends javax.swing.JFrame {
     }
     private void ChonGhe(javax.swing.JToggleButton a){
         if (a.isSelected()) {
-            a.setForeground(new Color(51,102,0));
             String tmp = Lbl_Ghe_Ve.getText()+ a.getText()+" ";
             Lbl_Ghe_Ve.setText(tmp);
             long gia = Long.parseLong(Lbl_Gia_Ve.getText())+40000;
