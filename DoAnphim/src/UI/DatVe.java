@@ -49,7 +49,7 @@ public class DatVe extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         CBB_NgayChieu = new javax.swing.JComboBox<>();
         Lbl_NgayChieu = new javax.swing.JLabel();
-        jComboBox18 = new javax.swing.JComboBox<>();
+        CBB_Phim = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
         jComboBox19 = new javax.swing.JComboBox<>();
         jPanel49 = new javax.swing.JPanel();
@@ -217,11 +217,16 @@ public class DatVe extends javax.swing.JFrame {
         panel_datve2.add(Lbl_NgayChieu);
         Lbl_NgayChieu.setBounds(10, 40, 70, 16);
 
-        jComboBox18.setBackground(new java.awt.Color(0, 153, 153));
-        jComboBox18.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phim" }));
-        panel_datve2.add(jComboBox18);
-        jComboBox18.setBounds(90, 140, 330, 22);
+        CBB_Phim.setBackground(new java.awt.Color(0, 153, 153));
+        CBB_Phim.setForeground(new java.awt.Color(255, 255, 255));
+        CBB_Phim.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phim" }));
+        CBB_Phim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBB_PhimActionPerformed(evt);
+            }
+        });
+        panel_datve2.add(CBB_Phim);
+        CBB_Phim.setBounds(90, 140, 330, 22);
 
         jLabel51.setForeground(new java.awt.Color(255, 255, 255));
         jLabel51.setText("Suất chiếu: ");
@@ -591,7 +596,7 @@ public class DatVe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton198ActionPerformed
 
     private void CBB_LoaiPhimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_LoaiPhimActionPerformed
-        // TODO add your handling code here:
+        HienThiPhim();
     }//GEN-LAST:event_CBB_LoaiPhimActionPerformed
 
     private void Btn_XacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_XacNhanActionPerformed
@@ -615,6 +620,10 @@ public class DatVe extends javax.swing.JFrame {
 
     }//GEN-LAST:event_CBB_NgayChieuMouseEntered
 
+    private void CBB_PhimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_PhimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBB_PhimActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -628,6 +637,7 @@ public class DatVe extends javax.swing.JFrame {
     private java.awt.Button Btn_XacNhan;
     private javax.swing.JComboBox<String> CBB_LoaiPhim;
     private javax.swing.JComboBox<String> CBB_NgayChieu;
+    private javax.swing.JComboBox<String> CBB_Phim;
     private javax.swing.JLabel Lbl_NgayChieu;
     private javax.swing.JButton jButton166;
     private javax.swing.JButton jButton167;
@@ -662,7 +672,6 @@ public class DatVe extends javax.swing.JFrame {
     private javax.swing.JButton jButton196;
     private javax.swing.JButton jButton197;
     private javax.swing.JButton jButton198;
-    private javax.swing.JComboBox<String> jComboBox18;
     private javax.swing.JComboBox<String> jComboBox19;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel49;
@@ -702,5 +711,13 @@ public class DatVe extends javax.swing.JFrame {
         Vector<String> ListLoaiPhim = new Vector<String>();
         ListLoaiPhim= scc.ListLoaiPhim(NgayChieu);
         CBB_LoaiPhim.setModel(new DefaultComboBoxModel<String>(ListLoaiPhim.toArray(new String[ListLoaiPhim.size()])));
+    }
+        private void HienThiPhim(){
+        String NgayChieu = CBB_NgayChieu.getSelectedItem().toString();
+        String LoaiPhim = CBB_LoaiPhim.getSelectedItem().toString();
+        SuatChieu_ctrl scc = new SuatChieu_ctrl();
+        Vector<String> ListPhim = new Vector<String>();
+        ListPhim= scc.ListPhim(NgayChieu,LoaiPhim);
+        CBB_Phim.setModel(new DefaultComboBoxModel<String>(ListPhim.toArray(new String[ListPhim.size()])));
     }
 }
