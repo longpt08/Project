@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Controller;
-import UI.TraCuuTV;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,7 +41,7 @@ public class ThanhVien_ctrl extends Oracle{
             return false;
         }
     }
-    public ArrayList<ThanhVien> getAllMember(){
+    public static ArrayList<ThanhVien> getAllMember(){
         ArrayList<ThanhVien> memberList = new ArrayList<>();
         String sql = "SELECT * FROM THANHVIEN";
         try {

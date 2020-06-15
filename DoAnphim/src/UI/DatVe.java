@@ -728,7 +728,7 @@ public class DatVe extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void panel_dongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_dongMouseClicked
-        this.setState(ThemTV.ICONIFIED);//đóng
+        this.setState(DatVe.ICONIFIED);//đóng
     }//GEN-LAST:event_panel_dongMouseClicked
 
     private void panel_dongMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_dongMouseEntered
