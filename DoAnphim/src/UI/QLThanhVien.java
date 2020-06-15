@@ -6,6 +6,7 @@
 package UI;
 
 import Controller.Oracle;
+
 import Controller.ThanhVien_ctrl;
 import java.awt.Color;
 import java.sql.Statement;
@@ -18,7 +19,7 @@ import java.text.SimpleDateFormat;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Vector;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -33,7 +34,7 @@ import model.ThanhVien;
  *
  * @author Phon
  */
-public class TraCuuTV extends javax.swing.JFrame {
+public class QLThanhVien extends javax.swing.JFrame {
 
     private static void setModel(DefaultTableModel model) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -43,36 +44,48 @@ public class TraCuuTV extends javax.swing.JFrame {
     /**
      * Creates new form QLThanhVien
      */
-    public TraCuuTV() {
+    public QLThanhVien() {
         initComponents();
         this.setLocationRelativeTo(null);//hiển thị giữa màn hình
+ 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//thoát chương trình khi bấm exit
         this.setVisible(true);//chạy chương trình
        //set màu cho table
         JTableHeader table = table_thanhvien.getTableHeader();
         table.setBackground(new Color(0,153,153));
         table.setForeground(Color.black);
-        showThanhVien();     
+        showThanhVien();
+        
+        txt_diachi1.setWrapStyleWord(true);//tách từ có nghĩa nếu xuống dòng
+        txt_diachi1.setLineWrap(true);//căn xuống dòng
+       
     }
+    
+       
     public void showThanhVien(){
-        ThanhVien_ctrl tvc = new ThanhVien_ctrl();
-        ArrayList<ThanhVien> list = tvc.getAllMember();
+        
+        ArrayList<ThanhVien> list = Controller.ThanhVien_ctrl.getAllMember();
         DefaultTableModel model = (DefaultTableModel) table_thanhvien.getModel();
-        model.setRowCount(0);
-        for(int i=0;i< list.size();i++){         
-            Vector<Object> row = new Vector<Object>();
-            row.add(list.get(i).getMaTV());
-            row.add(list.get(i).getTenTV());
-            row.add(list.get(i).getGioiTinh());
-            row.add(list.get(i).getNgaySinh());
-            row.add(list.get(i).getDiaChi());
-            row.add(list.get(i).getSDT());
-            row.add(list.get(i).getCMND());
-            row.add(list.get(i).getNgayDangKy());
-            row.add(list.get(i).getDiemTichLuy());
-            model.addRow(row);          
-        }   
+        Object[] row = new Object[9];
+        for(int i=0;i< list.size();i++){
+            row[0]=list.get(i).getMaTV();
+            
+            row[1]=list.get(i).getTenTV();
+            row[2]=list.get(i).getGioiTinh();
+            row[3]=list.get(i).getNgaySinh();
+            row[4]=list.get(i).getDiaChi();
+            row[5]=list.get(i).getSDT();
+            row[6]=list.get(i).getCMND();
+            row[7]=list.get(i).getNgayDangKy();
+            row[8]=list.get(i).getDiemTichLuy();
+            model.addRow(row);
+            
+            
+        }
+        
     }
+    
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -103,11 +116,9 @@ public class TraCuuTV extends javax.swing.JFrame {
         txt_matv1 = new javax.swing.JTextField();
         txt_tentv2 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        txt_ngaysinh1 = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_diachi1 = new javax.swing.JTextArea();
         txt_gioitinh1 = new javax.swing.JTextField();
-        txt_ngaydangky1 = new com.toedter.calendar.JDateChooser();
         txt_sdt1 = new javax.swing.JTextField();
         txt_cmnd1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -115,10 +126,13 @@ public class TraCuuTV extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        button_tracuu1 = new javax.swing.JButton();
-        button_tracuu2 = new javax.swing.JButton();
+        button_huy = new javax.swing.JButton();
+        button_xoa = new javax.swing.JButton();
         butt_capnhat = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        button_them = new javax.swing.JButton();
+        txt_ngaysinh1 = new com.toedter.calendar.JDateChooser();
+        txt_ngaydangky1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -185,7 +199,7 @@ public class TraCuuTV extends javax.swing.JFrame {
         jScrollPane2.setViewportView(table_thanhvien);
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(440, 150, 670, 530);
+        jScrollPane2.setBounds(440, 150, 680, 530);
 
         jLabel2.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 153));
@@ -307,12 +321,6 @@ public class TraCuuTV extends javax.swing.JFrame {
         jPanel1.add(jLabel12);
         jLabel12.setBounds(40, 330, 78, 19);
 
-        txt_ngaysinh1.setDateFormatString("dd-MM-yyyy");
-        txt_ngaysinh1.setMaxSelectableDate(new java.util.Date(253370743279000L));
-        txt_ngaysinh1.setMinSelectableDate(new java.util.Date(-62135791121000L));
-        jPanel1.add(txt_ngaysinh1);
-        txt_ngaysinh1.setBounds(130, 330, 290, 30);
-
         txt_diachi1.setColumns(20);
         txt_diachi1.setRows(5);
         jScrollPane1.setViewportView(txt_diachi1);
@@ -321,10 +329,6 @@ public class TraCuuTV extends javax.swing.JFrame {
         jScrollPane1.setBounds(130, 380, 300, 50);
         jPanel1.add(txt_gioitinh1);
         txt_gioitinh1.setBounds(130, 280, 290, 30);
-
-        txt_ngaydangky1.setDateFormatString("dd-MM-yyyy");
-        jPanel1.add(txt_ngaydangky1);
-        txt_ngaydangky1.setBounds(130, 550, 290, 30);
         jPanel1.add(txt_sdt1);
         txt_sdt1.setBounds(130, 450, 290, 30);
         jPanel1.add(txt_cmnd1);
@@ -355,32 +359,32 @@ public class TraCuuTV extends javax.swing.JFrame {
         jPanel1.add(jLabel14);
         jLabel14.setBounds(10, 600, 100, 30);
 
-        button_tracuu1.setBackground(new java.awt.Color(0, 153, 153));
-        button_tracuu1.setForeground(new java.awt.Color(255, 255, 255));
-        button_tracuu1.setText("Huỷ");
-        button_tracuu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_huy.setBackground(new java.awt.Color(0, 153, 153));
+        button_huy.setForeground(new java.awt.Color(255, 255, 255));
+        button_huy.setText("Huỷ");
+        button_huy.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_tracuu1MouseClicked(evt);
+                button_huyMouseClicked(evt);
             }
         });
-        button_tracuu1.addActionListener(new java.awt.event.ActionListener() {
+        button_huy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_tracuu1ActionPerformed(evt);
+                button_huyActionPerformed(evt);
             }
         });
-        jPanel1.add(button_tracuu1);
-        button_tracuu1.setBounds(350, 640, 80, 30);
+        jPanel1.add(button_huy);
+        button_huy.setBounds(350, 640, 80, 30);
 
-        button_tracuu2.setBackground(new java.awt.Color(0, 153, 153));
-        button_tracuu2.setForeground(new java.awt.Color(255, 255, 255));
-        button_tracuu2.setText("Xoá");
-        button_tracuu2.addActionListener(new java.awt.event.ActionListener() {
+        button_xoa.setBackground(new java.awt.Color(0, 153, 153));
+        button_xoa.setForeground(new java.awt.Color(255, 255, 255));
+        button_xoa.setText("Xoá");
+        button_xoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_tracuu2ActionPerformed(evt);
+                button_xoaActionPerformed(evt);
             }
         });
-        jPanel1.add(button_tracuu2);
-        button_tracuu2.setBounds(90, 640, 80, 30);
+        jPanel1.add(button_xoa);
+        button_xoa.setBounds(120, 640, 80, 30);
 
         butt_capnhat.setBackground(new java.awt.Color(0, 153, 153));
         butt_capnhat.setForeground(new java.awt.Color(255, 255, 255));
@@ -391,7 +395,7 @@ public class TraCuuTV extends javax.swing.JFrame {
             }
         });
         jPanel1.add(butt_capnhat);
-        butt_capnhat.setBounds(210, 640, 90, 30);
+        butt_capnhat.setBounds(230, 640, 90, 30);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 153));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -404,15 +408,30 @@ public class TraCuuTV extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(970, 100, 67, 26);
 
+        button_them.setBackground(new java.awt.Color(0, 153, 153));
+        button_them.setForeground(new java.awt.Color(255, 255, 255));
+        button_them.setText("Thêm");
+        button_them.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_themActionPerformed(evt);
+            }
+        });
+        jPanel1.add(button_them);
+        button_them.setBounds(10, 640, 80, 30);
+        jPanel1.add(txt_ngaysinh1);
+        txt_ngaysinh1.setBounds(130, 330, 290, 30);
+        jPanel1.add(txt_ngaydangky1);
+        txt_ngaydangky1.setBounds(130, 550, 290, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1120, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1115, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
         );
 
         pack();
@@ -443,7 +462,7 @@ public class TraCuuTV extends javax.swing.JFrame {
     }//GEN-LAST:event_panel_exitMouseExited
 
     private void panel_dongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_dongMouseClicked
-        this.setState(ThemTV.ICONIFIED);//đóng
+        this.setState(QLThanhVien.ICONIFIED);//đóng
     }//GEN-LAST:event_panel_dongMouseClicked
 
     private void panel_dongMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_dongMouseEntered
@@ -491,46 +510,90 @@ public class TraCuuTV extends javax.swing.JFrame {
         
     }//GEN-LAST:event_table_thanhvienMouseClicked
 
-    private void button_tracuu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_tracuu1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button_tracuu1ActionPerformed
+    private void button_huyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_huyActionPerformed
+        //random mã thành viên để tạo mới
+        Random ran = new Random();
+        int n = ran.nextInt(202000)+1;
+        String val = String.valueOf(n);
+        txt_matv1.setText(val+"tv");
+        
+        txt_tentv2.setText("");
+        txt_gioitinh1.setText("");
+        txt_ngaysinh1.setDate(null);
+        txt_sdt1.setText("");
+        txt_diachi1.setText("");
+        txt_cmnd1.setText("");
+        txt_diem1.setText("");
+        txt_ngaydangky1.setDate(null);
+    }//GEN-LAST:event_button_huyActionPerformed
 
-    private void button_tracuu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_tracuu2ActionPerformed
-        int xacnhanxoa = JOptionPane.showConfirmDialog(this, "Bạn có muốn xoá thành viên này không?", "Xác nhận cậpt nhật",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+    private void button_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_xoaActionPerformed
+         int xacnhanxoa = JOptionPane.showConfirmDialog(this, "Bạn có muốn xoá thành viên này không?", "Xác nhận cậpt nhật",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
         if(xacnhanxoa == JOptionPane.YES_OPTION)
-        {     
-            ThanhVien tv = new ThanhVien();
-            tv.setMaTV(txt_matv1.getText());
-            ThanhVien_ctrl tvc = new ThanhVien_ctrl();
-            tvc.XoaTV(tv);
+        {
+           
+        try {
+        String sql = "DELETE FROM THANHVIEN WHERE MATV =?";
+          try {
+            PreparedStatement pre = Controller.Oracle.con.prepareStatement(sql);
+            pre.setString(1, txt_matv1.getText());
+            pre.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Xoá Thành công !");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Xoá không thành công !");
         }
-    }//GEN-LAST:event_button_tracuu2ActionPerformed
+        }catch(Exception e){
+            e.printStackTrace();
+        }}
+    }//GEN-LAST:event_button_xoaActionPerformed
 
     private void butt_capnhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_capnhatActionPerformed
         
         int xacnhan = JOptionPane.showConfirmDialog(this, "Bạn có muốn cập nhật thành viên này không?", "Xác nhận cậpt nhật",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
-        if(xacnhan == JOptionPane.YES_OPTION){
+        if(xacnhan == JOptionPane.YES_OPTION)
+        {
+           
+        try {
+            ThanhVien tv = new ThanhVien();
+           
+           
+            tv.setMaTV(txt_matv1.getText());
+            tv.setTenTV(txt_tentv2.getText());
+            tv.setGioiTinh(txt_gioitinh1.getText());
+            tv.setDiaChi(txt_diachi1.getText());
+            tv.setCMND(txt_cmnd1.getText());
+            tv.setSDT(txt_sdt1.getText());
+            tv.setDiemTichLuy(Integer.parseInt(txt_diem1.getText()));
+         
             try {
-                ThanhVien tv = new ThanhVien();
-                tv.setMaTV(txt_matv1.getText());
-                tv.setTenTV(txt_tentv2.getText());
-                tv.setGioiTinh(txt_gioitinh1.getText());
-                tv.setDiaChi(txt_diachi1.getText());
-                tv.setCMND(txt_cmnd1.getText());
-                tv.setSDT(txt_sdt1.getText());
-                tv.setDiemTichLuy(Integer.parseInt(txt_diem1.getText()));
-                tv.setNgayDangKy(txt_ngaydangky1.getDate().toString());
-                tv.setNgaySinh(txt_ngaysinh1.getDate().toString());
-                ThanhVien_ctrl tvc = new ThanhVien_ctrl();
-                tvc.CapNhatTV(tv);
-            }
-            catch (Exception e){
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                String ngsinh = sdf.format(txt_ngaysinh1.getDate());
+                tv.setNgaySinh(ngsinh);
+                String ngdk = sdf.format(txt_ngaydangky1.getDate());
+                tv.setNgayDangKy(ngdk);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Lỗi ngày tháng năm");
                 e.printStackTrace();
-            } 
-        }    
+            }
+
+            if (new QLThanhVien().UpdateTV(tv)) {
+                JOptionPane.showMessageDialog(null, "Cập nhật Thành viên thành công");
+            } else {
+                JOptionPane.showMessageDialog(null, "Cập nhật không thành công");
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+        }
+           
+        }
+        
+     
+         
     }//GEN-LAST:event_butt_capnhatActionPerformed
 
-    private void button_tracuu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_tracuu1MouseClicked
+    private void button_huyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_huyMouseClicked
         txt_cmnd1.setText("");
         txt_diachi1.setText("");
         txt_diem1.setText("");
@@ -542,7 +605,7 @@ public class TraCuuTV extends javax.swing.JFrame {
         txt_tentv2.setText("");
         
                 
-    }//GEN-LAST:event_button_tracuu1MouseClicked
+    }//GEN-LAST:event_button_huyMouseClicked
 
     private void table_thanhvienMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_thanhvienMouseReleased
          
@@ -554,16 +617,85 @@ public class TraCuuTV extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void button_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_themActionPerformed
+         try {
+            ThanhVien tv = new ThanhVien();
+           
+           
+            tv.setMaTV(txt_matv1.getText());
+            tv.setTenTV(txt_tentv2.getText());
+            tv.setGioiTinh(txt_gioitinh1.getText());
+            tv.setDiaChi(txt_diachi1.getText());
+            tv.setCMND(txt_cmnd1.getText());
+            tv.setSDT(txt_sdt1.getText());
+            tv.setDiemTichLuy(0);
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+            try {
+//                Calendar c = jDate_ngaysinh.getCalendar();
+//                Calendar dk = jDate_ngaydangky.getCalendar();
+//                String ngdk = dk.getTime().getDate()+"-"+dk.getTime().getMonth()+"-"+dk.getTime().getYear();
+//                
+//                String ngsinh = c.getTime().getDate()+"-"+c.getTime().getMonth()+"-"+c.getTime().getYear();
+                //ngsinh co dang(dd-mm-yyyy)
+                //insert: to_date(ngsinh,'dd-mm-yyyy')
+                String ngsinh = sdf.format(txt_ngaysinh1.getDate());
+                tv.setNgaySinh(ngsinh);
+                String ngdk = sdf.format(txt_ngaydangky1.getDate());
+                tv.setNgayDangKy(ngdk);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Lỗi ngày tháng năm");
+                e.printStackTrace();
+            }
+
+            if (new ThanhVien_ctrl().ThemThanhVien(tv)) {
+                JOptionPane.showMessageDialog(null, "Thêm Thành viên thành công");
+            } else {
+                JOptionPane.showMessageDialog(null, "Thêm không thành công");
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+        }
+    }//GEN-LAST:event_button_themActionPerformed
+
+   public boolean UpdateTV(ThanhVien t){
+
+        String query = "UPDATE THANHVIEN SET TENTV =?,GIOITINH = ?, NGAYSINH= to_date(?,'dd-mm-yyyy'),DIACHI= ? "
+                 +     ",SDT= ? ,CMND= ? ,NGAYDANGKY= to_date(?,'dd-mm-yyyy'), DIEMTICHLUY= ? WHERE MATV = ?";
+        //String q = "insert into thanhvien(hoten,masv,ngsinh) values(?,?,to_date(....))
+        try {
+            PreparedStatement pt = Controller.Oracle.con.prepareStatement(query);
+            pt.setString(1,t.getTenTV());
+            
+            pt.setString(2,t.getGioiTinh());
+            pt.setString(3,t.getNgaySinh());
+            pt.setString(4,  t.getDiaChi());
+            pt.setString(5,t.getSDT());
+            pt.setString(6,t.getCMND());
+            pt.setString(7,t.getNgayDangKy());
+            pt.setInt(8,  t.getDiemTichLuy());
+            pt.setString(9, t.getMaTV());
+            
+            return pt.executeUpdate() >0;
+           
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+
+    } 
     public static void main(String args[]) {
        
-        TraCuuTV traCuuTV = new TraCuuTV();
+        QLThanhVien traCuuTV = new QLThanhVien();
           
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butt_capnhat;
-    private javax.swing.JButton button_tracuu1;
-    private javax.swing.JButton button_tracuu2;
+    private javax.swing.JButton button_huy;
+    private javax.swing.JButton button_them;
+    private javax.swing.JButton button_xoa;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
