@@ -67,7 +67,6 @@ public class DatVe extends javax.swing.JFrame {
         jPanel52 = new javax.swing.JPanel();
         jLabel53 = new javax.swing.JLabel();
         Btn_Huy = new javax.swing.JButton();
-        Btn_DatVe = new javax.swing.JButton();
         jPanel53 = new javax.swing.JPanel();
         jLabel54 = new javax.swing.JLabel();
         jPanel54 = new javax.swing.JPanel();
@@ -313,17 +312,6 @@ public class DatVe extends javax.swing.JFrame {
         Btn_Huy.setText("Huỷ");
         panel_datve2.add(Btn_Huy);
         Btn_Huy.setBounds(950, 560, 110, 40);
-
-        Btn_DatVe.setBackground(new java.awt.Color(102, 102, 0));
-        Btn_DatVe.setForeground(new java.awt.Color(255, 255, 255));
-        Btn_DatVe.setText("Đặt vé");
-        Btn_DatVe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_DatVeActionPerformed(evt);
-            }
-        });
-        panel_datve2.add(Btn_DatVe);
-        Btn_DatVe.setBounds(680, 560, 110, 40);
 
         jPanel53.setBackground(new java.awt.Color(0, 153, 153));
         jPanel53.setLayout(null);
@@ -763,13 +751,8 @@ public class DatVe extends javax.swing.JFrame {
         panel_exit.setBackground(new Color(0,153,153));
     }//GEN-LAST:event_panel_exitMouseExited
 
-    private void Btn_DatVeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_DatVeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_DatVeActionPerformed
-
     private void Btn_ThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ThanhToanActionPerformed
         ThanhToan_UI thanhtoan = new ThanhToan_UI();
-        
     }//GEN-LAST:event_Btn_ThanhToanActionPerformed
 
     private void CBB_LoaiPhimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_LoaiPhimActionPerformed
@@ -974,7 +957,6 @@ public class DatVe extends javax.swing.JFrame {
     private javax.swing.JToggleButton B4;
     private javax.swing.JToggleButton B5;
     private javax.swing.JToggleButton B6;
-    private javax.swing.JButton Btn_DatVe;
     private javax.swing.JButton Btn_Huy;
     private javax.swing.JButton Btn_ThanhToan;
     private java.awt.Button Btn_XacNhan;

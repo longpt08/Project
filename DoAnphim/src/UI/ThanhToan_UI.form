@@ -63,7 +63,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="Lbl_TongTien1" max="32767" attributes="0"/>
+                                      <Component id="Lbl_GiamGia" max="32767" attributes="0"/>
                                       <Component id="Lbl_TongTien" pref="70" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="Lbl_ThanhTien" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -71,7 +71,7 @@
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="Lbl_ThanhTien_num" max="32767" attributes="0"/>
-                                  <Component id="Lbl_TongTien_Num1" max="32767" attributes="0"/>
+                                  <Component id="Lbl_GiamGia_num" max="32767" attributes="0"/>
                                   <Component id="Lbl_TongTien_Num" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -105,7 +105,7 @@
                   <Component id="Lbl_MaTV" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="CB_MaTV_No" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Txt_MaTV" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="CB_MaTV_Yes" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="CB_MaTV_Yes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -121,7 +121,7 @@
                   <Component id="Lbl_MaGiamGia" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="CB_MaGiamGia_No" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Txt_MaGiamGia" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="CB_MaGiamGia_Yes" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="CB_MaGiamGia_Yes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -130,8 +130,8 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Lbl_TongTien1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Lbl_TongTien_Num1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Lbl_GiamGia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Lbl_GiamGia_num" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -181,6 +181,7 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Txt_MaTVMouseClicked"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Txt_MaTVKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Lbl_MaGiamGia">
@@ -222,17 +223,21 @@
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="Lbl_TongTien1">
+    <Component class="javax.swing.JLabel" name="Lbl_GiamGia">
       <Properties>
         <Property name="text" type="java.lang.String" value="Gi&#x1ea3;m gi&#xe1;:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="Lbl_TongTien_Num1">
+    <Component class="javax.swing.JLabel" name="Lbl_GiamGia_num">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSlider" name="Sl_DTL">
+      <Events>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="Sl_DTLStateChanged"/>
+        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Sl_DTLMouseReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Lbl_DiemTichLuy">
       <Properties>

@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package UI;
-
+import Controller.ThanhVien_ctrl;
+import java.awt.event.KeyEvent;
 /**
  *
  * @author PC
@@ -23,8 +24,8 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         CB_MaGiamGia_No.setSelected(true);
         Txt_MaGiamGia.setEditable(false);
         CB_MaTV_No.setSelected(true);
-        Txt_MaTV.setEditable(false);
-                
+        Txt_MaTV.setEditable(false);      
+        setSlider();
     }
 
     /**
@@ -47,8 +48,8 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         Txt_MaGiamGia = new javax.swing.JTextField();
         Lbl_TongTien = new javax.swing.JLabel();
         Lbl_TongTien_Num = new javax.swing.JLabel();
-        Lbl_TongTien1 = new javax.swing.JLabel();
-        Lbl_TongTien_Num1 = new javax.swing.JLabel();
+        Lbl_GiamGia = new javax.swing.JLabel();
+        Lbl_GiamGia_num = new javax.swing.JLabel();
         Sl_DTL = new javax.swing.JSlider();
         Lbl_DiemTichLuy = new javax.swing.JLabel();
         Txt_DTL_HienCo = new javax.swing.JTextField();
@@ -84,6 +85,11 @@ public class ThanhToan_UI extends javax.swing.JFrame {
                 Txt_MaTVMouseClicked(evt);
             }
         });
+        Txt_MaTV.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Txt_MaTVKeyPressed(evt);
+            }
+        });
 
         Lbl_MaGiamGia.setText("Mã Giảm Giá:");
 
@@ -112,9 +118,20 @@ public class ThanhToan_UI extends javax.swing.JFrame {
 
         Lbl_TongTien_Num.setText("0");
 
-        Lbl_TongTien1.setText("Giảm giá:");
+        Lbl_GiamGia.setText("Giảm giá:");
 
-        Lbl_TongTien_Num1.setText("0");
+        Lbl_GiamGia_num.setText("0");
+
+        Sl_DTL.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Sl_DTLStateChanged(evt);
+            }
+        });
+        Sl_DTL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Sl_DTLMouseReleased(evt);
+            }
+        });
 
         Lbl_DiemTichLuy.setText("Điểm Tích lũy:");
 
@@ -166,13 +183,13 @@ public class ThanhToan_UI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(Lbl_TongTien1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Lbl_GiamGia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(Lbl_TongTien, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
                                     .addComponent(Lbl_ThanhTien))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Lbl_ThanhTien_num, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Lbl_TongTien_Num1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Lbl_GiamGia_num, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Lbl_TongTien_Num, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -215,8 +232,8 @@ public class ThanhToan_UI extends javax.swing.JFrame {
                     .addComponent(Lbl_TongTien_Num))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lbl_TongTien1)
-                    .addComponent(Lbl_TongTien_Num1))
+                    .addComponent(Lbl_GiamGia)
+                    .addComponent(Lbl_GiamGia_num))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lbl_ThanhTien)
@@ -256,6 +273,28 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         CB_MaGiamGia_No.setSelected(false);
         Txt_MaGiamGia.setEditable(true);
     }//GEN-LAST:event_CB_MaGiamGia_YesActionPerformed
+
+    private void Txt_MaTVKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_MaTVKeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {  
+            ThanhVien_ctrl  tvc = new ThanhVien_ctrl();
+            String MaTV = Txt_MaTV.getText();
+            int DTL = tvc.getDiemTichLuy(MaTV);
+            Sl_DTL.setMaximum(DTL);
+            Txt_DTL_HienCo.setText(DTL+"");
+        }
+    }//GEN-LAST:event_Txt_MaTVKeyPressed
+
+    private void Sl_DTLStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Sl_DTLStateChanged
+        int value = Sl_DTL.getValue();
+        Txt_DTL_use.setText("-"+value +"");
+    }//GEN-LAST:event_Sl_DTLStateChanged
+
+    private void Sl_DTLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sl_DTLMouseReleased
+        int value = Sl_DTL.getValue();
+        int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
+        int giamgia = value+tmp;
+        Lbl_GiamGia_num.setText(giamgia+"");
+    }//GEN-LAST:event_Sl_DTLMouseReleased
 
     /**
      * @param args the command line arguments
@@ -299,19 +338,22 @@ public class ThanhToan_UI extends javax.swing.JFrame {
     private javax.swing.JCheckBox CB_MaTV_No;
     private javax.swing.JCheckBox CB_MaTV_Yes;
     private javax.swing.JLabel Lbl_DiemTichLuy;
+    private javax.swing.JLabel Lbl_GiamGia;
+    private javax.swing.JLabel Lbl_GiamGia_num;
     private javax.swing.JLabel Lbl_MaGiamGia;
     private javax.swing.JLabel Lbl_MaTV;
     private javax.swing.JLabel Lbl_ThanhTien;
     private javax.swing.JLabel Lbl_ThanhTien_num;
     private javax.swing.JLabel Lbl_ThanhToan;
     private javax.swing.JLabel Lbl_TongTien;
-    private javax.swing.JLabel Lbl_TongTien1;
     private javax.swing.JLabel Lbl_TongTien_Num;
-    private javax.swing.JLabel Lbl_TongTien_Num1;
     private javax.swing.JSlider Sl_DTL;
     private javax.swing.JTextField Txt_DTL_HienCo;
     private javax.swing.JTextField Txt_DTL_use;
     private javax.swing.JTextField Txt_MaGiamGia;
     private javax.swing.JTextField Txt_MaTV;
     // End of variables declaration//GEN-END:variables
+    private void setSlider(){
+        Sl_DTL.setValue(0);
+    }
 }

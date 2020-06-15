@@ -8,6 +8,7 @@ import UI.TraCuuTV;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -118,5 +119,21 @@ public class ThanhVien_ctrl extends Oracle{
             return false;
         }
     }
-    
+    public int getDiemTichLuy(String MaTV){
+        int DTL = 0;
+        String query = "select DiemTichLuy\n" +
+                       "from thanhvien\n" +
+                       "where matv ='"+MaTV+"'";
+        try {
+        Statement smt = con.createStatement();
+        ResultSet rs = smt.executeQuery(query);
+        if (rs.next())
+            DTL = rs.getInt(1);
+        con.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return DTL;
+    }
 }
