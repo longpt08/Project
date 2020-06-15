@@ -16,15 +16,13 @@ import java.sql.Statement;
  */
 public class TaiKhoan_ctrl extends Oracle {
     public boolean Login (String username, String password){
-        String query = "select * from TaiKhoan where TenTK = ?, Password = ?";
+        String query = "select * from TaiKhoan where TenTK = '"+username+"' and Password = '"+password+"'";
         try{
-        PreparedStatement presmt = con.prepareStatement(query);
-        presmt.setString(1,username);
-        presmt.setString(2,password);
-        ResultSet rs = presmt.executeQuery();
-        if (rs.next())
-            return true;
-        else return false;
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery(query);
+            if (rs.next())
+                return true;
+            else return false;
         }
         catch(SQLException e){
             e.printStackTrace();

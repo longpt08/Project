@@ -6,6 +6,7 @@
 package UI;
 import Controller.ThanhVien_ctrl;
 import java.awt.event.KeyEvent;
+import javax.swing.event.ChangeListener;
 /**
  *
  * @author PC
@@ -26,6 +27,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         CB_MaTV_No.setSelected(true);
         Txt_MaTV.setEditable(false);      
         setSlider();
+        Lbl_TongTien_Num.setText(DatVe.TongTien);
     }
 
     /**
@@ -127,17 +129,17 @@ public class ThanhToan_UI extends javax.swing.JFrame {
                 Sl_DTLStateChanged(evt);
             }
         });
-        Sl_DTL.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Sl_DTLMouseReleased(evt);
-            }
-        });
 
         Lbl_DiemTichLuy.setText("Điểm Tích lũy:");
 
         Txt_DTL_HienCo.setText("0");
 
         Txt_DTL_use.setText("0");
+        Txt_DTL_use.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt_DTL_useActionPerformed(evt);
+            }
+        });
 
         Lbl_ThanhTien.setText("Thành Tiền:");
 
@@ -286,15 +288,38 @@ public class ThanhToan_UI extends javax.swing.JFrame {
 
     private void Sl_DTLStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Sl_DTLStateChanged
         int value = Sl_DTL.getValue();
-        Txt_DTL_use.setText("-"+value +"");
+        Txt_DTL_use.setText(value+"");
+        if (value>Value_of_Slider) {
+            int sub = value - Value_of_Slider;
+            Value_of_Slider = value;
+            int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
+            Lbl_GiamGia_num.setText(sub+tmp+"");
+        }
+        else{
+            int sub =  Value_of_Slider - value;
+            Value_of_Slider = value;
+            int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
+            Lbl_GiamGia_num.setText(-sub+tmp+"");
+        }
     }//GEN-LAST:event_Sl_DTLStateChanged
 
-    private void Sl_DTLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sl_DTLMouseReleased
+    private void Txt_DTL_useActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_DTL_useActionPerformed
+        int i = Integer.parseInt(Txt_DTL_use.getText());
+        Sl_DTL.setValue(i);
         int value = Sl_DTL.getValue();
-        int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
-        int giamgia = value+tmp;
-        Lbl_GiamGia_num.setText(giamgia+"");
-    }//GEN-LAST:event_Sl_DTLMouseReleased
+        if (value>Value_of_Slider) {
+            int sub = value - Value_of_Slider;
+            Value_of_Slider = value;
+            int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
+            Lbl_GiamGia_num.setText(sub+tmp+"");
+        }
+        else{
+            int sub =  Value_of_Slider - value;
+            Value_of_Slider = value;
+            int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
+            Lbl_GiamGia_num.setText(-sub+tmp+"");
+        }
+    }//GEN-LAST:event_Txt_DTL_useActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,6 +378,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
     private javax.swing.JTextField Txt_MaGiamGia;
     private javax.swing.JTextField Txt_MaTV;
     // End of variables declaration//GEN-END:variables
+    private int Value_of_Slider=0;
     private void setSlider(){
         Sl_DTL.setValue(0);
     }

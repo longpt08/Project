@@ -752,6 +752,7 @@ public class DatVe extends javax.swing.JFrame {
     }//GEN-LAST:event_panel_exitMouseExited
 
     private void Btn_ThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ThanhToanActionPerformed
+        TongTien=Lbl_Gia_Ve.getText();
         ThanhToan_UI thanhtoan = new ThanhToan_UI();
     }//GEN-LAST:event_Btn_ThanhToanActionPerformed
 
@@ -1015,7 +1016,7 @@ public class DatVe extends javax.swing.JFrame {
     private javax.swing.JPanel panel_dong;
     private javax.swing.JPanel panel_exit;
     // End of variables declaration//GEN-END:variables
-
+    public static String TongTien;
     private void HienThiNgayChieu() {
         SuatChieu_ctrl scc = new SuatChieu_ctrl();
         Vector<String> ListNgayChieu = new Vector<String>();

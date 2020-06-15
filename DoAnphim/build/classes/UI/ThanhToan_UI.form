@@ -236,7 +236,6 @@
     <Component class="javax.swing.JSlider" name="Sl_DTL">
       <Events>
         <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="Sl_DTLStateChanged"/>
-        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Sl_DTLMouseReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Lbl_DiemTichLuy">
@@ -253,6 +252,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_DTL_useActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Lbl_ThanhTien">
       <Properties>
