@@ -768,7 +768,8 @@ public class DatVe extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_DatVeActionPerformed
 
     private void Btn_ThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ThanhToanActionPerformed
-        // TODO add your handling code here:
+        ThanhToan_UI thanhtoan = new ThanhToan_UI();
+        
     }//GEN-LAST:event_Btn_ThanhToanActionPerformed
 
     private void CBB_LoaiPhimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_LoaiPhimActionPerformed
@@ -1081,13 +1082,13 @@ public class DatVe extends javax.swing.JFrame {
         if (a.isSelected()) {
             String tmp = Lbl_Ghe_Ve.getText()+ a.getText()+" ";
             Lbl_Ghe_Ve.setText(tmp);
-            long gia = Long.parseLong(Lbl_Gia_Ve.getText())+40000;
+            long gia = Long.parseLong(Lbl_Gia_Ve.getText())+65000;
             Lbl_Gia_Ve.setText(""+gia);
         }
         else{
             String tmp = Lbl_Ghe_Ve.getText().replace(a.getText()+" ","");
             Lbl_Ghe_Ve.setText(tmp);
-            long gia = Long.parseLong(Lbl_Gia_Ve.getText())-40000;
+            long gia = Long.parseLong(Lbl_Gia_Ve.getText())-65000;
             Lbl_Gia_Ve.setText(""+gia);
         }
     }

@@ -26,6 +26,7 @@ public class SuatChieu_ctrl extends Oracle {
                 String date =rs.getString(1).substring(8,10)+"-"+rs.getString(1).substring(5,8)+rs.getString(1).substring(0,4);
                 ListNgayChieu.add(date);
             }
+            con.close();
         }
         catch(Exception e){
             e.printStackTrace();
@@ -102,18 +103,35 @@ public class SuatChieu_ctrl extends Oracle {
             return MaSuatChieu;
     }
     public String RapDaChon(String NgayChieu, String ThoiGianChieu){
-            String MaSuatChieu = "";
+            String Rap = "";
             String query = "select  marap "
                           +"from    suatchieu "
                           +"where   thoigianchieu ='"+ThoiGianChieu+"' and ngaychieu =TO_DATE('"+NgayChieu+"', 'DD-MM-YYYY','NLS_DATE_LANGUAGE = American')";
             try {
             Statement smt = con.createStatement();
             ResultSet rs = smt.executeQuery(query);
-                if (rs.next())
-                    MaSuatChieu=rs.getString(1);
+                if (rs.next()){
+                    switch (rs.getString(1)){
+                        case "1r":
+                            Rap = "Rạp 1";
+                            break;
+                        case "2r":
+                            Rap = "Rạp 1";
+                            break;
+                        case "3r":
+                            Rap = "Rạp 1";
+                            break;
+                        case "4r":
+                            Rap = "Rạp 1";
+                            break;
+                        case "5r":
+                            Rap = "Rạp 1";
+                            break;
+                    }
+                }
             } catch (Exception e) {
             e.printStackTrace();
             }
-            return MaSuatChieu;
+            return Rap;
     }
 }

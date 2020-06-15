@@ -8,6 +8,7 @@ package Controller;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -29,5 +30,22 @@ public class TaiKhoan_ctrl extends Oracle {
             e.printStackTrace();
             return false;
         }
+    }
+    public String getThongTinDangNhap(){
+        String MaNV = "";
+        String query = "select manv\n" +
+                       "from (select manv from nhanvien) nv join (select manguoidung, tentk from taikhoan where tentk = 'longpt') tk\n"+
+                       "on nv.manv=tk.manguoidung";
+        try{   
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery(query);
+            if(rs.next()){
+                MaNV = rs.getString(1);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return MaNV;
     }
 }
