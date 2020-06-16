@@ -68,8 +68,7 @@ public class QLThanhVien extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) table_thanhvien.getModel();
         Object[] row = new Object[9];
         for(int i=0;i< list.size();i++){
-            row[0]=list.get(i).getMaTV();
-            
+            row[0]=list.get(i).getMaTV();           
             row[1]=list.get(i).getTenTV();
             row[2]=list.get(i).getGioiTinh();
             row[3]=list.get(i).getNgaySinh();
@@ -79,8 +78,6 @@ public class QLThanhVien extends javax.swing.JFrame {
             row[7]=list.get(i).getNgayDangKy();
             row[8]=list.get(i).getDiemTichLuy();
             model.addRow(row);
-            
-            
         }
         
     }

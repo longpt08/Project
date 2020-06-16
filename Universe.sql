@@ -1,23 +1,51 @@
-create or replace procedure pro_datve (p_MaGhe nvarchar2,
-p_MaSC nvarchar2,
-p_MaKM nvarchar2,
-p_MaNV nvarchar2,
-p_MaTV nvarchar2,
-p_ThanhTien number)
-as
-        v_sohd   HOADON.SOHD%TYPE;
-        v_ngayhd HOADON.NGAYHD%type;
-begin
-        v_ngayhd := to_date(current_date(),'dd-mm-YYYY');
-        insert into hoadon (MaNV, matv, NGAYHD,tongtien)
-            values(p_MaNV, p_MaTV, v_ngayhd, p_ThanhTien);
-        select  hd.soHD into v_sohd
-        from    hoadon hd, datve d
-        where   hd.sohd = d.sohd
-                and ngayhd = v_ngayhd;
-        insert into datve values(p_MaGhe, p_MaSC, v_sohd, p_MaKM, p_ThanhTien);    
-        commit;
-end;
-
-select vitri from datve join ghe on datve.maghe=ghe.maghe where masc ='1sc';
-commit;
+--FUNCTION KI?M TRA GH?
+create or replace function F_CHECK_SEAT(
+P_MAGHE in nvarchar2,
+P_MASC IN NVARCHAR2)
+RETURN NUMBER
+IS
+    CURSOR CUR IS SELECT DATVE.MAGHE FROM DATVE WHERE DATVE.MASC = p_MASC;
+    V_MAGHE DATVE.MAGHE%TYPE;
+    BOOL_GHEDADAT NUMBER :=0;
+BEGIN
+    OPEN CUR;
+    LOOP
+            FETCH CUR INTO V_MAGHE;
+            EXIT WHEN CUR%NOTFOUND;
+            IF V_MAGHE = p_MAGHE
+                THEN BOOL_GHEDADAT:=1;
+            END IF;
+    END LOOP;
+    CLOSE CUR;
+    IF BOOL_GHEDADAT = 1
+    THEN
+        RAISE_APPLICATION_ERROR(-20003, 'Ghe da duoc dat');
+    END IF;
+    RETURN BOOL_GHEDADAT;
+END;
+--FUNCTION T?O HÓA ??N
+create or replace function F_CREATE_HOADON_DATVE(
+P_MANV in nvarchar2,
+P_MATV in nvarchar2,
+P_MAKM IN NVARCHAR2,
+P_THANHTIEN in NUMBER
+)
+return NUMBER
+IS
+    V_SYSDATE DATE := to_date(SYSDATE,'dd-mm-YYYY');
+    V_SOHD HOADON.SOHD%TYPE;
+BEGIN
+        INSERT INTO HOADON(MANV, MATV, NGAYHD, TONGTIEN, MAKM) 
+            VALUES (p_MANV, p_MATV, V_SYSDATE, p_THANHTIEN,P_MAKM)
+                RETURNING SOHD INTO V_SOHD;
+    RETURN V_SOHD;
+END;
+--PROCEDURE ??T VÉ
+CREATE OR REPLACE PROCEDURE SP_DATVE(
+P_MAGHE IN NVARCHAR2,
+P_MASC IN NVARCHAR2,
+P_SOHD IN NUMBER)
+IS
+BEGIN
+    INSERT INTO DATVE VALUES(P_MAGHE, P_MASC, P_SOHD);
+END;

@@ -801,15 +801,18 @@ public class DatVe extends javax.swing.JFrame {
     private void CBB_NgayChieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_NgayChieuActionPerformed
         HienThiLoaiPhim();
         Lbl_NgayChieu_Ve.setText(CBB_NgayChieu.getSelectedItem().toString());
+        setDefaultColor();
     }//GEN-LAST:event_CBB_NgayChieuActionPerformed
 
     private void CBB_PhimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_PhimActionPerformed
         HienThoiGianChieu();
         Lbl_TenPhim_Ve.setText(CBB_Phim.getSelectedItem().toString());
+        setDefaultColor();
     }//GEN-LAST:event_CBB_PhimActionPerformed
 
     private void CBB_SuatChieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_SuatChieuActionPerformed
         Lbl_GioChieu_Ve.setText(CBB_SuatChieu.getSelectedItem().toString());
+        setDefaultColor();
         SuatChieu_ctrl scc = new SuatChieu_ctrl();
         String ThoiGianChieu = CBB_SuatChieu.getSelectedItem().toString();
         String NgayChieu = CBB_NgayChieu.getSelectedItem().toString();
@@ -1051,7 +1054,7 @@ public class DatVe extends javax.swing.JFrame {
         ListLoaiPhim= scc.ListLoaiPhim(NgayChieu);
         CBB_LoaiPhim.setModel(new DefaultComboBoxModel<String>(ListLoaiPhim.toArray(new String[ListLoaiPhim.size()])));
     }
-        private void HienThiPhim(){
+    private void HienThiPhim(){
         String NgayChieu = CBB_NgayChieu.getSelectedItem().toString();
         String LoaiPhim = CBB_LoaiPhim.getSelectedItem().toString();
         SuatChieu_ctrl scc = new SuatChieu_ctrl();
@@ -1119,5 +1122,37 @@ public class DatVe extends javax.swing.JFrame {
             String maghe = ViTri + marap;
             MaGhe.remove(maghe);
         }
+    }
+    public void setDefaultColor(){
+        A1.setBackground(new Color(0,153,153));
+        A2.setBackground(new Color(0,153,153));
+        A3.setBackground(new Color(0,153,153));
+        A4.setBackground(new Color(0,153,153));
+        A5.setBackground(new Color(0,153,153));
+        A6.setBackground(new Color(0,153,153));
+        B1.setBackground(new Color(0,153,153));
+        B2.setBackground(new Color(0,153,153));
+        B3.setBackground(new Color(0,153,153));
+        B4.setBackground(new Color(0,153,153));
+        B5.setBackground(new Color(0,153,153));
+        B6.setBackground(new Color(0,153,153));
+        C1.setBackground(new Color(0,153,153));
+        C2.setBackground(new Color(0,153,153));
+        C3.setBackground(new Color(0,153,153));
+        C4.setBackground(new Color(0,153,153));
+        C5.setBackground(new Color(0,153,153));
+        C6.setBackground(new Color(0,153,153));
+        D1.setBackground(new Color(0,153,153));
+        D2.setBackground(new Color(0,153,153));
+        D3.setBackground(new Color(0,153,153));
+        D4.setBackground(new Color(0,153,153));
+        D5.setBackground(new Color(0,153,153));
+        D6.setBackground(new Color(0,153,153));
+        E1.setBackground(new Color(0,153,153));
+        E2.setBackground(new Color(0,153,153));
+        E3.setBackground(new Color(0,153,153));
+        E4.setBackground(new Color(0,153,153));
+        E5.setBackground(new Color(0,153,153));
+        E6.setBackground(new Color(0,153,153));
     }
 }
