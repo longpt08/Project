@@ -5,8 +5,9 @@
  */
 package UI;
 
-import Controller.Oracle;
 
+
+import Controller.Oracle;
 import Controller.ThanhVien_ctrl;
 import java.awt.Color;
 import java.sql.Statement;
@@ -55,13 +56,9 @@ public class QLThanhVien extends javax.swing.JFrame {
         table.setBackground(new Color(0,153,153));
         table.setForeground(Color.black);
         showThanhVien();
-        
-        txt_diachi1.setWrapStyleWord(true);//tách từ có nghĩa nếu xuống dòng
-        txt_diachi1.setLineWrap(true);//căn xuống dòng
        
     }
-    
-       
+   
     public void showThanhVien(){
         
         ArrayList<ThanhVien> list = Controller.ThanhVien_ctrl.getAllMember();
@@ -113,9 +110,11 @@ public class QLThanhVien extends javax.swing.JFrame {
         txt_matv1 = new javax.swing.JTextField();
         txt_tentv2 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        txt_ngaysinh1 = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_diachi1 = new javax.swing.JTextArea();
         txt_gioitinh1 = new javax.swing.JTextField();
+        txt_ngaydangky1 = new com.toedter.calendar.JDateChooser();
         txt_sdt1 = new javax.swing.JTextField();
         txt_cmnd1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -123,13 +122,11 @@ public class QLThanhVien extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        button_huy = new javax.swing.JButton();
+        button_tracuu1 = new javax.swing.JButton();
         button_xoa = new javax.swing.JButton();
         butt_capnhat = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         button_them = new javax.swing.JButton();
-        txt_ngaysinh1 = new com.toedter.calendar.JDateChooser();
-        txt_ngaydangky1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -196,7 +193,7 @@ public class QLThanhVien extends javax.swing.JFrame {
         jScrollPane2.setViewportView(table_thanhvien);
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(440, 150, 680, 530);
+        jScrollPane2.setBounds(440, 150, 670, 530);
 
         jLabel2.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 153));
@@ -318,6 +315,12 @@ public class QLThanhVien extends javax.swing.JFrame {
         jPanel1.add(jLabel12);
         jLabel12.setBounds(40, 330, 78, 19);
 
+        txt_ngaysinh1.setDateFormatString("dd-MM-yyyy");
+        txt_ngaysinh1.setMaxSelectableDate(new java.util.Date(253370743279000L));
+        txt_ngaysinh1.setMinSelectableDate(new java.util.Date(-62135791121000L));
+        jPanel1.add(txt_ngaysinh1);
+        txt_ngaysinh1.setBounds(130, 330, 290, 30);
+
         txt_diachi1.setColumns(20);
         txt_diachi1.setRows(5);
         jScrollPane1.setViewportView(txt_diachi1);
@@ -326,6 +329,10 @@ public class QLThanhVien extends javax.swing.JFrame {
         jScrollPane1.setBounds(130, 380, 300, 50);
         jPanel1.add(txt_gioitinh1);
         txt_gioitinh1.setBounds(130, 280, 290, 30);
+
+        txt_ngaydangky1.setDateFormatString("dd-MM-yyyy");
+        jPanel1.add(txt_ngaydangky1);
+        txt_ngaydangky1.setBounds(130, 550, 290, 30);
         jPanel1.add(txt_sdt1);
         txt_sdt1.setBounds(130, 450, 290, 30);
         jPanel1.add(txt_cmnd1);
@@ -356,21 +363,21 @@ public class QLThanhVien extends javax.swing.JFrame {
         jPanel1.add(jLabel14);
         jLabel14.setBounds(10, 600, 100, 30);
 
-        button_huy.setBackground(new java.awt.Color(0, 153, 153));
-        button_huy.setForeground(new java.awt.Color(255, 255, 255));
-        button_huy.setText("Huỷ");
-        button_huy.addMouseListener(new java.awt.event.MouseAdapter() {
+        button_tracuu1.setBackground(new java.awt.Color(0, 153, 153));
+        button_tracuu1.setForeground(new java.awt.Color(255, 255, 255));
+        button_tracuu1.setText("Huỷ");
+        button_tracuu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_huyMouseClicked(evt);
+                button_tracuu1MouseClicked(evt);
             }
         });
-        button_huy.addActionListener(new java.awt.event.ActionListener() {
+        button_tracuu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_huyActionPerformed(evt);
+                button_tracuu1ActionPerformed(evt);
             }
         });
-        jPanel1.add(button_huy);
-        button_huy.setBounds(350, 640, 80, 30);
+        jPanel1.add(button_tracuu1);
+        button_tracuu1.setBounds(350, 640, 80, 30);
 
         button_xoa.setBackground(new java.awt.Color(0, 153, 153));
         button_xoa.setForeground(new java.awt.Color(255, 255, 255));
@@ -381,7 +388,7 @@ public class QLThanhVien extends javax.swing.JFrame {
             }
         });
         jPanel1.add(button_xoa);
-        button_xoa.setBounds(120, 640, 80, 30);
+        button_xoa.setBounds(130, 640, 80, 30);
 
         butt_capnhat.setBackground(new java.awt.Color(0, 153, 153));
         butt_capnhat.setForeground(new java.awt.Color(255, 255, 255));
@@ -392,7 +399,7 @@ public class QLThanhVien extends javax.swing.JFrame {
             }
         });
         jPanel1.add(butt_capnhat);
-        butt_capnhat.setBounds(230, 640, 90, 30);
+        butt_capnhat.setBounds(240, 640, 90, 30);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 153));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -414,21 +421,17 @@ public class QLThanhVien extends javax.swing.JFrame {
             }
         });
         jPanel1.add(button_them);
-        button_them.setBounds(10, 640, 80, 30);
-        jPanel1.add(txt_ngaysinh1);
-        txt_ngaysinh1.setBounds(130, 330, 290, 30);
-        jPanel1.add(txt_ngaydangky1);
-        txt_ngaydangky1.setBounds(130, 550, 290, 30);
+        button_them.setBounds(30, 640, 80, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1115, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1120, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
         );
 
         pack();
@@ -507,22 +510,21 @@ public class QLThanhVien extends javax.swing.JFrame {
         
     }//GEN-LAST:event_table_thanhvienMouseClicked
 
-    private void button_huyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_huyActionPerformed
-        //random mã thành viên để tạo mới
-        Random ran = new Random();
-        int n = ran.nextInt(202000)+1;
-        String val = String.valueOf(n);
-        txt_matv1.setText(val+"tv");
-        
-        txt_tentv2.setText("");
+    private void button_tracuu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_tracuu1ActionPerformed
+         txt_tentv2.setText("");
         txt_gioitinh1.setText("");
         txt_ngaysinh1.setDate(null);
-        txt_sdt1.setText("");
-        txt_diachi1.setText("");
-        txt_cmnd1.setText("");
-        txt_diem1.setText("");
         txt_ngaydangky1.setDate(null);
-    }//GEN-LAST:event_button_huyActionPerformed
+        txt_diachi1.setText("");
+        txt_sdt1.setText("");
+        txt_cmnd1.setText("");
+        txt_diem1.setText("0"); 
+       //random id cho matv
+         Random ran = new Random();
+         int n = ran.nextInt(202000)+1;
+         String val = String.valueOf(n);
+         txt_matv1.setText(val+"tv");
+    }//GEN-LAST:event_button_tracuu1ActionPerformed
 
     private void button_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_xoaActionPerformed
          int xacnhanxoa = JOptionPane.showConfirmDialog(this, "Bạn có muốn xoá thành viên này không?", "Xác nhận cậpt nhật",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
@@ -532,7 +534,7 @@ public class QLThanhVien extends javax.swing.JFrame {
         try {
         String sql = "DELETE FROM THANHVIEN WHERE MATV =?";
           try {
-            PreparedStatement pre = Controller.Oracle.con.prepareStatement(sql);
+            PreparedStatement pre = Oracle.getConnection().prepareStatement(sql);
             pre.setString(1, txt_matv1.getText());
             pre.executeUpdate();
             JOptionPane.showMessageDialog(null, "Xoá Thành công !");
@@ -590,7 +592,7 @@ public class QLThanhVien extends javax.swing.JFrame {
          
     }//GEN-LAST:event_butt_capnhatActionPerformed
 
-    private void button_huyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_huyMouseClicked
+    private void button_tracuu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_tracuu1MouseClicked
         txt_cmnd1.setText("");
         txt_diachi1.setText("");
         txt_diem1.setText("");
@@ -602,7 +604,7 @@ public class QLThanhVien extends javax.swing.JFrame {
         txt_tentv2.setText("");
         
                 
-    }//GEN-LAST:event_button_huyMouseClicked
+    }//GEN-LAST:event_button_tracuu1MouseClicked
 
     private void table_thanhvienMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_thanhvienMouseReleased
          
@@ -615,7 +617,7 @@ public class QLThanhVien extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void button_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_themActionPerformed
-         try {
+  try {
             ThanhVien tv = new ThanhVien();
            
            
@@ -628,13 +630,7 @@ public class QLThanhVien extends javax.swing.JFrame {
             tv.setDiemTichLuy(0);
             SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
             try {
-//                Calendar c = jDate_ngaysinh.getCalendar();
-//                Calendar dk = jDate_ngaydangky.getCalendar();
-//                String ngdk = dk.getTime().getDate()+"-"+dk.getTime().getMonth()+"-"+dk.getTime().getYear();
-//                
-//                String ngsinh = c.getTime().getDate()+"-"+c.getTime().getMonth()+"-"+c.getTime().getYear();
-                //ngsinh co dang(dd-mm-yyyy)
-                //insert: to_date(ngsinh,'dd-mm-yyyy')
+//               
                 String ngsinh = sdf.format(txt_ngaysinh1.getDate());
                 tv.setNgaySinh(ngsinh);
                 String ngdk = sdf.format(txt_ngaydangky1.getDate());
@@ -644,7 +640,7 @@ public class QLThanhVien extends javax.swing.JFrame {
                 e.printStackTrace();
             }
 
-            if (new ThanhVien_ctrl().ThemThanhVien(tv)) {
+            if (new ThanhVien_ctrl().addThanhVien(tv)) {
                 JOptionPane.showMessageDialog(null, "Thêm Thành viên thành công");
             } else {
                 JOptionPane.showMessageDialog(null, "Thêm không thành công");
@@ -654,6 +650,7 @@ public class QLThanhVien extends javax.swing.JFrame {
             ex.printStackTrace();
 
         }
+       
     }//GEN-LAST:event_button_themActionPerformed
 
    public boolean UpdateTV(ThanhVien t){
@@ -662,8 +659,9 @@ public class QLThanhVien extends javax.swing.JFrame {
                  +     ",SDT= ? ,CMND= ? ,NGAYDANGKY= to_date(?,'dd-mm-yyyy'), DIEMTICHLUY= ? WHERE MATV = ?";
         //String q = "insert into thanhvien(hoten,masv,ngsinh) values(?,?,to_date(....))
         try {
-            PreparedStatement pt = Controller.Oracle.con.prepareStatement(query);
-            pt.setString(1,t.getTenTV());            
+            PreparedStatement pt = Oracle.getConnection().prepareStatement(query);
+            pt.setString(1,t.getTenTV());
+            
             pt.setString(2,t.getGioiTinh());
             pt.setString(3,t.getNgaySinh());
             pt.setString(4,  t.getDiaChi());
@@ -689,8 +687,8 @@ public class QLThanhVien extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butt_capnhat;
-    private javax.swing.JButton button_huy;
     private javax.swing.JButton button_them;
+    private javax.swing.JButton button_tracuu1;
     private javax.swing.JButton button_xoa;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
