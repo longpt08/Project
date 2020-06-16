@@ -372,7 +372,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         String MASC = DatVe.MaSuatChieu;
         //Kiểm tra xem trong các ghế đang chọn có ghế nào bị đặt hay chưa
         for (int i = 0; i < DatVe.MaGhe.size(); i++) {
-            seatIsOrdered=dvc.KiemTraGhe(DatVe.MaGhe.get(i), MASC);
+            seatIsOrdered=seatIsOrdered|dvc.KiemTraGhe(DatVe.MaGhe.get(i), MASC);
             if (seatIsOrdered==1) {
                 JOptionPane.showMessageDialog(null, "Ghế đã được đặt trước");
                 break;

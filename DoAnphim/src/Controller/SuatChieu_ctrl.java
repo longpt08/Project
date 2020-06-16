@@ -18,7 +18,7 @@ import model.SuatChieu;
 public class SuatChieu_ctrl extends Oracle {
     public Vector<String> ListNgayChieu (){
             Vector<String> ListNgayChieu = new Vector<String>();
-            String query = "select Ngaychieu from suatchieu group by ngaychieu having ngaychieu>sysdate";
+            String query = "select Ngaychieu from suatchieu group by ngaychieu having ngaychieu>=sysdate";
             try{
                 Statement smt = con.createStatement();
                 ResultSet rs = smt.executeQuery(query);
