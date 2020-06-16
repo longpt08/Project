@@ -666,8 +666,7 @@ public class QLThanhVien extends javax.swing.JFrame {
         //String q = "insert into thanhvien(hoten,masv,ngsinh) values(?,?,to_date(....))
         try {
             PreparedStatement pt = Controller.Oracle.con.prepareStatement(query);
-            pt.setString(1,t.getTenTV());
-            
+            pt.setString(1,t.getTenTV());            
             pt.setString(2,t.getGioiTinh());
             pt.setString(3,t.getNgaySinh());
             pt.setString(4,  t.getDiaChi());

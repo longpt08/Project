@@ -10,7 +10,5 @@ package Controller;
  * @author PC
  */
 public class HoaDon_ctrl extends Oracle {
-    public boolean TaoHoaDon(){
-       return true;
-    }
+
 }

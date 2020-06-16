@@ -10,27 +10,27 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
-
+import model.SuatChieu;
 /**
  *
  * @author PC
  */
 public class SuatChieu_ctrl extends Oracle {
     public Vector<String> ListNgayChieu (){
-        Vector<String> ListNgayChieu = new Vector<String>();
-        String query = "Select NGAYCHIEU from SUATCHIEU group by NGAYCHIEU";
-        try{
-            Statement smt = con.createStatement();
-            ResultSet rs = smt.executeQuery(query);
-            while (rs.next()){
-                String date =rs.getString(1).substring(8,10)+"-"+rs.getString(1).substring(5,8)+rs.getString(1).substring(0,4);
-                ListNgayChieu.add(date);
+            Vector<String> ListNgayChieu = new Vector<String>();
+            String query = "select Ngaychieu from suatchieu group by ngaychieu having ngaychieu>sysdate";
+            try{
+                Statement smt = con.createStatement();
+                ResultSet rs = smt.executeQuery(query);
+                while (rs.next()){
+                String date_before_convert = rs.getString(1);
+                String date_after_convert = date_before_convert.substring(8,10)+"-"+date_before_convert.substring(5,8)+date_before_convert.substring(0,4);
+                ListNgayChieu.add(date_after_convert);
+                }
             }
-            con.close();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+            catch(Exception e){
+                e.printStackTrace();
+            }
         return ListNgayChieu;
     }
     public Vector<String> ListLoaiPhim(String NgayChieu){
@@ -87,11 +87,12 @@ public class SuatChieu_ctrl extends Oracle {
         }
         return ListThoiGianChieu;
     }
-    public String SuatChieuDaChon(String NgayChieu, String ThoiGianChieu){
+    public String SuatChieuDaChon(String NgayChieu, String ThoiGianChieu, String TenPhim){
             String MaSuatChieu = "";
             String query = "select  masc "
                           +"from    suatchieu sc join phim p on sc.maphim = p.maphim "
-                          +"where   thoigianchieu ='"+ThoiGianChieu+"' and ngaychieu =TO_DATE('"+NgayChieu+"', 'DD-MM-YYYY','NLS_DATE_LANGUAGE = American')";
+                          +"where   thoigianchieu ='"+ThoiGianChieu+"' and ngaychieu =TO_DATE('"+NgayChieu+"', 'DD-MM-YYYY','NLS_DATE_LANGUAGE = American') "
+                          +"and tenphim = '"+TenPhim+"'";
             try {
             Statement smt = con.createStatement();
             ResultSet rs = smt.executeQuery(query);
@@ -103,35 +104,18 @@ public class SuatChieu_ctrl extends Oracle {
             return MaSuatChieu;
     }
     public String RapDaChon(String NgayChieu, String ThoiGianChieu){
-            String Rap = "";
+            String MaRap = null;
             String query = "select  marap "
                           +"from    suatchieu "
                           +"where   thoigianchieu ='"+ThoiGianChieu+"' and ngaychieu =TO_DATE('"+NgayChieu+"', 'DD-MM-YYYY','NLS_DATE_LANGUAGE = American')";
             try {
-            Statement smt = con.createStatement();
-            ResultSet rs = smt.executeQuery(query);
-                if (rs.next()){
-                    switch (rs.getString(1)){
-                        case "1r":
-                            Rap = "Rạp 1";
-                            break;
-                        case "2r":
-                            Rap = "Rạp 1";
-                            break;
-                        case "3r":
-                            Rap = "Rạp 1";
-                            break;
-                        case "4r":
-                            Rap = "Rạp 1";
-                            break;
-                        case "5r":
-                            Rap = "Rạp 1";
-                            break;
-                    }
-                }
+                Statement smt = con.createStatement();
+                ResultSet rs = smt.executeQuery(query);
+                if (rs.next())
+                    MaRap = rs.getString(1);
             } catch (Exception e) {
             e.printStackTrace();
             }
-            return Rap;
+            return MaRap;
     }
 }

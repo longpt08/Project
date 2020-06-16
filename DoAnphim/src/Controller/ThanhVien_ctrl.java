@@ -118,6 +118,23 @@ public class ThanhVien_ctrl extends Oracle{
             return false;
         }
     }
+    public boolean isThanhVien(String MaTV){
+        String query = "select *\n" +
+                       "from thanhvien\n" +
+                       "where matv ='"+MaTV+"'";
+        try {
+        Statement smt = con.createStatement();
+        ResultSet rs = smt.executeQuery(query);
+        if (rs.next()){
+            return true;
+        }
+        else return false;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
     public int getDiemTichLuy(String MaTV){
         int DTL = 0;
         String query = "select DiemTichLuy\n" +

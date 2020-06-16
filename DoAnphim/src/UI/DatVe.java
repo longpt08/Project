@@ -8,10 +8,11 @@ package UI;
 import Controller.DatVe_ctrl;
 import Controller.SuatChieu_ctrl;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
-
+import model.SuatChieu;
 /**
  *
  * @author Phon
@@ -812,7 +813,25 @@ public class DatVe extends javax.swing.JFrame {
         SuatChieu_ctrl scc = new SuatChieu_ctrl();
         String ThoiGianChieu = CBB_SuatChieu.getSelectedItem().toString();
         String NgayChieu = CBB_NgayChieu.getSelectedItem().toString();
-        String Rap = scc.RapDaChon(NgayChieu, ThoiGianChieu);
+        MaRap = scc.RapDaChon(NgayChieu, ThoiGianChieu);
+        String Rap ="";
+                    switch (MaRap){
+                        case "1r":
+                            Rap = "Rạp 1";
+                            break;
+                        case "2r":
+                            Rap = "Rạp 1";
+                            break;
+                        case "3r":
+                            Rap = "Rạp 1";
+                            break;
+                        case "4r":
+                            Rap = "Rạp 1";
+                            break;
+                        case "5r":
+                            Rap = "Rạp 1";
+                            break;
+                    }        
         Lbl_Rap_Ve.setText(Rap);
     }//GEN-LAST:event_CBB_SuatChieuActionPerformed
 
@@ -1017,10 +1036,12 @@ public class DatVe extends javax.swing.JFrame {
     private javax.swing.JPanel panel_exit;
     // End of variables declaration//GEN-END:variables
     public static String TongTien;
+    public static String MaSuatChieu;
+    public static String MaRap;
+    public static Vector<String> MaGhe = new Vector<String>();
     private void HienThiNgayChieu() {
         SuatChieu_ctrl scc = new SuatChieu_ctrl();
-        Vector<String> ListNgayChieu = new Vector<String>();
-        ListNgayChieu = scc.ListNgayChieu();
+        Vector<String> ListNgayChieu = scc.ListNgayChieu();
         CBB_NgayChieu.setModel(new DefaultComboBoxModel<String>(ListNgayChieu.toArray(new String[ListNgayChieu.size()])));
     }
     private void HienThiLoaiPhim(){
@@ -1049,15 +1070,19 @@ public class DatVe extends javax.swing.JFrame {
     }
     private void DoiMauGheDaDat(javax.swing.JToggleButton a){
         String ViTri = a.getText();
+        ViTri = ViTri.toLowerCase();
+        String col = ViTri.substring(1);
+        String row = ViTri.substring(0,1);
+        ViTri="h"+row+" "+"c"+col;//vị trí lúc này sẽ là "hrow ccol";
         String NgayChieu = CBB_NgayChieu.getSelectedItem().toString();
-        String LoaiPhim = CBB_LoaiPhim.getSelectedItem().toString();
         String TenPhim = CBB_Phim.getSelectedItem().toString();
         String ThoiGianChieu = CBB_SuatChieu.getSelectedItem().toString();
         DatVe_ctrl dvc = new DatVe_ctrl();
         SuatChieu_ctrl scc = new SuatChieu_ctrl();
-        String MaSuatChieu = scc.SuatChieuDaChon(NgayChieu,ThoiGianChieu);
-        boolean tmp = dvc.GheDaDat(ViTri, MaSuatChieu);
-        if (tmp) {
+        MaSuatChieu = scc.SuatChieuDaChon(NgayChieu,ThoiGianChieu,TenPhim);
+        ArrayList<String> ViTriDaDat = dvc.ViTriDaDat(MaSuatChieu);
+        for(int i = 0; i< ViTriDaDat.size();i++){
+            if(ViTri.equalsIgnoreCase(ViTriDaDat.get(i)))
             a.setBackground(new Color(255,51,51));
         }
     }
@@ -1067,12 +1092,32 @@ public class DatVe extends javax.swing.JFrame {
             Lbl_Ghe_Ve.setText(tmp);
             long gia = Long.parseLong(Lbl_Gia_Ve.getText())+65000;
             Lbl_Gia_Ve.setText(""+gia);
+            String ViTri = a.getText();
+            ViTri = ViTri.toLowerCase();
+            String col = ViTri.substring(1);
+            String row = ViTri.substring(0,1);
+            ViTri=row+col;
+            String i = MaRap.substring(0,1);
+            String j = MaRap.substring(1,2);
+            String marap = j+i;
+            String maghe =ViTri + marap;
+            MaGhe.add(maghe);
         }
         else{
             String tmp = Lbl_Ghe_Ve.getText().replace(a.getText()+" ","");
             Lbl_Ghe_Ve.setText(tmp);
             long gia = Long.parseLong(Lbl_Gia_Ve.getText())-65000;
             Lbl_Gia_Ve.setText(""+gia);
+            String ViTri = a.getText();
+            ViTri = ViTri.toLowerCase();
+            String col = ViTri.substring(1);
+            String row = ViTri.substring(0,1);
+            ViTri=row+col;
+            String i = MaRap.substring(0,1);
+            String j = MaRap.substring(1,2);
+            String marap = j+i;            
+            String maghe = ViTri + marap;
+            MaGhe.remove(maghe);
         }
     }
 }

@@ -163,7 +163,8 @@ public class DangNhap extends javax.swing.JFrame {
         try {
             if(tkc.Login(username, password))
             {
-             //hiển thị frame trang chủ
+                MaNV=tkc.getThongTinDangNhap(username);
+                //hiển thị frame trang chủ
                 Home trangchu = new Home();
                 //Đóng đăng nhập
                 this.dispose();
@@ -264,6 +265,6 @@ public class DangNhap extends javax.swing.JFrame {
     private javax.swing.JPasswordField txt_pass;
     private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
-
+    public static String MaNV;
     
 }

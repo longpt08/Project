@@ -29,10 +29,10 @@ public class TaiKhoan_ctrl extends Oracle {
             return false;
         }
     }
-    public String getThongTinDangNhap(){
+    public String getThongTinDangNhap(String username){
         String MaNV = "";
         String query = "select manv\n" +
-                       "from (select manv from nhanvien) nv join (select manguoidung, tentk from taikhoan where tentk = 'longpt') tk\n"+
+                       "from (select manv from nhanvien) nv join (select manguoidung, tentk from taikhoan where tentk = '"+username+"') tk\n"+
                        "on nv.manv=tk.manguoidung";
         try{   
             Statement smt = con.createStatement();

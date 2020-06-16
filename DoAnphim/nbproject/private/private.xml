@@ -5,7 +5,8 @@
         <group>
             <file>file:/E:/HK4/Project/DoAnphim/src/UI/ThanhToan_UI.java</file>
             <file>file:/E:/HK4/Project/DoAnphim/src/UI/DatVe.java</file>
-            <file>file:/E:/HK4/Project/DoAnphim/src/UI/Home.java</file>
+            <file>file:/E:/HK4/Project/DoAnphim/src/Controller/DatVe_ctrl.java</file>
+            <file>file:/E:/HK4/Project/DoAnphim/src/Controller/SuatChieu_ctrl.java</file>
         </group>
     </open-files>
 </project-private>

@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 package UI;
+import Controller.DatVe_ctrl;
+import Controller.KhuyenMai_ctrl;
 import Controller.ThanhVien_ctrl;
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 import javax.swing.event.ChangeListener;
 /**
  *
@@ -28,6 +31,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         Txt_MaTV.setEditable(false);      
         setSlider();
         Lbl_TongTien_Num.setText(DatVe.TongTien);
+        Lbl_ThanhTien_num.setText(DatVe.TongTien);
     }
 
     /**
@@ -82,11 +86,6 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         });
 
         Txt_MaTV.setText("Mã Thành Viên");
-        Txt_MaTV.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Txt_MaTVMouseClicked(evt);
-            }
-        });
         Txt_MaTV.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Txt_MaTVKeyPressed(evt);
@@ -110,9 +109,9 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         });
 
         Txt_MaGiamGia.setText("Mã Giảm Giá");
-        Txt_MaGiamGia.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Txt_MaGiamGiaMouseClicked(evt);
+        Txt_MaGiamGia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Txt_MaGiamGiaKeyPressed(evt);
             }
         });
 
@@ -146,6 +145,11 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         Lbl_ThanhTien_num.setText("0");
 
         Btn_ThanhToan.setText("Thanh Toán");
+        Btn_ThanhToan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_ThanhToanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,23 +169,13 @@ public class ThanhToan_UI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Txt_MaTV))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Lbl_MaGiamGia, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(CB_MaGiamGia_No)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(CB_MaGiamGia_Yes))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Lbl_DiemTichLuy, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Txt_DTL_HienCo, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(Txt_DTL_use, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Lbl_MaGiamGia, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Txt_MaGiamGia, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                                    .addComponent(Sl_DTL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(CB_MaGiamGia_No)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CB_MaGiamGia_Yes)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Txt_MaGiamGia))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -192,7 +186,15 @@ public class ThanhToan_UI extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Lbl_ThanhTien_num, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Lbl_GiamGia_num, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Lbl_TongTien_Num, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(Lbl_TongTien_Num, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_DiemTichLuy, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Txt_DTL_HienCo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Txt_DTL_use, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Sl_DTL, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -248,21 +250,15 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Txt_MaTVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_MaTVMouseClicked
-
-    }//GEN-LAST:event_Txt_MaTVMouseClicked
-
-    private void Txt_MaGiamGiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_MaGiamGiaMouseClicked
-
-    }//GEN-LAST:event_Txt_MaGiamGiaMouseClicked
-
     private void CB_MaTV_NoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_MaTV_NoActionPerformed
         CB_MaTV_Yes.setSelected(false);
+        Txt_MaTV.setText("Mã Thành Viên");
         Txt_MaTV.setEditable(false);
     }//GEN-LAST:event_CB_MaTV_NoActionPerformed
 
     private void CB_MaGiamGia_NoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_MaGiamGia_NoActionPerformed
         CB_MaGiamGia_Yes.setSelected(false);
+        Txt_MaGiamGia.setText("Mã Giảm Giá");
         Txt_MaGiamGia.setEditable(false);
     }//GEN-LAST:event_CB_MaGiamGia_NoActionPerformed
 
@@ -277,12 +273,18 @@ public class ThanhToan_UI extends javax.swing.JFrame {
     }//GEN-LAST:event_CB_MaGiamGia_YesActionPerformed
 
     private void Txt_MaTVKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_MaTVKeyPressed
-        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {  
-            ThanhVien_ctrl  tvc = new ThanhVien_ctrl();
+        if (Txt_MaTV.isEditable()){
             String MaTV = Txt_MaTV.getText();
-            int DTL = tvc.getDiemTichLuy(MaTV);
-            Sl_DTL.setMaximum(DTL);
-            Txt_DTL_HienCo.setText(DTL+"");
+            if (evt.getKeyCode()==KeyEvent.VK_ENTER) {  
+                ThanhVien_ctrl  tvc = new ThanhVien_ctrl();
+                if (tvc.isThanhVien(MaTV)) {       
+                    int DTL = tvc.getDiemTichLuy(MaTV);
+                    Sl_DTL.setMaximum(DTL);
+                    Txt_DTL_HienCo.setText(DTL+"");
+                }
+                else
+                    JOptionPane.showMessageDialog(null,"Mã thành viên không hợp lệ");                
+            }
         }
     }//GEN-LAST:event_Txt_MaTVKeyPressed
 
@@ -290,16 +292,26 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         int value = Sl_DTL.getValue();
         Txt_DTL_use.setText(value+"");
         if (value>Value_of_Slider) {
-            int sub = value - Value_of_Slider;
+            int giamgiadtl = value - Value_of_Slider;
             Value_of_Slider = value;
-            int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
-            Lbl_GiamGia_num.setText(sub+tmp+"");
+            float giamgia = Float.parseFloat(Lbl_GiamGia_num.getText());
+            giamgia = giamgia + giamgiadtl;
+            Lbl_GiamGia_num.setText(giamgia+"");
+            int tongtien = Integer.parseInt(Lbl_TongTien_Num.getText());
+            float thanhtien = Float.parseFloat(Lbl_ThanhTien_num.getText());
+            thanhtien = tongtien - giamgia;
+            Lbl_ThanhTien_num.setText(thanhtien+"");
         }
         else{
-            int sub =  Value_of_Slider - value;
+            int giamgiadtl =  Value_of_Slider - value;
             Value_of_Slider = value;
-            int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
-            Lbl_GiamGia_num.setText(-sub+tmp+"");
+            float giamgia = Float.parseFloat(Lbl_GiamGia_num.getText());
+            giamgia = giamgia-giamgiadtl;
+            Lbl_GiamGia_num.setText(giamgia+"");
+            int tongtien = Integer.parseInt(Lbl_TongTien_Num.getText());
+            float thanhtien = Float.parseFloat(Lbl_ThanhTien_num.getText());
+            thanhtien = tongtien - giamgia;
+            Lbl_ThanhTien_num.setText(thanhtien+"");            
         }
     }//GEN-LAST:event_Sl_DTLStateChanged
 
@@ -308,18 +320,69 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         Sl_DTL.setValue(i);
         int value = Sl_DTL.getValue();
         if (value>Value_of_Slider) {
-            int sub = value - Value_of_Slider;
+            int giamgiadtl = value - Value_of_Slider;
             Value_of_Slider = value;
-            int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
-            Lbl_GiamGia_num.setText(sub+tmp+"");
+            float giamgia = Float.parseFloat(Lbl_GiamGia_num.getText());
+            giamgia = giamgia + giamgiadtl;
+            Lbl_GiamGia_num.setText(giamgia+"");
+            int tongtien = Integer.parseInt(Lbl_TongTien_Num.getText());
+            float thanhtien = Float.parseFloat(Lbl_ThanhTien_num.getText());
+            thanhtien = tongtien - giamgia;
+            Lbl_ThanhTien_num.setText(thanhtien+"");
         }
         else{
-            int sub =  Value_of_Slider - value;
+            int giamgiadtl =  Value_of_Slider - value;
             Value_of_Slider = value;
-            int tmp = Integer.parseInt(Lbl_GiamGia_num.getText());
-            Lbl_GiamGia_num.setText(-sub+tmp+"");
+            float giamgia = Float.parseFloat(Lbl_GiamGia_num.getText());
+            giamgia = giamgia-giamgiadtl;
+            Lbl_GiamGia_num.setText(giamgia+"");
+            int tongtien = Integer.parseInt(Lbl_TongTien_Num.getText());
+            float thanhtien = Float.parseFloat(Lbl_ThanhTien_num.getText());
+            thanhtien = tongtien - giamgia;
+            Lbl_ThanhTien_num.setText(thanhtien+"");          
         }
     }//GEN-LAST:event_Txt_DTL_useActionPerformed
+
+    private void Txt_MaGiamGiaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_MaGiamGiaKeyPressed
+        if (Txt_MaGiamGia.isEditable()){
+            String MaGG = Txt_MaGiamGia.getText();
+            if (evt.getKeyCode()==KeyEvent.VK_ENTER) {  
+                KhuyenMai_ctrl  kmc = new KhuyenMai_ctrl();
+                if (kmc.isKhuyenMai(MaGG)) {       
+                    int TLKM = kmc.getTyleKM(MaGG);
+                    long tongtien = Long.parseLong(Lbl_TongTien_Num.getText());
+                    float giamgia_ma = (float)tongtien*TLKM/100;
+                    float giamgia = Float.parseFloat(Lbl_GiamGia_num.getText());
+                    giamgia = giamgia + giamgia_ma;
+                    Lbl_GiamGia_num.setText(giamgia+"");
+                    float thanhtien = Float.parseFloat(Lbl_ThanhTien_num.getText());
+                    thanhtien = tongtien - giamgia;
+                    Lbl_ThanhTien_num.setText(thanhtien+"");
+                }
+                else
+                    JOptionPane.showMessageDialog(null,"Mã khuyến mãi không hợp lệ");                
+            }
+        }
+    }//GEN-LAST:event_Txt_MaGiamGiaKeyPressed
+
+    private void Btn_ThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ThanhToanActionPerformed
+        DatVe_ctrl dvc = new DatVe_ctrl();
+        String MANV = DangNhap.MaNV;
+        String MATV=null;
+        if(Txt_MaTV.isEditable())
+            MATV = Txt_MaTV.getText();
+        float TONGTIEN = Float.parseFloat(Lbl_ThanhTien_num.getText());
+        String MASC = DatVe.MaSuatChieu;
+        String MAKM =null;
+        if(Txt_MaGiamGia.isEditable())
+            MAKM=Txt_MaGiamGia.getText();
+        for(int i = 0; i<DatVe.MaGhe.size();i++){
+            String MAGHE=DatVe.MaGhe.get(i);
+            if(dvc.DatVe(MANV, MATV, MASC, MAGHE, TONGTIEN, MAKM))
+                JOptionPane.showMessageDialog(null, "Thanh toán thành công");
+            else JOptionPane.showMessageDialog(null, "Thanh toán không thành công");
+        }
+    }//GEN-LAST:event_Btn_ThanhToanActionPerformed
 
     /**
      * @param args the command line arguments
