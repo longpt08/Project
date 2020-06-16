@@ -17,10 +17,10 @@ BEGIN
             END IF;
     END LOOP;
     CLOSE CUR;
-    IF BOOL_GHEDADAT = 1
-    THEN
-        RAISE_APPLICATION_ERROR(-20003, 'Ghe da duoc dat');
-    END IF;
+    --IF BOOL_GHEDADAT = 1
+    --THEN
+        --RAISE_APPLICATION_ERROR(-20003, 'Ghe da duoc dat');
+    --END IF;
     RETURN BOOL_GHEDADAT;
 END;
 --FUNCTION T?O HÓA ??N

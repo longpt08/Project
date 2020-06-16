@@ -755,6 +755,7 @@ public class DatVe extends javax.swing.JFrame {
     private void Btn_ThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ThanhToanActionPerformed
         TongTien=Lbl_Gia_Ve.getText();
         ThanhToan_UI thanhtoan = new ThanhToan_UI();
+        setDefaultColor();
     }//GEN-LAST:event_Btn_ThanhToanActionPerformed
 
     private void CBB_LoaiPhimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBB_LoaiPhimActionPerformed
