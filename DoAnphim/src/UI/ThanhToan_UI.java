@@ -65,6 +65,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         Btn_ThanhToan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 153, 153));
 
         Lbl_ThanhToan.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         Lbl_ThanhToan.setText("Thanh Toán");
@@ -367,21 +368,40 @@ public class ThanhToan_UI extends javax.swing.JFrame {
 
     private void Btn_ThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ThanhToanActionPerformed
         DatVe_ctrl dvc = new DatVe_ctrl();
-        String MANV = DangNhap.MaNV;
-        String MATV=null;
-        if(Txt_MaTV.isEditable())
-            MATV = Txt_MaTV.getText();
-        float TONGTIEN = Float.parseFloat(Lbl_ThanhTien_num.getText());
+        int seatIsOrdered = 0;
         String MASC = DatVe.MaSuatChieu;
-        String MAKM =null;
-        if(Txt_MaGiamGia.isEditable())
-            MAKM=Txt_MaGiamGia.getText();
-        for(int i = 0; i<DatVe.MaGhe.size();i++){
-            String MAGHE=DatVe.MaGhe.get(i);
-            if(dvc.DatVe(MANV, MATV, MASC, MAGHE, TONGTIEN, MAKM))
-                JOptionPane.showMessageDialog(null, "Thanh toán thành công");
-            else JOptionPane.showMessageDialog(null, "Thanh toán không thành công");
+        //Kiểm tra xem trong các ghế đang chọn có ghế nào bị đặt hay chưa
+        for (int i = 0; i < DatVe.MaGhe.size(); i++) {
+            seatIsOrdered=dvc.KiemTraGhe(DatVe.MaGhe.get(i), MASC);
+            if (seatIsOrdered==1) {
+                JOptionPane.showMessageDialog(null, "Ghế đã được đặt trước");
+                break;
+            }
         }
+        //Nếu chưa thì tiến hành tạo hóa đơn
+        if (seatIsOrdered==0) {           
+            String MANV = DangNhap.MaNV;
+            String MATV=null;
+            if(Txt_MaTV.isEditable())
+                MATV = Txt_MaTV.getText();
+            float TONGTIEN = Float.parseFloat(Lbl_ThanhTien_num.getText());
+            String MAKM =null;
+            if(Txt_MaGiamGia.isEditable())
+                MAKM=Txt_MaGiamGia.getText();
+            int sohd = dvc.TaoHoaDon(MANV, MATV, TONGTIEN, MAKM); //Tạo hóa đơn
+            boolean DatVeThanhCong = false; //Sau khi tạo hóa đơn, tiến hành đặt vé cho từng ghế
+            for (int i = 0; i < DatVe.MaGhe.size(); i++) {
+                DatVeThanhCong=dvc.DatVe(DatVe.MaGhe.get(i),MASC, sohd);
+                if ( DatVeThanhCong == false) {
+                    JOptionPane.showMessageDialog(null, "Đặt vé không thành công"); //Nếu có bất kì ghế nào không đặt được, break
+                    break;
+                }
+            }
+            if (DatVeThanhCong) {
+                JOptionPane.showMessageDialog(null, "Đặt vé thành công");
+            }
+        }
+        
     }//GEN-LAST:event_Btn_ThanhToanActionPerformed
 
     /**
