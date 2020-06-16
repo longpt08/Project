@@ -18,39 +18,47 @@ import model.ThanhVien;
  * @author PC
  */
 public class ThanhVien_ctrl extends Oracle{
-    public boolean ThemThanhVien(ThanhVien tv){
-        String query = "insert into ThanhVien values (?,?,?,?,to_date(?,'dd-mm-yyyy','NLS_DATE_LANGUAGE=American'),?,?,?,to_date(?,'dd-mm-yyyy','NLS_DATE_LANGUAGE=American'),?)";
-        try{
-            PreparedStatement presmt = con.prepareStatement(query);
-            presmt.setString(1, tv.getMaTV());
-            presmt.setString(2, "NV1");
-            presmt.setString(3, tv.getTenTV());
-            presmt.setString(4, tv.getGioiTinh());
-            presmt.setString(5, tv.getNgaySinh());
-            presmt.setString(6, tv.getDiaChi());
-            presmt.setString(7, tv.getSDT());
-            presmt.setString(8, tv.getCMND());
-            presmt.setString(9, tv.getNgayDangKy());
-            presmt.setInt(10, 0);
-            if (presmt.executeUpdate()>0)
-                return true;
-            else return false;    
-        }
-        catch (SQLException e){
+   
+     public boolean addThanhVien(ThanhVien t){
+//        String  ngay = ""
+        String query = "INSERT INTO THANHVIEN VALUES(?,?,?,to_date(?,'dd-mm-yyyy'),?,?,?,to_date(?,'dd-mm-yyyy'),?)";
+        //String q = "insert into thanhvien(hoten,masv,ngsinh) values(?,?,to_date(....))
+        try {
+            PreparedStatement pt = getConnection().prepareStatement(query);
+            pt.setString(1,t.getMaTV());
+            
+            pt.setString(2,t.getTenTV());
+            pt.setString(3,t.getGioiTinh());
+            pt.setString(4,  t.getNgaySinh());
+            pt.setString(5,t.getDiaChi());
+            pt.setString(6,t.getSDT());
+            pt.setString(7,t.getCMND());
+            pt.setString(8,  t.getNgayDangKy());
+            pt.setInt(9, t.getDiemTichLuy());
+            
+            return pt.executeUpdate() >0;
+           
+        } catch (Exception e) {
             e.printStackTrace();
-            return false;
-        }
+        }finally{try {
+                getConnection().close();
+            } catch (Exception e) {
+            }}
+        return false;
+
     }
-    public static ArrayList<ThanhVien> getAllMember(){
+    
+   public static ArrayList<ThanhVien> getAllMember(){
         ArrayList<ThanhVien> memberList = new ArrayList<>();
         String sql = "SELECT * FROM THANHVIEN";
         try {
-            PreparedStatement pt = con.prepareStatement(sql);
+            PreparedStatement pt = Oracle.getConnection().prepareStatement(sql);
             ResultSet rss = pt.executeQuery();
             
             while(rss.next()){
                
                 String mtv = rss.getString(1);
+                
                 String tentv = rss.getString(2);
                 String gt = rss.getString(3);
                 String ngsinh = rss.getString(4);
@@ -59,23 +67,25 @@ public class ThanhVien_ctrl extends Oracle{
                 String cm = rss.getString(7);
                 String ngdk = rss.getString(8);
                 int dtl = rss.getInt(9);
-                ThanhVien tv = new ThanhVien();
-                tv.setMaTV(mtv);
-                tv.setTenTV(tentv);
-                tv.setDiaChi(dchi);
-                tv.setCMND(cm);
-                tv.setGioiTinh(gt);
-                tv.setNgayDangKy(ngdk);
-                tv.setSDT(dth);
-                tv.setDiemTichLuy(dtl);
-                tv.setNgaySinh(ngsinh);
-                memberList.add(tv);
-                con.close();
+              
+               
+               
+              
+               
+                
+                
+                memberList.add(new ThanhVien(mtv, tentv, gt, ngsinh, dchi, dth, cm, ngdk, dtl));
+               
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }finally{try {
+                Oracle.getConnection().close();
+            } catch (Exception e) {
+            }}
         return memberList;
+        
+        
     }
     public boolean XoaTV(ThanhVien tv){
         String sql = "DELETE FROM THANHVIEN WHERE MATV =?";
