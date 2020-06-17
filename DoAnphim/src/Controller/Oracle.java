@@ -30,8 +30,8 @@ public class Oracle {
     public Oracle() {
             //Thiết lập kết nối đến cơ sở dữ liệu
             String url = "jdbc:oracle:thin:@localhost:1521:orcl3";
-            String username = "phon";
-            String password = "phon";
+            String username = "Universe";
+            String password = "Universe";
             try{
                 con = DriverManager.getConnection(url, username, password);
                 
