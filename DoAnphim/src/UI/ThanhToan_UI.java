@@ -398,7 +398,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
                 }
             }
             if (DatVeThanhCong) {
-                JOptionPane.showMessageDialog(null, "Đặt vé thành công");
+                JOptionPane.showMessageDialog(null, "Đặt vé thành công");                
             }
         }
         
