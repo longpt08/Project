@@ -48,29 +48,33 @@ public class DangNhap extends javax.swing.JFrame {
         txt_pass = new javax.swing.JPasswordField();
         button_login = new javax.swing.JButton();
         button_cancel = new javax.swing.JButton();
-        label_background = new javax.swing.JLabel();
+        label_unive1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(82, 179, 217));
         jPanel1.setLayout(null);
 
-        label_unive.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
+        label_unive.setFont(new java.awt.Font("Corbel Light", 0, 24)); // NOI18N
         label_unive.setForeground(new java.awt.Color(255, 255, 255));
-        label_unive.setText("UNIVERsal CINEMAS");
+        label_unive.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_unive.setText("Welcome to Universal cinemas");
         jPanel1.add(label_unive);
-        label_unive.setBounds(70, 30, 260, 60);
+        label_unive.setBounds(50, 70, 340, 50);
 
-        label_pass.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
+        label_pass.setFont(new java.awt.Font("Corbel Light", 0, 18)); // NOI18N
         label_pass.setForeground(new java.awt.Color(255, 255, 255));
         label_pass.setText("Password: ");
         jPanel1.add(label_pass);
-        label_pass.setBounds(30, 160, 80, 40);
+        label_pass.setBounds(20, 220, 80, 40);
 
-        label_username.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
+        label_username.setFont(new java.awt.Font("Corbel Light", 0, 18)); // NOI18N
         label_username.setForeground(new java.awt.Color(255, 255, 255));
         label_username.setText("Username:");
         jPanel1.add(label_username);
-        label_username.setBounds(30, 110, 100, 40);
+        label_username.setBounds(20, 160, 100, 40);
 
         txt_username.setBackground(new java.awt.Color(0, 0, 0));
         txt_username.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -92,7 +96,7 @@ public class DangNhap extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_username);
-        txt_username.setBounds(130, 100, 230, 30);
+        txt_username.setBounds(130, 160, 230, 30);
 
         txt_pass.setBackground(new java.awt.Color(0, 0, 0));
         txt_pass.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -114,19 +118,23 @@ public class DangNhap extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_pass);
-        txt_pass.setBounds(130, 150, 230, 30);
+        txt_pass.setBounds(130, 230, 230, 30);
 
-        button_login.setBackground(new java.awt.Color(255, 255, 255));
-        button_login.setText("Login");
+        button_login.setBackground(new java.awt.Color(52, 152, 219));
+        button_login.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
+        button_login.setForeground(new java.awt.Color(255, 255, 255));
+        button_login.setText("Sign in");
         button_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_loginActionPerformed(evt);
             }
         });
         jPanel1.add(button_login);
-        button_login.setBounds(139, 210, 70, 26);
+        button_login.setBounds(120, 310, 90, 40);
 
-        button_cancel.setBackground(new java.awt.Color(255, 255, 255));
+        button_cancel.setBackground(new java.awt.Color(52, 152, 219));
+        button_cancel.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
+        button_cancel.setForeground(new java.awt.Color(255, 255, 255));
         button_cancel.setText("Cancel");
         button_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,22 +142,36 @@ public class DangNhap extends javax.swing.JFrame {
             }
         });
         jPanel1.add(button_cancel);
-        button_cancel.setBounds(260, 210, 72, 26);
+        button_cancel.setBounds(260, 310, 90, 40);
 
-        label_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/vutru.png"))); // NOI18N
-        label_background.setText("jLabel1");
-        jPanel1.add(label_background);
-        label_background.setBounds(0, 0, 400, 300);
+        label_unive1.setFont(new java.awt.Font("Calibri Light", 0, 36)); // NOI18N
+        label_unive1.setForeground(new java.awt.Color(255, 255, 255));
+        label_unive1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_unive1.setText("Sign in");
+        jPanel1.add(label_unive1);
+        label_unive1.setBounds(90, 30, 260, 60);
+
+        jLabel1.setFont(new java.awt.Font("Corbel Light", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("__________________________________");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 420, 440, 16);
+
+        jLabel2.setFont(new java.awt.Font("Corbel Light", 3, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("@gm.uit.edu.vn");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(180, 440, 120, 18);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -168,13 +190,13 @@ public class DangNhap extends javax.swing.JFrame {
                 Home trangchu = new Home();
                 //Đóng đăng nhập
                 this.dispose();
-                Oracle.con.close();
+                Oracle.getConnection().close();
             }
             else
             {
              // hiển thị lỗi
                 JOptionPane.showMessageDialog(null,"Invalid Username/ Password","Login error",2);
-                Oracle.con.close();
+                Oracle.getConnection().close();
             }
             
             
@@ -257,10 +279,12 @@ public class DangNhap extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton button_cancel;
     private javax.swing.JButton button_login;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel label_background;
     private javax.swing.JLabel label_pass;
     private javax.swing.JLabel label_unive;
+    private javax.swing.JLabel label_unive1;
     private javax.swing.JLabel label_username;
     private javax.swing.JPasswordField txt_pass;
     private javax.swing.JTextField txt_username;

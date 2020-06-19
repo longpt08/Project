@@ -14,6 +14,23 @@ public class NhanVien {
             NgayVL, ChucVu;
     private long Luong;
 
+    public NhanVien() {
+    }
+
+    public NhanVien(String MaNV, String MaNQL, String MaTK, String HoTenNV, String GioiTinh, String NgaySinh, String DiaChi, String SDT, String NgayVL, String ChucVu, long Luong) {
+        this.MaNV = MaNV;
+        this.MaNQL = MaNQL;
+        this.MaTK = MaTK;
+        this.HoTenNV = HoTenNV;
+        this.GioiTinh = GioiTinh;
+        this.NgaySinh = NgaySinh;
+        this.DiaChi = DiaChi;
+        this.SDT = SDT;
+        this.NgayVL = NgayVL;
+        this.ChucVu = ChucVu;
+        this.Luong = Luong;
+    }
+
     public String getMaNV() {
         return MaNV;
     }
