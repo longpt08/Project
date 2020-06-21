@@ -5,11 +5,17 @@
  */
 package Controller;
 
+import java.sql.PreparedStatement;
 import java.util.Date;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import model.SuatChieu;
 /**
  *
@@ -117,5 +123,51 @@ public class SuatChieu_ctrl extends Oracle {
             e.printStackTrace();
             }
             return MaRap;
+    }
+    public static void HienThiSuatChieu(String ngay, String maphim, SuatChieu sc, JComboBox cb){
+        String sql = "select distinct (thoigianchieu) from suatchieu where NGAYCHIEU = to_date(?,'dd-mm-yyyy') and maphim = ?";
+        PreparedStatement pre;
+        ResultSet rs;
+        try {
+            pre = Oracle.getConnection().prepareStatement(sql);
+            pre.setString(1, ngay);
+            pre.setString(2, maphim);
+            rs = pre.executeQuery();
+            while(rs.next())
+            {
+                sc.setThoiGianChieu(rs.getString(1));
+                cb.addItem(sc.getThoiGianChieu());
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SuatChieu_ctrl.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{try {
+                getConnection().close();
+            } catch (Exception e) {
+            }}
+       
+    }
+    public static void HienThiSlot(String ngay, String thoigian,String maphim, JLabel lb){
+        String sql = "select count(masc) from datve where  masc =(select masc from suatchieu where ngaychieu = to_date(?,'dd-mm-yyyy') and"
+                + " THOIGIANCHIEU = ? and maphim = ? ) group by masc";
+        PreparedStatement pre;
+        ResultSet rs;
+        try {
+            pre = Oracle.getConnection().prepareStatement(sql);
+            pre.setString(1, ngay);
+            pre.setString(2, thoigian);
+            pre.setString(3, maphim);
+            rs = pre.executeQuery();
+            while(rs.next())
+            {
+                int slot = 30 - Integer.parseInt(rs.getString(1));
+                lb.setText(String.valueOf(slot));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SuatChieu_ctrl.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{try {
+                getConnection().close();
+            } catch (Exception e) {
+            }}
+       
     }
 }

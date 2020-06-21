@@ -593,15 +593,7 @@ public class QLThanhVien extends javax.swing.JFrame {
     }//GEN-LAST:event_butt_capnhatActionPerformed
 
     private void button_tracuu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_tracuu1MouseClicked
-        txt_cmnd1.setText("");
-        txt_diachi1.setText("");
-        txt_diem1.setText("");
-        txt_gioitinh1.setText("");
-        txt_matv1.setText("");
-        txt_ngaydangky1.setDate(null);
-        txt_ngaysinh1.setDate(null);
-        txt_sdt1.setText("");
-        txt_tentv2.setText("");
+      
         
                 
     }//GEN-LAST:event_button_tracuu1MouseClicked
