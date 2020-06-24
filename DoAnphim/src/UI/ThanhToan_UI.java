@@ -5,6 +5,7 @@
  */
 package UI;
 import Controller.DatVe_ctrl;
+import Controller.HoaDon_ctrl;
 import Controller.KhuyenMai_ctrl;
 import Controller.ThanhVien_ctrl;
 import java.awt.event.KeyEvent;
@@ -64,6 +65,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
         Lbl_ThanhTien = new javax.swing.JLabel();
         Lbl_ThanhTien_num = new javax.swing.JLabel();
         Btn_ThanhToan = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -155,6 +157,8 @@ public class ThanhToan_UI extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("-");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -194,8 +198,10 @@ public class ThanhToan_UI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Txt_DTL_HienCo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Txt_DTL_use, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Txt_DTL_use, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Sl_DTL, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -227,7 +233,8 @@ public class ThanhToan_UI extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Lbl_DiemTichLuy)
                         .addComponent(Txt_DTL_HienCo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Txt_DTL_use, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Txt_DTL_use, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lbl_MaGiamGia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -371,6 +378,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
 
     private void Btn_ThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ThanhToanActionPerformed
         DatVe_ctrl dvc = new DatVe_ctrl();
+        HoaDon_ctrl hdc = new HoaDon_ctrl();
         int seatIsOrdered = 0;
         String MASC = DatVe.MaSuatChieu;
         //Kiểm tra xem trong các ghế đang chọn có ghế nào bị đặt hay chưa
@@ -382,7 +390,8 @@ public class ThanhToan_UI extends javax.swing.JFrame {
             }
         }
         //Nếu chưa thì tiến hành tạo hóa đơn
-        if (seatIsOrdered==0) {           
+        if (seatIsOrdered==0) {
+            long DTL = Long.parseLong(Txt_DTL_use.getText());
             String MANV = DangNhap.MaNV;
             String MATV=null;
             if(Txt_MaTV.isEditable())
@@ -391,7 +400,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
             String MAKM =null;
             if(Txt_MaGiamGia.isEditable())
                 MAKM=Txt_MaGiamGia.getText();
-            int sohd = dvc.TaoHoaDon(MANV, MATV, TONGTIEN, MAKM); //Tạo hóa đơn
+            int sohd = hdc.TaoHoaDon(MANV, MATV, TONGTIEN, MAKM, DTL); //Tạo hóa đơn
             boolean DatVeThanhCong = false; //Sau khi tạo hóa đơn, tiến hành đặt vé cho từng ghế
             for (int i = 0; i < DatVe.MaGhe.size(); i++) {
                 DatVeThanhCong=dvc.DatVe(DatVe.MaGhe.get(i),MASC, sohd);
@@ -463,6 +472,7 @@ public class ThanhToan_UI extends javax.swing.JFrame {
     private javax.swing.JTextField Txt_DTL_use;
     private javax.swing.JTextField Txt_MaGiamGia;
     private javax.swing.JTextField Txt_MaTV;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
     private int Value_of_Slider=0;

@@ -92,12 +92,12 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" pref="41" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Component id="jLabel7" min="-2" pref="142" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" pref="117" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -109,7 +109,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="but_taikhoan" min="-2" pref="65" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="but_nhanvien" min="-2" pref="68" max="-2" attributes="0"/>
@@ -119,9 +119,9 @@
                       <Component id="but_phongchieu" min="-2" pref="68" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="but_baocao" min="-2" pref="67" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace pref="71" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -253,7 +253,10 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel8"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng Xu&#x1ea5;t"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MouseClicked"/>
@@ -294,6 +297,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="E:\HK4\Project\icons\film (3).jpg"/>
                 </Property>
               </Properties>
               <Events>
@@ -995,7 +1001,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="13" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1038,7 +1044,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="13" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -2149,6 +2155,9 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="DialogInput" size="36" style="1"/>
                         </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n L&#xfd; S&#x1ea3;n Ph&#x1ea9;m"/>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
@@ -2158,7 +2167,7 @@
                 <Container class="javax.swing.JScrollPane" name="jScrollPane3">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="100" width="870" height="570"/>
+                      <AbsoluteConstraints x="0" y="100" width="870" height="420"/>
                     </Constraint>
                   </Constraints>
 
@@ -2253,7 +2262,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel70" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner9" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_BapRang" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel69" alignment="1" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -2267,7 +2276,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jLabel70" max="32767" attributes="0"/>
-                                          <Component id="jSpinner9" pref="35" max="32767" attributes="0"/>
+                                          <Component id="JSP_BapRang" pref="35" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
@@ -2302,7 +2311,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner9">
+                            <Component class="javax.swing.JSpinner" name="JSP_BapRang">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_BapRangStateChanged"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2316,7 +2328,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel73" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner10" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_BapRangPhoMai" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel72" alignment="1" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -2329,7 +2341,7 @@
                                       <Component id="jLabel72" min="-2" pref="186" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner10" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_BapRangPhoMai" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel73" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2353,7 +2365,7 @@
                                   <Color blue="0" green="33" red="cc" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="B&#x1eaf;p rang b&#x1a1; (55.000&#x111;)"/>
+                                <Property name="text" type="java.lang.String" value="B&#x1eaf;p rang ph&#xf4; mai (55.000&#x111;)"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel73">
@@ -2364,7 +2376,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner10">
+                            <Component class="javax.swing.JSpinner" name="JSP_BapRangPhoMai">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_BapRangPhoMaiStateChanged"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2378,7 +2393,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel94" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner17" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_CocaNho" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel93" alignment="1" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -2396,7 +2411,7 @@
                                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jSpinner17" min="-2" pref="33" max="-2" attributes="0"/>
+                                              <Component id="JSP_CocaNho" min="-2" pref="33" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -2432,7 +2447,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner17">
+                            <Component class="javax.swing.JSpinner" name="JSP_CocaNho">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_CocaNhoStateChanged"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2446,7 +2464,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel97" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner18" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_CocaLon" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel96" alignment="1" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -2459,7 +2477,7 @@
                                       <Component id="jLabel96" min="-2" pref="181" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner18" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_CocaLon" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel97" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2494,7 +2512,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner18">
+                            <Component class="javax.swing.JSpinner" name="JSP_CocaLon">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_CocaLonStateChanged"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2508,7 +2529,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel100" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner19" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_SpriteNho" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel99" alignment="1" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -2521,7 +2542,7 @@
                                       <Component id="jLabel99" min="-2" pref="181" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner19" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_SpriteNho" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel100" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2556,7 +2577,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner19">
+                            <Component class="javax.swing.JSpinner" name="JSP_SpriteNho">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_SpriteNhoStateChanged"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2570,7 +2594,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel103" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner20" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_SpriteLon" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel102" alignment="1" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -2583,7 +2607,7 @@
                                       <Component id="jLabel102" min="-2" pref="181" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner20" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_SpriteLon" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel103" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2618,7 +2642,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner20">
+                            <Component class="javax.swing.JSpinner" name="JSP_SpriteLon">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_SpriteLonStateChanged"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2631,7 +2658,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel121" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner26" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_Combo1" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel120" alignment="1" pref="0" max="32767" attributes="0"/>
                                   <Component id="jLabel79" alignment="0" max="32767" attributes="0"/>
@@ -2649,7 +2676,7 @@
                                       <Component id="jLabel120" min="-2" pref="181" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner26" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_Combo1" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel121" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -2673,7 +2700,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner26">
+                            <Component class="javax.swing.JSpinner" name="JSP_Combo1">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_Combo1StateChanged"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel79">
                               <Properties>
@@ -2711,7 +2741,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel118" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner25" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_Combo2" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel81" alignment="0" pref="269" max="32767" attributes="0"/>
                                   <Component id="jLabel82" alignment="0" max="32767" attributes="0"/>
@@ -2728,7 +2758,7 @@
                                       <Component id="jLabel117" min="-2" pref="181" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner25" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_Combo2" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel118" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2751,7 +2781,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner25">
+                            <Component class="javax.swing.JSpinner" name="JSP_Combo2">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_Combo2StateChanged"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel81">
                               <Properties>
@@ -2789,7 +2822,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel115" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner24" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_Combo3" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel85" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel86" alignment="0" max="32767" attributes="0"/>
@@ -2798,13 +2831,6 @@
                                           <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
                                           <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
-                                          <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="28" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -2820,7 +2846,7 @@
                                       <Component id="jLabel114" min="-2" pref="181" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner24" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_Combo3" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel115" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2828,13 +2854,6 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2857,7 +2876,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner24">
+                            <Component class="javax.swing.JSpinner" name="JSP_Combo3">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_Combo3StateChanged"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel83">
                               <Properties>
@@ -2869,18 +2891,6 @@
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Combo 1 b&#x1eaf;p rang + "/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel84">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Tahoma" size="18" style="1"/>
-                                </Property>
-                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="33" red="cc" type="rgb"/>
-                                </Property>
-                                <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="1 n&#x1b0;&#x1edb;c nh&#x1ecf; (70.000&#x111;)"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel85">
@@ -2918,7 +2928,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel123" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner27" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_Combo4" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel122" alignment="1" pref="0" max="32767" attributes="0"/>
                                   <Component id="jLabel87" alignment="0" max="32767" attributes="0"/>
@@ -2936,7 +2946,7 @@
                                       <Component id="jLabel122" min="-2" pref="181" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner27" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_Combo4" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel123" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -2960,7 +2970,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner27">
+                            <Component class="javax.swing.JSpinner" name="JSP_Combo4">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_Combo4StateChanged"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel87">
                               <Properties>
@@ -2998,7 +3011,7 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel124" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner28" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_Combo5" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel89" alignment="0" pref="269" max="32767" attributes="0"/>
                                   <Component id="jLabel90" alignment="0" max="32767" attributes="0"/>
@@ -3015,7 +3028,7 @@
                                       <Component id="jLabel119" min="-2" pref="181" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner28" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_Combo5" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel124" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -3038,7 +3051,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner28">
+                            <Component class="javax.swing.JSpinner" name="JSP_Combo5">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_Combo5StateChanged"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel89">
                               <Properties>
@@ -3076,22 +3092,15 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel125" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jSpinner29" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="JSP_Combo6" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel107" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel107" alignment="0" pref="268" max="32767" attributes="0"/>
                                   <Component id="jLabel110" alignment="0" max="32767" attributes="0"/>
                                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
                                           <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
-                                          <Component id="jLabel104" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="28" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -3107,7 +3116,7 @@
                                       <Component id="jLabel116" min="-2" pref="181" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jSpinner29" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="JSP_Combo6" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                                           <Component id="jLabel125" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -3115,13 +3124,6 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel104" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -3144,7 +3146,10 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JSpinner" name="jSpinner29">
+                            <Component class="javax.swing.JSpinner" name="JSP_Combo6">
+                              <Events>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="JSP_Combo6StateChanged"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel91">
                               <Properties>
@@ -3156,18 +3161,6 @@
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Combo 1 b&#x1eaf;p rang + "/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel104">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Tahoma" size="18" style="1"/>
-                                </Property>
-                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="33" red="cc" type="rgb"/>
-                                </Property>
-                                <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="1 n&#x1b0;&#x1edb;c nh&#x1ecf; (70.000&#x111;)"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel107">
@@ -3191,13 +3184,88 @@
                                   <Color blue="0" green="33" red="cc" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="2 n&#x1b0;&#x1edb;c l&#x1edb;n (110.000&#x111;)"/>
+                                <Property name="text" type="java.lang.String" value="2 n&#x1b0;&#x1edb;c nh&#x1ecf; (110.000&#x111;)"/>
                               </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
                       </SubComponents>
                     </Container>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="Lbl_TongCong_num">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="24" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="440" y="560" width="140" height="30"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Lbl_TongCong">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="24" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="T&#x1ed5;ng c&#x1ed9;ng:"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="310" y="560" width="120" height="30"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Container class="javax.swing.JPanel" name="Pn_ThanhToan">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="cc" green="cc" red="0" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Pn_ThanhToanMouseClicked"/>
+                  </Events>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="680" y="520" width="190" height="110"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="39" max="32767" attributes="0"/>
+                              <Component id="Lbl_ThanhToan" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="Lbl_ThanhToan" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="42" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="Lbl_ThanhToan">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="20" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Thanh To&#xe1;n"/>
+                      </Properties>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>

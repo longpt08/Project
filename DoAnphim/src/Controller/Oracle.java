@@ -29,9 +29,9 @@ public class Oracle {
     public static Connection con;
     public Oracle() {
             //Thiết lập kết nối đến cơ sở dữ liệu
-            String url = "jdbc:oracle:thin:@localhost:1521:orcl3";
+            String url = "jdbc:oracle:thin:@localhost:1521:OrclLong";
             String username = "Universe";
-            String password = "Universe";
+            String password = "universe";
             try{
                 con = DriverManager.getConnection(url, username, password);
                 
@@ -43,7 +43,7 @@ public class Oracle {
      public static Connection getConnection() {
          try {
             //Thiết lập kết nối đến cơ sở dữ liệu
-            String url = "jdbc:oracle:thin:@localhost:1521:orcl3";
+            String url = "jdbc:oracle:thin:@localhost:1521:OrclLong";
             String username = "Universe";
             String password = "universe";
             return DriverManager.getConnection(url,username,password);

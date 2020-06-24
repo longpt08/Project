@@ -26,7 +26,7 @@ public class DatVe extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);//hiển thị giữa màn hình
         this.setTitle("Đăng nhập");
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//thoát chương trình khi bấm exit
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setVisible(true);//chạy chương trình
         panel_datve2.setVisible(true);
         HienThiNgayChieu();

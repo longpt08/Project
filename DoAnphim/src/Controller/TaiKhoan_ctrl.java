@@ -33,7 +33,7 @@ public class TaiKhoan_ctrl extends Oracle {
     }
     public String getThongTinDangNhap(String username){
         String MaNV = "";
-        String query = "select manv from (select manv from nhanvien) nv join (select manguoidung, tentk from taikhoan where tentk = ?) tk on nv.manv=tk.manguoidung;";
+        String query = "select manv from (select manv from nhanvien) nv join (select manguoidung, tentk from taikhoan where tentk = ?) tk on nv.manv=tk.manguoidung";
         try{   
             PreparedStatement smt = Oracle.getConnection().prepareStatement(query);
             smt.setString(1, username);

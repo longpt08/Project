@@ -67,8 +67,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Txt_DTL_HienCo" min="-2" pref="94" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Txt_DTL_use" pref="96" max="32767" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Txt_DTL_use" pref="99" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="Sl_DTL" min="-2" pref="188" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -110,6 +112,7 @@
                       <Component id="Lbl_DiemTichLuy" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Txt_DTL_HienCo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Txt_DTL_use" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -274,6 +277,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_ThanhToanActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

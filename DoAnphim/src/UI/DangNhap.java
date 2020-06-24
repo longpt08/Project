@@ -190,7 +190,6 @@ public class DangNhap extends javax.swing.JFrame {
                 Home trangchu = new Home();
                 //Đóng đăng nhập
                 this.dispose();
-                Oracle.getConnection().close();
             }
             else
             {
@@ -198,8 +197,6 @@ public class DangNhap extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Invalid Username/ Password","Login error",2);
                 Oracle.getConnection().close();
             }
-            
-            
         } catch (SQLException ex) {
             Logger.getLogger(DangNhap.class.getName()).log(Level.SEVERE, null, ex);
         }
